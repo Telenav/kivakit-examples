@@ -1,0 +1,472 @@
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<!--                                                                                                                 -->
+<!--  © 2011-2021 Telenav, Inc.                                                                                      -->
+<!--  Licensed under Apache License, Version 2.0                                                                     -->
+<!--                                                                                                                 -->
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<!--suppress MavenModelInspection -->
+<project xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns = "http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.telenav.kivakit</groupId>
+    <artifactId>kivakit-examples</artifactId>
+    <version>0.9.8-alpha-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <!-- Project -->
+
+    <name>KivaKit Examples</name>
+    <description>A collection of modules that demonstrate use of the KivaKit API.</description>
+    <url>http://www.kivakit.org</url>
+    <inceptionYear>2011</inceptionYear>
+    <organization>
+        <name>Telenav</name>
+        <url>https://www.telenav.com</url>
+    </organization>
+
+    <!-- Licensing -->
+
+    <licenses>
+
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+
+    </licenses>
+
+    <!-- Contributors -->
+
+    <developers>
+
+        <developer>
+            <id>jonathanl</id>
+            <name>Jonathan Locke (Luo Shibo)</name>
+            <email>jonathanl@telenav.com</email>
+            <organization>Telenav</organization>
+            <organizationUrl>http://www.telenav.com/</organizationUrl>
+            <roles>
+                <role>lead</role>
+                <role>administrator</role>
+            </roles>
+        </developer>
+
+        <developer>
+            <id>haifeng</id>
+            <name>Haifeng Zhu</name>
+            <email>hfzhu@telenav.com</email>
+            <organization>Telenav</organization>
+            <organizationUrl>http://www.telenav.com/</organizationUrl>
+            <roles>
+                <role>developer</role>
+                <role>administrator</role>
+            </roles>
+        </developer>
+
+    </developers>
+
+    <!-- Source Code -->
+
+    <scm>
+
+        <connection>scm:git:https://Telenav/kivakit.git</connection>
+        <developerConnection>scm:git:https://Telenav/kivakit.git</developerConnection>
+        <url>https://Telenav/kivakit.git</url>
+
+    </scm>
+
+    <!-- Issue Tracking -->
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/Telenav/kivakit-examples/issues</url>
+    </issueManagement>
+
+    <!-- Publishing -->
+
+    <distributionManagement>
+
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+
+    </distributionManagement>
+
+    <!-- Snapshots -->
+
+    <repositories>
+
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+    </repositories>
+
+    <!-- Properties -->
+
+    <properties>
+
+        <!-- KivaKit -->
+
+        <kivakit.version>0.9.8-alpha-SNAPSHOT</kivakit.version>
+
+        <!-- Cactus Build -->
+
+        <cactus.version>0.9.6-alpha</cactus.version>
+        <cactus.download.version>0.9.6-alpha</cactus.download.version>
+        <cactus.downloads.folder>${user.home}/.cactus-build/downloads</cactus.downloads.folder>
+        <cactus.url>https://repo1.maven.org/maven2/com/telenav/cactus/cactus-build-metadata/${cactus.download.version}/cactus-build-metadata-${cactus.download.version}.jar</cactus.url>
+        <cactus.jar>${cactus.downloads.folder}/cactus-build-metadata-${cactus.download.version}.jar</cactus.jar>
+
+        <!-- Java -->
+
+        <java.version>12</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Maven -->
+
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>2.7</maven-resources-plugin.version>
+        <maven-shade-plugin.version>3.2.4</maven-shade-plugin.version>
+        <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
+        <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+        <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+
+        <!-- Build -->
+
+        <nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
+        <moditect-maven-plugin.version>1.0.0.RC1</moditect-maven-plugin.version>
+
+    </properties>
+
+    <dependencies>
+
+        <!-- Lexakai -->
+
+        <dependency>
+            <groupId>com.telenav.lexakai</groupId>
+            <artifactId>lexakai-annotations</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- KivaKit -->
+
+        <dependency>
+            <groupId>com.telenav.kivakit</groupId>
+            <artifactId>kivakit-application</artifactId>
+            <version>${kivakit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.telenav.kivakit</groupId>
+            <artifactId>kivakit-resource</artifactId>
+            <version>${kivakit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.telenav.kivakit</groupId>
+            <artifactId>kivakit-network-http</artifactId>
+            <version>${kivakit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.telenav.kivakit</groupId>
+            <artifactId>kivakit-collections</artifactId>
+            <version>${kivakit.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <profiles>
+
+        <!-- Attach JARs -->
+
+        <profile>
+            <id>attach-jars</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>${maven-source-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>attach-source-jar</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven-javadoc-plugin.version}</version>
+                        <configuration>
+                            <show>public</show>
+                            <source>12</source>
+                            <detectJavaApiLink>false</detectJavaApiLink>
+                            <doclint>none</doclint>
+                            <nohelp>true</nohelp>
+                            <additionalOptions>-notimestamp --show-module-contents all --show-packages all --show-types private</additionalOptions>
+                            <destDir>target/attached-javadocs</destDir>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>attach-javadoc-jar</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- Sign Artifacts -->
+
+        <profile>
+
+            <id>sign-artifacts</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${maven-gpg-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                </configuration>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+
+        </profile>
+
+    </profiles>
+
+    <build>
+
+        <plugins>
+
+            <!-- Build Metadata -->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>project-metadata</id>
+                        <phase>verify</phase>
+                        <configuration>
+                            <target name = "build-metadata">
+                                <property name = "project.groupId" value = "${project.groupId}"/>
+                                <property name = "project.artifactId" value = "${project.artifactId}"/>
+                                <property name = "project.version" value = "${project.version}"/>
+                                <property name = "project.name" value = "${project.name}"/>
+                                <condition property = "source.exists">
+                                    <available file = "src" type = "dir"/>
+                                </condition>
+                                <taskdef resource = "net/sf/antcontrib/antcontrib.properties" classpathref = "maven.plugin.classpath"/>
+                                <if>
+                                    <equals arg1 = "${maven.multiModuleProjectDirectory}" arg2 = "${project.basedir}"/>
+                                    <then>
+                                        <mkdir dir = "${cactus.downloads.folder}"/>
+                                        <get src = "${cactus.url}" dest = "${cactus.jar}"/>
+                                    </then>
+                                </if>
+                                <if>
+                                    <equals arg1 = "${source.exists}" arg2 = "true"/>
+                                    <then>
+                                        <echo file = "src/main/java/project.properties">
+                                            project-name = ${project.name}${line.separator}project-version = ${project.version}${line.separator}project-group-id = ${project.groupId}${line.separator}project-artifact-id = ${project.artifactId}
+                                        </echo>
+                                        <java jar = "${cactus.jar}" failonerror = "true" fork = "true">
+                                            <arg value = "src/main/java"/>
+                                        </java>
+                                    </then>
+                                </if>
+                                <echo file = "${project.basedir}/project.properties">
+                                    project-name = ${project.name}${line.separator}project-version = ${project.version}${line.separator}project-group-id = ${project.groupId}${line.separator}project-artifact-id = ${project.artifactId}
+                                </echo>
+                                <java jar = "${cactus.jar}" failonerror = "true" fork = "true">
+                                    <arg value = "${project.basedir}"/>
+                                </java>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>ant-contrib</groupId>
+                        <artifactId>ant-contrib</artifactId>
+                        <version>20020829</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+        </plugins>
+
+        <!-- Resource Copying -->
+
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/java</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </testResource>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </testResource>
+        </testResources>
+
+        <pluginManagement>
+
+            <plugins>
+
+                <!-- Compiler -->
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <release>${java.version}</release>
+                        <compilerArgs>
+                            <compilerArgument>-Xlint:unchecked</compilerArgument>
+                            <compilerArgument>-Xlint:deprecation</compilerArgument>
+                        </compilerArgs>
+                    </configuration>
+                </plugin>
+
+                <!-- Maven Build -->
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>3.2.0</version>
+                </plugin>
+
+                <!-- Testing -->
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M5</version>
+                    <configuration>
+                        <!--suppress MavenModelInspection -->
+                        <excludedGroups>${exclude.test.groups}</excludedGroups>
+                        <systemPropertyVariables>
+                            <!--suppress MavenModelInspection -->
+                            <testQuick>${testQuick}</testQuick>
+                        </systemPropertyVariables>
+                        <argLine>-Xmx2g</argLine>
+                    </configuration>
+                </plugin>
+
+                <!-- Javadoc -->
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven-javadoc-plugin.version}</version>
+                    <configuration>
+                        <show>public</show>
+                        <source>12</source>
+                        <detectJavaApiLink>false</detectJavaApiLink>
+                        <doclint>none</doclint>
+                        <nohelp>true</nohelp>
+                        <reportOutputDirectory>${env.KIVAKIT_ASSETS_HOME}/docs/${env.KIVAKIT_VERSION}/javadoc</reportOutputDirectory>
+                        <destDir>kivakit-examples</destDir>
+                        <additionalOptions>-notimestamp --show-module-contents all --show-packages all --show-types private</additionalOptions>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>aggregate</id>
+                            <phase>site</phase>
+                            <goals>
+                                <goal>aggregate</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- Publishing -->
+
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>${nexus-staging-maven-plugin.version}</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <serverId>ossrh</serverId>
+                        <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                        <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                    </configuration>
+                </plugin>
+
+            </plugins>
+
+        </pluginManagement>
+
+    </build>
+
+</project>
+
