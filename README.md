@@ -77,7 +77,7 @@ Javadoc coverage for this project is 87.5%.
 
 | Class | Documentation Sections |
 |---|---|
-| [*LineCountApplication*](https://www.kivakit.org/0.9.8-alpha-SNAPSHOT/javadoc/kivakit-examples/kivakit.examples/com/telenav/kivakit/examples/linecount/LineCountApplication.html) |  |  
+| [*LineCountApplication*](https://www.kivakit.org/0.9.8-alpha-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/linecount/LineCountApplication.html) |  |  
 
 [//]: # (start-user-text)
 
