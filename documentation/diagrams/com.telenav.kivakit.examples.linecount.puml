@@ -1,0 +1,15 @@
+@startuml
+
+    !include lexakai.theme
+    
+    title "com.telenav.kivakit.examples.linecount"
+    
+    Application <|-- LineCountApplication
+    class LineCountApplication
+    {
+        --
+        +void main(String[] arguments)
+    }
+    
+@enduml
+
