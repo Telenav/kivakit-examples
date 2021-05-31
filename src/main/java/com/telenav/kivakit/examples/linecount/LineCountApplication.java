@@ -5,7 +5,7 @@ import com.telenav.kivakit.commandline.ArgumentParser;
 import com.telenav.kivakit.commandline.SwitchParser;
 import com.telenav.kivakit.filesystem.File;
 import com.telenav.kivakit.kernel.language.values.count.Count;
-import com.telenav.kivakit.resource.project.CoreResourceProject;
+import com.telenav.kivakit.resource.project.ResourceProject;
 
 import java.util.List;
 import java.util.Set;
@@ -36,7 +36,7 @@ public class LineCountApplication extends Application
 
     private LineCountApplication()
     {
-        super(CoreResourceProject.get());
+        super(ResourceProject.get());
     }
 
     @Override
