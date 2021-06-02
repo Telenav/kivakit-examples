@@ -10,6 +10,9 @@ import com.telenav.kivakit.resource.project.ResourceProject;
 import java.util.List;
 import java.util.Set;
 
+import static com.telenav.kivakit.commandline.SwitchParser.booleanSwitchParser;
+import static com.telenav.kivakit.filesystem.File.fileArgumentParser;
+
 /**
  * Example application that counts the lines in its file argument. With no arguments, the application gives usage help.
  * With the argument -show-file-size=true, it shows the size of the file in bytes.
@@ -18,21 +21,21 @@ import java.util.Set;
  */
 public class LineCountApplication extends Application
 {
-    private final ArgumentParser<File> INPUT =
-            File.fileArgument("Input text file")
-                    .required()
-                    .build();
-
-    private final SwitchParser<Boolean> SHOW_FILE_SIZE =
-            SwitchParser.booleanSwitch("show-file-size", "Show the file size in bytes")
-                    .optional()
-                    .defaultValue(false)
-                    .build();
-
     public static void main(final String[] arguments)
     {
         new LineCountApplication().run(arguments);
     }
+
+    private final ArgumentParser<File> INPUT =
+            fileArgumentParser("Input text file")
+                    .required()
+                    .build();
+
+    private final SwitchParser<Boolean> SHOW_FILE_SIZE =
+            booleanSwitchParser("show-file-size", "Show the file size in bytes")
+                    .optional()
+                    .defaultValue(false)
+                    .build();
 
     private LineCountApplication()
     {
@@ -46,12 +49,6 @@ public class LineCountApplication extends Application
     }
 
     @Override
-    protected Set<SwitchParser<?>> switchParsers()
-    {
-        return Set.of(SHOW_FILE_SIZE);
-    }
-
-    @Override
     protected void onRun()
     {
         final var input = argument(INPUT);
@@ -62,5 +59,11 @@ public class LineCountApplication extends Application
         }
 
         information("Lines = $", Count.count(input.reader().lines()));
+    }
+
+    @Override
+    protected Set<SwitchParser<?>> switchParsers()
+    {
+        return Set.of(SHOW_FILE_SIZE);
     }
 }
