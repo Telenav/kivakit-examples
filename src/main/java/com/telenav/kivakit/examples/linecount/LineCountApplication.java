@@ -55,7 +55,7 @@ public class LineCountApplication extends Application
 
         if (get(SHOW_FILE_SIZE))
         {
-            information("File size = $", input.bytes());
+            information("File size = $", input.sizeInBytes());
         }
 
         information("Lines = $", Count.count(input.reader().lines()));
