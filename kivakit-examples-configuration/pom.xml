@@ -7,16 +7,17 @@
 
 <project xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns = "http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <parent>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-examples</artifactId>
         <version>0.9.8-alpha-SNAPSHOT</version>
     </parent>
 
-    <name>KivaKit Examples - Line Count</name>
+    <name>KivaKit Examples - Configuration</name>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>kivakit-examples-linecount</artifactId>
+    <artifactId>kivakit-examples-configuration</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -30,7 +31,7 @@
         </dependency>
         <dependency>
             <groupId>com.telenav.kivakit</groupId>
-            <artifactId>kivakit-resource</artifactId>
+            <artifactId>kivakit-configuration</artifactId>
             <version>${kivakit.version}</version>
         </dependency>
 

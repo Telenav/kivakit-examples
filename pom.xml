@@ -122,7 +122,8 @@
 
     <modules>
 
-        <module>kivakit-examples-linecount</module>
+        <module>kivakit-examples-configuration</module>
+        <module>kivakit-examples-line-count</module>
         <module>kivakit-examples-serialization-json</module>
 
     </modules>
