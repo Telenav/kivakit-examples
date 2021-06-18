@@ -3,12 +3,13 @@ package com.telenav.kivakit.examples.configuration.settings.simple;
 import com.telenav.kivakit.configuration.settings.Settings;
 
 /**
- * Shows how to configure a spaceship and launch it.
+ * Shows how to configure a spaceship and launch it as part of Operation Impending Doom III. See <a
+ * href="https://en.wikipedia.org/wiki/The_Nightmare_Begins">Operation Impending Doom I</a>
  * <p>
  * The register and lookup pattern allows decoupling of settings from their use, but without violating the cardinal
  * object-oriented design principle of encapsulation. Objects that need an interface request it via {@link
  * Settings#require(Class)} and objects providing interfaces register them with {@link Settings#register(Object)}. This
- * prevents the exposure of implementation details of the requesting object (either through primitive field access or
+ * prevents implementation details of the requesting object from being exposed (either through primitive field access or
  * getters and setters, see <a href="https://www.infoworld.com/article/2073723/why-getter-and-setter-methods-are-evil.html">Why
  * Getter and Setter Methods are Evil, Infoworld, Alan Holub</a>).
  * </p>
@@ -26,7 +27,7 @@ public class SettingsExample
     {
         // Create the spaceship settings
         final var settings = new SpaceshipSettings();
-        settings.name("Zim's Cool Spaceship");
+        settings.name("Zim's Awesome Spaceship");
         settings.airConditioning(true);
         settings.cruiseControl(true);
         settings.missileLaunchers(7);
