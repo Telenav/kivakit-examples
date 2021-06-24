@@ -1,6 +1,6 @@
 package com.telenav.kivakit.examples.configuration.lookup;
 
-import com.telenav.kivakit.configuration.lookup.Lookup;
+import com.telenav.kivakit.configuration.lookup.Registry;
 
 /**
  * Represents an alien from an arbitrary galaxy (possibly from Irk) in a spaceship.
@@ -25,7 +25,7 @@ public class Alien
     public void attack()
     {
         // Look up the attack plan in the alien database and wait until it's time to attack
-        final var database = Lookup.global().lookup(QuantumDatabase.class);
+        final var database = Registry.global().lookup(QuantumDatabase.class);
         database.retrieveAttackPlan().waitForAttackTime();
 
         // then launch the attack. Prepare to meet your horrible doom!

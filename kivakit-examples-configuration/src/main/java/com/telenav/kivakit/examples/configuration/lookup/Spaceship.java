@@ -1,6 +1,6 @@
 package com.telenav.kivakit.examples.configuration.lookup;
 
-import com.telenav.kivakit.configuration.lookup.Lookup;
+import com.telenav.kivakit.configuration.lookup.Registry;
 import com.telenav.kivakit.examples.configuration.settings.simple.SettingsExample;
 import com.telenav.kivakit.examples.configuration.settings.simple.SpaceshipSettings;
 import com.telenav.kivakit.kernel.messaging.Message;
@@ -24,7 +24,7 @@ public class Spaceship
     public void startAttack()
     {
         // Get database from global lookup
-        final var database = Lookup.global().lookup(QuantumDatabase.class);
+        final var database = Registry.global().lookup(QuantumDatabase.class);
 
         // and launch an attack.
         launch(database.retrieveAttackPlan());
