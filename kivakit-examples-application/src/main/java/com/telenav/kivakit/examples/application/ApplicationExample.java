@@ -1,4 +1,4 @@
-package com.telenav.kivakit.examples.linecount;
+package com.telenav.kivakit.examples.application;
 
 import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.commandline.ArgumentParser;
@@ -19,11 +19,11 @@ import static com.telenav.kivakit.filesystem.File.fileArgumentParser;
  *
  * @author jonathanl (shibo)
  */
-public class LineCountExample extends Application
+public class ApplicationExample extends Application
 {
     public static void main(final String[] arguments)
     {
-        new LineCountExample().run(arguments);
+        new ApplicationExample().run(arguments);
     }
 
     private final ArgumentParser<File> INPUT =
@@ -37,7 +37,7 @@ public class LineCountExample extends Application
                     .defaultValue(false)
                     .build();
 
-    private LineCountExample()
+    private ApplicationExample()
     {
         super(ResourceProject.get());
     }

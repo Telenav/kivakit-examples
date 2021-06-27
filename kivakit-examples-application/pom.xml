@@ -14,10 +14,10 @@
         <version>0.9.8-alpha-SNAPSHOT</version>
     </parent>
 
-    <name>KivaKit Examples - Line Count</name>
+    <name>KivaKit Examples - Application</name>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>kivakit-examples-linecount</artifactId>
+    <artifactId>kivakit-examples-application</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
