@@ -24,7 +24,7 @@ public class Spaceship
     public void startAttack()
     {
         // Get database from global lookup
-        final var database = Registry.global().lookup(QuantumDatabase.class);
+        final var database = Registry.lookup(QuantumDatabase.class);
 
         // and launch an attack.
         launch(database.retrieveAttackPlan());

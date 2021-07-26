@@ -25,7 +25,7 @@ public class Alien
     public void attack()
     {
         // Look up the attack plan in the alien database and wait until it's time to attack
-        final var database = Registry.global().lookup(QuantumDatabase.class);
+        final var database = Registry.lookup(QuantumDatabase.class);
         database.retrieveAttackPlan().waitForAttackTime();
 
         // then launch the attack. Prepare to meet your horrible doom!

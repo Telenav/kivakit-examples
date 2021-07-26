@@ -31,7 +31,7 @@ public class RegistryExample
     {
         // Register the quantum database containing alien information,
         final var database = new QuantumDatabase();
-        Registry.global().register(database);
+        Registry.register(database);
 
         // then create Zim with his spaceship and launch an attack.
         final var zim = new Alien(new Spaceship());
