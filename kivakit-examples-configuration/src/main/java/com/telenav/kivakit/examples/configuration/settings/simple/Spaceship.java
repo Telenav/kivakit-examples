@@ -1,5 +1,6 @@
 package com.telenav.kivakit.examples.configuration.settings.simple;
 
+import com.telenav.kivakit.configuration.BaseComponent;
 import com.telenav.kivakit.configuration.settings.Settings;
 
 import static com.telenav.kivakit.kernel.language.time.Duration.ONE_SECOND;
@@ -16,7 +17,7 @@ import static com.telenav.kivakit.kernel.messaging.Message.println;
  * @see SettingsExample
  * @see SpaceshipSettings
  */
-public class Spaceship
+public class Spaceship extends BaseComponent
 {
     /**
      * Commence the mission!
@@ -61,6 +62,6 @@ public class Spaceship
      */
     private SpaceshipSettings settings()
     {
-        return Settings.require(SpaceshipSettings.class);
+        return require(SpaceshipSettings.class);
     }
 }
