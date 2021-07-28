@@ -1,6 +1,6 @@
 package com.telenav.kivakit.examples.configuration.settings.simple;
 
-import com.telenav.kivakit.configuration.BaseComponent;
+import com.telenav.kivakit.application.component.BaseComponent;
 import com.telenav.kivakit.configuration.settings.Settings;
 
 /**

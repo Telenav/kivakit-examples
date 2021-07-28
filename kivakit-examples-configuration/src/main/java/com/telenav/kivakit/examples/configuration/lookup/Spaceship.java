@@ -1,6 +1,6 @@
 package com.telenav.kivakit.examples.configuration.lookup;
 
-import com.telenav.kivakit.configuration.BaseComponent;
+import com.telenav.kivakit.application.component.BaseComponent;
 import com.telenav.kivakit.examples.configuration.settings.simple.SettingsExample;
 import com.telenav.kivakit.examples.configuration.settings.simple.SpaceshipSettings;
 import com.telenav.kivakit.kernel.messaging.Message;
