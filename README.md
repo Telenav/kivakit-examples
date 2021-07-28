@@ -26,7 +26,9 @@ This repository contains working example code to show what KivaKit can do.
 
 [//]: # (start-user-text)
 
+[**KivaKit Blog Articles**](https://state-of-the-art.org/)  
 
+<img src="https://www.kivakit.org/images/horizontal-line-128.png" srcset="https://www.kivakit.org/images/horizontal-line-128-2x.png 2x"/>
 
 [//]: # (end-user-text)
 
