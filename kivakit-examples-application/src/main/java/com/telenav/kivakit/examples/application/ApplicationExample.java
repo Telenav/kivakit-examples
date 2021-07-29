@@ -5,7 +5,6 @@ import com.telenav.kivakit.commandline.ArgumentParser;
 import com.telenav.kivakit.commandline.SwitchParser;
 import com.telenav.kivakit.filesystem.File;
 import com.telenav.kivakit.kernel.language.values.count.Count;
-import com.telenav.kivakit.resource.project.ResourceProject;
 
 import java.util.List;
 import java.util.Set;
@@ -39,7 +38,13 @@ public class ApplicationExample extends Application
 
     private ApplicationExample()
     {
-        super(ResourceProject.get());
+        super(ApplicationExampleProject.get());
+    }
+
+    @Override
+    public String description()
+    {
+        return "Example application that counts the number of lines in the file argument passed to the command line";
     }
 
     @Override
@@ -53,17 +58,29 @@ public class ApplicationExample extends Application
     {
         final var input = argument(INPUT);
 
-        if (get(SHOW_FILE_SIZE))
+        if (input.exists())
         {
-            information("File size = $", input.sizeInBytes());
+            showFile(input);
         }
-
-        information("Lines = $", Count.count(input.reader().lines()));
+        else
+        {
+            problem("File does not exist: $", input.path());
+        }
     }
 
     @Override
     protected Set<SwitchParser<?>> switchParsers()
     {
         return Set.of(SHOW_FILE_SIZE);
+    }
+
+    private void showFile(final File input)
+    {
+        if (get(SHOW_FILE_SIZE))
+        {
+            information("File size = $", input.sizeInBytes());
+        }
+
+        information("Lines = $", Count.count(input.reader().lines()));
     }
 }
