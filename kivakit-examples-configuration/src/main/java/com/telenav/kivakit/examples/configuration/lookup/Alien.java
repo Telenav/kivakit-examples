@@ -1,6 +1,6 @@
 package com.telenav.kivakit.examples.configuration.lookup;
 
-import com.telenav.kivakit.application.component.BaseComponent;
+import com.telenav.kivakit.component.BaseComponent;
 
 /**
  * Represents an alien from an arbitrary galaxy (possibly from Irk) in a spaceship.
