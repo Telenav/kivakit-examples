@@ -18,7 +18,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-examples 0.9.8-beta &nbsp;&nbsp; <img src="https://www.kivakit.org/images/kivakit-64.png" srcset="https://www.kivakit.org/images/kivakit-64-2x.png 2x"/>
+# kivakit-examples 1.0.0 &nbsp;&nbsp; <img src="https://www.kivakit.org/images/kivakit-64.png" srcset="https://www.kivakit.org/images/kivakit-64-2x.png 2x"/>
 
 This repository contains working example code to show what KivaKit can do.
 
@@ -26,7 +26,9 @@ This repository contains working example code to show what KivaKit can do.
 
 [//]: # (start-user-text)
 
+[**KivaKit Blog Articles**](https://state-of-the-art.org/)  
 
+<img src="https://www.kivakit.org/images/horizontal-line-128.png" srcset="https://www.kivakit.org/images/horizontal-line-128-2x.png 2x"/>
 
 [//]: # (end-user-text)
 
@@ -39,7 +41,7 @@ This repository contains working example code to show what KivaKit can do.
 
 ### Javadoc Coverage <a name = "javadoc-coverage"></a> &nbsp; <img src="https://www.kivakit.org/images/bargraph-32.png" srcset="https://www.kivakit.org/images/bargraph-32-2x.png 2x"/>
 
-&nbsp; <img src="https://www.kivakit.org/images/meter-90-96.png" srcset="https://www.kivakit.org/images/meter-90-96-2x.png 2x"/>
+&nbsp; <img src="https://www.kivakit.org/images/meter-70-96.png" srcset="https://www.kivakit.org/images/meter-70-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-examples-application**](kivakit-examples-application/README.md)  
 &nbsp; <img src="https://www.kivakit.org/images/meter-70-96.png" srcset="https://www.kivakit.org/images/meter-70-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-examples-configuration**](kivakit-examples-configuration/README.md)

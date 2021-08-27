@@ -1,5 +1,6 @@
 package com.telenav.kivakit.examples.configuration.settings.simple;
 
+import com.telenav.kivakit.component.BaseComponent;
 import com.telenav.kivakit.configuration.settings.Settings;
 
 /**
@@ -16,7 +17,7 @@ import com.telenav.kivakit.configuration.settings.Settings;
  *
  * @author jonathanl (shibo)
  */
-public class SettingsExample
+public class SettingsExample extends BaseComponent
 {
     public static void main(final String[] arguments)
     {
@@ -33,7 +34,7 @@ public class SettingsExample
         settings.missileLaunchers(7);
 
         // and register them for any interested components
-        Settings.register(settings);
+        registerSettingsObject(settings);
 
         // then launch a new spaceship.
         new Spaceship().launch();

@@ -12,7 +12,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.telenav.kivakit</groupId>
     <artifactId>kivakit-examples</artifactId>
-    <version>0.9.8-beta</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <!-- Project -->
@@ -131,7 +131,7 @@
 
         <!-- KivaKit -->
 
-        <kivakit.version>0.9.8-beta</kivakit.version>
+        <kivakit.version>1.0.0</kivakit.version>
 
         <!-- Cactus Build -->
 
@@ -143,7 +143,7 @@
 
         <!-- Java -->
 
-        <java.version>12</java.version>
+        <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jakarta.activation.version>1.2.2</jakarta.activation.version>
         <java-mail.version>1.6.2</java-mail.version>
@@ -246,7 +246,7 @@
                         <version>${maven-javadoc-plugin.version}</version>
                         <configuration>
                             <show>public</show>
-                            <source>12</source>
+                            <source>11</source>
                             <detectJavaApiLink>false</detectJavaApiLink>
                             <doclint>none</doclint>
                             <nohelp>true</nohelp>
@@ -457,7 +457,7 @@
                     <version>${maven-javadoc-plugin.version}</version>
                     <configuration>
                         <show>public</show>
-                        <source>12</source>
+                        <source>11</source>
                         <detectJavaApiLink>false</detectJavaApiLink>
                         <doclint>none</doclint>
                         <nohelp>true</nohelp>

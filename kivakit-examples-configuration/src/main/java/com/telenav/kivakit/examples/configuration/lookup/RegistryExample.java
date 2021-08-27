@@ -1,5 +1,6 @@
 package com.telenav.kivakit.examples.configuration.lookup;
 
+import com.telenav.kivakit.component.BaseComponent;
 import com.telenav.kivakit.configuration.lookup.Registry;
 
 /**
@@ -17,7 +18,7 @@ import com.telenav.kivakit.configuration.lookup.Registry;
  * @see <a href="https://www.infoworld.com/article/2073723/why-getter-and-setter-methods-are-evil.html">Why Getter and
  * Setter Methods are Evil, Infoworld, Alan Holub</a>
  */
-public class RegistryExample
+public class RegistryExample extends BaseComponent
 {
     public static void main(final String[] arguments)
     {
@@ -31,7 +32,7 @@ public class RegistryExample
     {
         // Register the quantum database containing alien information,
         final var database = new QuantumDatabase();
-        Registry.global().register(database);
+        registerObject(database);
 
         // then create Zim with his spaceship and launch an attack.
         final var zim = new Alien(new Spaceship());

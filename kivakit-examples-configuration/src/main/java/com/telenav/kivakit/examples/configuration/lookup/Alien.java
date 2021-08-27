@@ -1,6 +1,6 @@
 package com.telenav.kivakit.examples.configuration.lookup;
 
-import com.telenav.kivakit.configuration.lookup.Registry;
+import com.telenav.kivakit.component.BaseComponent;
 
 /**
  * Represents an alien from an arbitrary galaxy (possibly from Irk) in a spaceship.
@@ -9,7 +9,7 @@ import com.telenav.kivakit.configuration.lookup.Registry;
  * need to know where this object comes from, preventing this implementation detail from leaking out.
  * </p>
  */
-public class Alien
+public class Alien extends BaseComponent
 {
     /** The alien's spaceship */
     private final Spaceship spaceship;
@@ -25,7 +25,7 @@ public class Alien
     public void attack()
     {
         // Look up the attack plan in the alien database and wait until it's time to attack
-        final var database = Registry.global().lookup(QuantumDatabase.class);
+        final var database = lookup(QuantumDatabase.class);
         database.retrieveAttackPlan().waitForAttackTime();
 
         // then launch the attack. Prepare to meet your horrible doom!
