@@ -69,7 +69,7 @@ public class ApplicationExample extends Application
     }
 
     @Override
-    protected Set<SwitchParser<?>> switchParsers()
+    protected ObjectSet<SwitchParser<?>> switchParsers()
     {
         return Set.of(SHOW_FILE_SIZE);
     }
