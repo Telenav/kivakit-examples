@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-package com.telenav.kivakit.examples.microservice.rest.methods;
+package com.telenav.kivakit.examples.microservice.rest.requests;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.telenav.kivakit.filesystem.Folder;
@@ -27,7 +27,7 @@ import com.telenav.kivakit.kernel.language.reflection.property.KivaKitIncludePro
 import com.telenav.kivakit.kernel.language.strings.Strings;
 import com.telenav.kivakit.kernel.language.vm.Processes;
 import com.telenav.kivakit.kernel.messaging.messages.status.Problem;
-import com.telenav.kivakit.microservice.methods.MicroservicePostMethod;
+import com.telenav.kivakit.microservice.rest.methods.MicroservicePostRequest;
 import com.telenav.kivakit.network.http.HttpNetworkLocation;
 import com.telenav.kivakit.resource.resources.jar.launcher.JarLauncher;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -56,10 +56,10 @@ import static com.telenav.kivakit.resource.resources.jar.launcher.JarLauncher.Re
  * @author jonathanl (shibo)
  */
 @Schema(description = "A request for a UML diagram of a GitHub package")
-public class UmlDiagramGenerate extends MicroservicePostMethod<UmlDiagramGenerate.Response>
+public class UmlDiagramRequest extends MicroservicePostRequest<UmlDiagramRequest.Response>
 {
     /**
-     * The UML diagram for a {@link UmlDiagramGenerate}.
+     * The UML diagram for a {@link UmlDiagramRequest}.
      *
      * @author jonathanl (shibo)
      */
@@ -69,6 +69,11 @@ public class UmlDiagramGenerate extends MicroservicePostMethod<UmlDiagramGenerat
         @JsonProperty
         @Schema(description = "The requested plant UML diagram")
         String diagram;
+
+        public String diagram()
+        {
+            return diagram;
+        }
 
         void diagram(String diagram)
         {

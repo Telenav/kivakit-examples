@@ -18,8 +18,6 @@
 
 package com.telenav.kivakit.examples.microservice;
 
-import com.telenav.kivakit.kernel.language.collections.set.ObjectSet;
-import com.telenav.kivakit.kernel.project.Project;
 import com.telenav.kivakit.microservice.MicroserviceProject;
 
 /**
@@ -29,9 +27,4 @@ import com.telenav.kivakit.microservice.MicroserviceProject;
  */
 public class UmlMicroserviceProject extends MicroserviceProject
 {
-    @Override
-    public ObjectSet<Project> dependencies()
-    {
-        return ObjectSet.empty();
-    }
 }

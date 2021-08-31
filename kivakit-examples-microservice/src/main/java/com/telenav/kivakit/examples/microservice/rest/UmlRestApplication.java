@@ -18,8 +18,7 @@
 
 package com.telenav.kivakit.examples.microservice.rest;
 
-import com.telenav.kivakit.component.ComponentMixin;
-import com.telenav.kivakit.examples.microservice.rest.methods.UmlDiagramGenerate;
+import com.telenav.kivakit.examples.microservice.rest.requests.UmlDiagramRequest;
 import com.telenav.kivakit.microservice.rest.MicroserviceGsonFactory;
 import com.telenav.kivakit.microservice.rest.MicroserviceRestApplication;
 
@@ -28,15 +27,15 @@ import com.telenav.kivakit.microservice.rest.MicroserviceRestApplication;
  *
  * @author jonathanl (shibo)
  */
-public class UmlRestApplication extends MicroserviceRestApplication implements ComponentMixin
+public class UmlRestApplication extends MicroserviceRestApplication
 {
     public UmlRestApplication()
     {
-        mount("/api/1.0.0/uml/diagram/generate", UmlDiagramGenerate.class);
+        mount("/uml/diagram/generate", UmlDiagramRequest.class);
     }
 
     @Override
-    protected MicroserviceGsonFactory gsonFactory()
+    public MicroserviceGsonFactory gsonFactory()
     {
         return new UmlGsonFactory();
     }

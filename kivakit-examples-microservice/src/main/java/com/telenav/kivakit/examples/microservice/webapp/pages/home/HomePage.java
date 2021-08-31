@@ -18,171 +18,35 @@
 
 package com.telenav.kivakit.examples.microservice.webapp.pages.home;
 
+import com.telenav.kivakit.examples.microservice.rest.requests.UmlDiagramRequest;
 import com.telenav.kivakit.examples.microservice.webapp.UmlWebPage;
-import com.telenav.kivakit.kernel.language.collections.Collections;
-import com.telenav.kivakit.kernel.logging.Logger;
-import com.telenav.kivakit.kernel.logging.LoggerFactory;
-import com.telenav.kivakit.kernel.messaging.messages.Result;
-import com.telenav.kivakit.network.core.cluster.ClusterIdentifier;
-import com.telenav.kivakit.service.registry.Scope;
-import com.telenav.kivakit.service.registry.Service;
-import com.telenav.kivakit.service.registry.client.ServiceRegistryClient;
-import com.telenav.kivakit.service.registry.server.ServiceRegistryServer;
-import com.telenav.kivakit.web.wicket.components.refresh.UpdatingContainer;
+import com.telenav.kivakit.web.wicket.components.feedback.FeedbackPanel;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
-import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.form.AjaxFormComponentUpdatingBehavior;
-import org.apache.wicket.markup.html.WebMarkupContainer;
-import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.form.DropDownChoice;
-import org.apache.wicket.markup.html.list.ListItem;
-import org.apache.wicket.markup.html.list.ListView;
-import org.apache.wicket.model.IModel;
-import org.apache.wicket.model.LoadableDetachableModel;
-import org.apache.wicket.model.Model;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
-import java.util.Set;
-
-import static com.telenav.kivakit.service.registry.server.ServiceRegistryServerSettings.WICKET_AJAX_REFRESH_FREQUENCY;
+import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.form.TextField;
 
 /**
- * Home page for service registry Apache Wicket application.
+ * Home page to allow user to enter a GitHub URL.
  *
  * @author jonathanl (shibo)
  */
 @LexakaiJavadoc(complete = true)
 public class HomePage extends UmlWebPage
 {
-    private static final Logger LOGGER = LoggerFactory.newLogger();
-
     public HomePage()
     {
-        final IModel<String> scope = new Model<>(isLocal() ? "localhost" : "network");
-
-        final var services = new LoadableDetachableModel<Result<Set<Service>>>()
+        add(new FeedbackPanel("feedback"));
+        var form = new Form<String>("form")
         {
             @Override
-            protected Result<Set<Service>> load()
+            protected void onSubmit()
             {
-                return services(scope.getObject());
+                final UmlDiagramRequest.Response response = new UmlDiagramRequest().respond();
+                getResponse().write(response.diagram());
             }
         };
-
-        final var scopes = new LoadableDetachableModel<List<String>>()
-        {
-            @Override
-            protected List<String> load()
-            {
-                final var scopes = Scope.names(services.getObject());
-                scopes.add(0, "network");
-                if (isLocal())
-                {
-                    scopes.add(0, "localhost");
-                }
-                return scopes;
-            }
-        };
-
-        final var updatingContainer = new UpdatingContainer("updating-container", WICKET_AJAX_REFRESH_FREQUENCY,
-                target -> services.detach());
-        updatingContainer.setOutputMarkupId(true);
-
-        updatingContainer.add(new WebMarkupContainer("no-services")
-        {
-            @Override
-            public boolean isVisible()
-            {
-                final var result = services.getObject();
-                return result.get() != null && result.get().isEmpty();
-            }
-        });
-
-        updatingContainer.add(new Label("error", () -> services.getObject().why().description())
-        {
-            @Override
-            public boolean isVisible()
-            {
-                return services.getObject().failed();
-            }
-        });
-
-        final var scopeDropdown = new DropDownChoice<>("scope", new Model<>(isLocal() ? "localhost" : "network"), scopes);
-        scopeDropdown.add(new AjaxFormComponentUpdatingBehavior("change")
-        {
-            @Override
-            protected void onUpdate(final AjaxRequestTarget target)
-            {
-                scopes.detach();
-                target.add(updatingContainer);
-            }
-        });
-        updatingContainer.add(scopeDropdown);
-
-        updatingContainer.add(new ListView<>("list", () -> list(scopeDropdown))
-        {
-            @Override
-            protected void populateItem(final ListItem<Service> item)
-            {
-                item.add(new ServicePanel("panel", updatingContainer, item.getModel()));
-            }
-        });
-
-        add(updatingContainer);
-    }
-
-    private boolean isLocal()
-    {
-        return ServiceRegistryServer.get().isLocal();
-    }
-
-    @NotNull
-    private List<Service> list(final DropDownChoice<String> scopeDropdown)
-    {
-        final var scope = scopeDropdown.getModelObject();
-        return Collections.sorted(services(scope).get());
-    }
-
-    private Result<Set<Service>> services(final String scopeString)
-    {
-        final Scope scope;
-        switch (scopeString)
-        {
-            case "network":
-            {
-                // If we are a local registry, search the network scope remotely, otherwise we are the network
-                // registry so we search our own local information.
-                scope = isLocal() ? Scope.network() : Scope.localhost();
-                break;
-            }
-
-            case "localhost":
-            {
-                // Search the local host
-                scope = Scope.localhost();
-                break;
-            }
-
-            default:
-            {
-                // Search the given cluster
-                scope = Scope.cluster(new ClusterIdentifier(scopeString));
-                break;
-            }
-        }
-
-        // If we are looking locally,
-        if (scope.isLocal())
-        {
-            // just directly access the registry without the client
-            return ServiceRegistryServer.get().serviceRegistry().discoverServices();
-        }
-        else
-        {
-            // otherwise have the client access the remote scope
-            final var client = LOGGER.listenTo(new ServiceRegistryClient());
-            return client.discoverServices(scope);
-        }
+        var gitHubFolder = new TextField<>("gitHubFolder");
+        form.add(gitHubFolder);
+        add(form);
     }
 }

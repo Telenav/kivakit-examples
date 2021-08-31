@@ -25,6 +25,7 @@ import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.basic.Label;
 
 /**
  * Base class for web pages within the {@link UmlWebApplication}. Gives a consistent look and feel and applies a header
@@ -37,7 +38,8 @@ public class UmlWebPage extends WebPage
 {
     public UmlWebPage()
     {
-        add(new HeaderPanel("header", Application.get().version(), "Microservice Example"));
+        add(new Label("page-title", "KivaKit Microservice Example"));
+        add(new HeaderPanel("header", Application.get().version(), "KivaKit Microservice Example"));
     }
 
     @Override

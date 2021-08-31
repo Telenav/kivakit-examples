@@ -5,20 +5,21 @@
     <span class="kivakit-indent">
 
         <div class="kivakit-wide-panel">
-            <span class="kivakit-panel-title kivakit-wide-bottom-margin">KivaKit Services</span>
-            <span wicket:id="updating-container">
-                <div class="kivakit-wide-bottom-margin">
-                    <span class="kivakit-medium-field-label kivakit-right-space">search scope</span>
-                    <select wicket:id="scope"></select>
-                </div>
-                <span class="kivakit-disabled" wicket:id="no-services">No registered services.</span>
-                <div class="kivakit-problem kivakit-wide-bottom-margin" wicket:id="error">Error</div>
-                <span wicket:id="list">
-                    <span wicket:id="panel"></span>
-                    <br/>
-                </span>
-            </span>
-    </div>
+            <div wicket:id="feedback"/>
+            <span class="kivakit-panel-title kivakit-wide-bottom-margin">Generate UML</span>
+            <div class="kivakit-wide-bottom-margin">
+                Enter a path to a public GitHub Java package, like:
+                <pre>
+github://[user]/[repository]/master/kivakit-configuration/src/main/java/com/telenav/kivakit/configuration/settings
+                </pre>
+                <form wicket:id="form">
+                    <span class="kivakit-medium-field-label kivakit-right-space">GitHub folder:</span>
+                    <input type="text" wicket:id="gitHubFolder"/>
+                <br/>
+                <input type="submit"/>
+            </form>
+            </div>
+        </div>
 
     </span>
 

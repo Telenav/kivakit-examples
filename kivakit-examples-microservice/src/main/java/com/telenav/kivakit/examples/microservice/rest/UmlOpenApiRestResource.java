@@ -16,11 +16,11 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-package com.telenav.kivakit.examples.microservice.rest.openapi;
+package com.telenav.kivakit.examples.microservice.rest;
 
-import com.telenav.kivakit.examples.microservice.rest.methods.UmlDiagramGenerate;
-import com.telenav.kivakit.microservice.rest.MicroserviceMethod;
-import com.telenav.kivakit.microservice.rest.MicroserviceOpenApiRestResource;
+import com.telenav.kivakit.examples.microservice.rest.requests.UmlDiagramRequest;
+import com.telenav.kivakit.microservice.rest.MicroserviceRestRequest;
+import com.telenav.kivakit.web.jersey.BaseRestResource;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -45,17 +45,15 @@ import javax.ws.rs.core.MediaType;
  *
  * @author jonathanl (shibo)
  */
-@OpenAPIDefinition(info = @Info
-        (
-                title = "KivaKit Microservice Example",
-                description = "REST API for KivaKit microservices example",
-                version = "1.0.0",
-                contact = @Contact(name = "Jonathan Locke", email = "jonathanl@telenav.com"),
-                license = @License(name = "Apache License 2.0")
-        )
-)
+@OpenAPIDefinition(info = @Info(
+        title = "KivaKit Microservice Example",
+        description = "REST API for KivaKit microservices example",
+        version = "1.0.0",
+        contact = @Contact(name = "Jonathan Locke", email = "jonathanl@telenav.com"),
+        license = @License(name = "Apache License 2.0")
+))
 @Path("api/1.0.0")
-public class UmlOpenApiRestResource extends MicroserviceOpenApiRestResource
+public class UmlOpenApiRestResource extends BaseRestResource
 {
     @POST
     @Path("uml")
@@ -64,29 +62,27 @@ public class UmlOpenApiRestResource extends MicroserviceOpenApiRestResource
     @Operation(operationId = "uml",
                method = "POST",
                description = "Produces a UML diagram for the given GitHub folder")
-    @ApiResponses(
-            {
-                    @ApiResponse(responseCode = "200",
-                                 description = "Success",
-                                 content = @Content(
-                                         schema = @Schema(implementation = UmlDiagramGenerate.Response.class))
-                    ),
-                    @ApiResponse(responseCode = "500",
-                                 description = "Failure",
-                                 content = @Content(
-                                         schema = @Schema(implementation = UmlDiagramGenerate.Response.class))
-                    )
-            })
-    public MicroserviceMethod.MicroserviceResponse onUml
-            (
-                    @Parameter(name = "request",
-                               description = "The UML request",
-                               required = true,
-                               schema = @Schema(implementation = UmlDiagramGenerate.class))
-
-                    final UmlDiagramGenerate request,
-                    @Context final HttpServletResponse servletResponse
+    @ApiResponses({
+            @ApiResponse(responseCode = "200",
+                         description = "Success",
+                         content = @Content(
+                                 schema = @Schema(implementation = UmlDiagramRequest.Response.class))
+            ),
+            @ApiResponse(responseCode = "500",
+                         description = "Failure",
+                         content = @Content(
+                                 schema = @Schema(implementation = UmlDiagramRequest.Response.class))
             )
+    })
+    public MicroserviceRestRequest.MicroserviceResponse onUml(
+            @Parameter(name = "request",
+                       description = "The UML request",
+                       required = true,
+                       schema = @Schema(implementation = UmlDiagramRequest.class))
+
+            final UmlDiagramRequest request,
+            @Context final HttpServletResponse servletResponse
+    )
     {
         return request.respond();
     }

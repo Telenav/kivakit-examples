@@ -19,13 +19,9 @@
 package com.telenav.kivakit.examples.microservice.webapp;
 
 import com.telenav.kivakit.examples.microservice.webapp.pages.home.HomePage;
-import com.telenav.kivakit.microservice.web.MicroserviceWicketWebApplication;
+import com.telenav.kivakit.microservice.web.MicroserviceWebApplication;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import org.apache.wicket.Page;
-import org.apache.wicket.RuntimeConfigurationType;
-import org.apache.wicket.settings.ExceptionSettings;
-
-import static org.apache.wicket.RuntimeConfigurationType.DEVELOPMENT;
 
 /**
  * Apache Wicket web application that shows information about registered services in a web browser.
@@ -33,14 +29,8 @@ import static org.apache.wicket.RuntimeConfigurationType.DEVELOPMENT;
  * @author jonathanl (shibo)
  */
 @LexakaiJavadoc(complete = true)
-public class UmlWebApplication extends MicroserviceWicketWebApplication
+public class UmlWebApplication extends MicroserviceWebApplication
 {
-    @Override
-    public RuntimeConfigurationType getConfigurationType()
-    {
-        return DEVELOPMENT;
-    }
-
     @Override
     public Class<? extends Page> getHomePage()
     {
@@ -50,21 +40,6 @@ public class UmlWebApplication extends MicroserviceWicketWebApplication
     @Override
     public void init()
     {
-        if (getConfigurationType() == DEVELOPMENT)
-        {
-            getDebugSettings().setDevelopmentUtilitiesEnabled(true);
-            getDebugSettings().setAjaxDebugModeEnabled(true);
-            getDebugSettings().setComponentUseCheck(true);
-            getExceptionSettings().setUnexpectedExceptionDisplay(ExceptionSettings.SHOW_EXCEPTION_PAGE);
-        }
-        else
-        {
-            getMarkupSettings().setStripWicketTags(false);
-            getMarkupSettings().setStripComments(false);
-            getMarkupSettings().setCompressWhitespace(false);
-            getExceptionSettings().setUnexpectedExceptionDisplay(ExceptionSettings.SHOW_INTERNAL_ERROR_PAGE);
-        }
-
         mountPage("/home", HomePage.class);
     }
 }
