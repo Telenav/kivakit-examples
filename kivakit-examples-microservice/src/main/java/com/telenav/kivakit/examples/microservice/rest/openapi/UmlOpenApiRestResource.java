@@ -16,12 +16,12 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-package com.telenav.kivakit.examples.microservice.rest;
+package com.telenav.kivakit.examples.microservice.rest.openapi;
 
 import com.telenav.kivakit.examples.microservice.rest.protocol.UmlDiagramRequest;
 import com.telenav.kivakit.examples.microservice.rest.protocol.UmlDiagramResponse;
-import com.telenav.kivakit.microservice.rest.MicroserviceRestResource;
 import com.telenav.kivakit.microservice.rest.protocol.MicroserviceResponse;
+import com.telenav.kivakit.microservice.rest.resources.openapi.MicroserviceOpenApiRestResource;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -46,32 +46,18 @@ import javax.ws.rs.core.MediaType;
  *
  * @author jonathanl (shibo)
  */
-@OpenAPIDefinition(
-
-        info = @Info(
-
+@OpenAPIDefinition(info = @Info
+        (
                 title = "KivaKit Microservice Example",
                 description = "REST API for KivaKit microservices example",
                 version = "1.0.0",
-
-                contact = @Contact(
-                        name = "Jonathan Locke",
-                        email = "jonathanl@telenav.com"
-                ),
-
-                license = @License(
-                        name = "Apache License 2.0"
-                )
+                contact = @Contact(name = "Jonathan Locke", email = "jonathanl@telenav.com"),
+                license = @License(name = "Apache License 2.0")
         )
 )
 @Path("api/1.0.0")
-public class UmlRestResource extends MicroserviceRestResource
+public class UmlOpenApiRestResource extends MicroserviceOpenApiRestResource
 {
-    /**
-     * Locates the set of applications within the given scope.
-     *
-     * @return The set of applications that were discovered
-     */
     @POST
     @Path("uml")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -79,26 +65,27 @@ public class UmlRestResource extends MicroserviceRestResource
     @Operation(operationId = "uml",
                method = "POST",
                description = "Produces a UML diagram for the given GitHub folder")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200",
-                         description = "Success",
-                         content = @Content(schema = @Schema(implementation = UmlDiagramResponse.class))
-            ),
-            @ApiResponse(responseCode = "500",
-                         description = "Failure",
-                         content = @Content(schema = @Schema(implementation = UmlDiagramResponse.class))
-            )
-    })
+    @ApiResponses(
+            {
+                    @ApiResponse(responseCode = "200",
+                                 description = "Success",
+                                 content = @Content(schema = @Schema(implementation = UmlDiagramResponse.class))
+                    ),
+                    @ApiResponse(responseCode = "500",
+                                 description = "Failure",
+                                 content = @Content(schema = @Schema(implementation = UmlDiagramResponse.class))
+                    )
+            })
     public MicroserviceResponse onUml
-    (
-            @Parameter(name = "request",
-                       description = "The UML request",
-                       required = true,
-                       schema = @Schema(implementation = UmlDiagramRequest.class))
+            (
+                    @Parameter(name = "request",
+                               description = "The UML request",
+                               required = true,
+                               schema = @Schema(implementation = UmlDiagramRequest.class))
 
-            final UmlDiagramRequest request,
-            @Context final HttpServletResponse servletResponse
-    )
+                    final UmlDiagramRequest request,
+                    @Context final HttpServletResponse servletResponse
+            )
     {
         return request.respond();
     }

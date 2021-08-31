@@ -19,31 +19,28 @@
 package com.telenav.kivakit.examples.microservice.rest;
 
 import com.telenav.kivakit.component.ComponentMixin;
-import com.telenav.kivakit.examples.microservice.rest.serialization.UmlGsonFactory;
-import com.telenav.kivakit.kernel.language.collections.set.ObjectSet;
+import com.telenav.kivakit.examples.microservice.rest.protocol.UmlDiagramRequest;
+import com.telenav.kivakit.examples.microservice.rest.protocol.UmlGsonFactory;
 import com.telenav.kivakit.microservice.rest.MicroserviceRestApplication;
-import com.telenav.kivakit.microservice.rest.MicroserviceRestResource;
 import com.telenav.kivakit.microservice.rest.serialization.MicroserviceGsonFactory;
 
-import javax.ws.rs.ApplicationPath;
+import static com.telenav.kivakit.microservice.rest.MicroserviceRestApplication.Method.POST;
 
 /**
  * REST interface for the KivaKit example microservice
  *
  * @author jonathanl (shibo)
  */
-@ApplicationPath("/api")
 public class UmlRestApplication extends MicroserviceRestApplication implements ComponentMixin
 {
+    public UmlRestApplication()
+    {
+        mount("/api/1.0.0/uml-create", POST, UmlDiagramRequest.class);
+    }
+
     @Override
     protected MicroserviceGsonFactory gsonFactory()
     {
         return new UmlGsonFactory();
-    }
-
-    @Override
-    protected ObjectSet<MicroserviceRestResource> resources()
-    {
-        return ObjectSet.of(new UmlRestResource());
     }
 }

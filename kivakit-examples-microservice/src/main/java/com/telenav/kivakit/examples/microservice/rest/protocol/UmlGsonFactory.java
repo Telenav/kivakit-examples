@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-package com.telenav.kivakit.examples.microservice.rest.serialization;
+package com.telenav.kivakit.examples.microservice.rest.protocol;
 
 import com.google.gson.GsonBuilder;
 import com.telenav.kivakit.microservice.rest.serialization.MicroserviceGsonFactory;

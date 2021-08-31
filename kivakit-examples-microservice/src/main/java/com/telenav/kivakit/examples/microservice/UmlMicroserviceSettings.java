@@ -1,7 +1,6 @@
 package com.telenav.kivakit.examples.microservice;
 
-import com.telenav.kivakit.kernel.data.conversion.string.primitive.IntegerConverter;
-import com.telenav.kivakit.kernel.language.reflection.populator.KivaKitPropertyConverter;
+import com.telenav.kivakit.microservice.MicroserviceSettings;
 
 /**
  * Settings for {@link UmlMicroservice}
@@ -9,13 +8,6 @@ import com.telenav.kivakit.kernel.language.reflection.populator.KivaKitPropertyC
  * @author jonathanl (shibo)
  */
 @SuppressWarnings("unused")
-public class UmlMicroserviceSettings
+public class UmlMicroserviceSettings extends MicroserviceSettings
 {
-    @KivaKitPropertyConverter(IntegerConverter.class)
-    private int port;
-
-    int port()
-    {
-        return port;
-    }
 }
