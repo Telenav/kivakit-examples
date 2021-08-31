@@ -9,8 +9,6 @@ package com.telenav.kivakit.examples.microservice;
 import com.telenav.kivakit.examples.microservice.rest.UmlRestApplication;
 import com.telenav.kivakit.examples.microservice.webapp.UmlWebApplication;
 import com.telenav.kivakit.microservice.Microservice;
-import com.telenav.kivakit.microservice.rest.MicroserviceRestApplication;
-import com.telenav.kivakit.microservice.web.MicroserviceWicketWebApplication;
 
 /**
  * Microservice example, including Apache Wicket, REST and Swagger interfaces.
@@ -35,13 +33,13 @@ public class UmlMicroservice extends Microservice
         return "KivaKit UML microservice example";
     }
 
-    public MicroserviceRestApplication restApplication()
+    protected UmlRestApplication restApplication()
     {
         return new UmlRestApplication();
     }
 
     @Override
-    public MicroserviceWicketWebApplication webApplication()
+    protected UmlWebApplication webApplication()
     {
         return new UmlWebApplication();
     }

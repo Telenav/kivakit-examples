@@ -16,10 +16,10 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-package com.telenav.kivakit.examples.microservice.rest.protocol;
+package com.telenav.kivakit.examples.microservice.rest;
 
 import com.google.gson.GsonBuilder;
-import com.telenav.kivakit.microservice.rest.serialization.MicroserviceGsonFactory;
+import com.telenav.kivakit.microservice.rest.MicroserviceGsonFactory;
 
 /**
  * Factory for GSON serializers

@@ -18,10 +18,9 @@
 
 package com.telenav.kivakit.examples.microservice.rest.openapi;
 
-import com.telenav.kivakit.examples.microservice.rest.protocol.UmlDiagramRequest;
-import com.telenav.kivakit.examples.microservice.rest.protocol.UmlDiagramResponse;
-import com.telenav.kivakit.microservice.rest.protocol.MicroserviceResponse;
-import com.telenav.kivakit.microservice.rest.resources.openapi.MicroserviceOpenApiRestResource;
+import com.telenav.kivakit.examples.microservice.rest.methods.UmlDiagramGenerate;
+import com.telenav.kivakit.microservice.rest.MicroserviceMethod;
+import com.telenav.kivakit.microservice.rest.MicroserviceOpenApiRestResource;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -69,21 +68,23 @@ public class UmlOpenApiRestResource extends MicroserviceOpenApiRestResource
             {
                     @ApiResponse(responseCode = "200",
                                  description = "Success",
-                                 content = @Content(schema = @Schema(implementation = UmlDiagramResponse.class))
+                                 content = @Content(
+                                         schema = @Schema(implementation = UmlDiagramGenerate.Response.class))
                     ),
                     @ApiResponse(responseCode = "500",
                                  description = "Failure",
-                                 content = @Content(schema = @Schema(implementation = UmlDiagramResponse.class))
+                                 content = @Content(
+                                         schema = @Schema(implementation = UmlDiagramGenerate.Response.class))
                     )
             })
-    public MicroserviceResponse onUml
+    public MicroserviceMethod.MicroserviceResponse onUml
             (
                     @Parameter(name = "request",
                                description = "The UML request",
                                required = true,
-                               schema = @Schema(implementation = UmlDiagramRequest.class))
+                               schema = @Schema(implementation = UmlDiagramGenerate.class))
 
-                    final UmlDiagramRequest request,
+                    final UmlDiagramGenerate request,
                     @Context final HttpServletResponse servletResponse
             )
     {

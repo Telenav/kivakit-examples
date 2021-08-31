@@ -19,12 +19,9 @@
 package com.telenav.kivakit.examples.microservice.rest;
 
 import com.telenav.kivakit.component.ComponentMixin;
-import com.telenav.kivakit.examples.microservice.rest.protocol.UmlDiagramRequest;
-import com.telenav.kivakit.examples.microservice.rest.protocol.UmlGsonFactory;
+import com.telenav.kivakit.examples.microservice.rest.methods.UmlDiagramGenerate;
+import com.telenav.kivakit.microservice.rest.MicroserviceGsonFactory;
 import com.telenav.kivakit.microservice.rest.MicroserviceRestApplication;
-import com.telenav.kivakit.microservice.rest.serialization.MicroserviceGsonFactory;
-
-import static com.telenav.kivakit.microservice.rest.MicroserviceRestApplication.Method.POST;
 
 /**
  * REST interface for the KivaKit example microservice
@@ -35,7 +32,7 @@ public class UmlRestApplication extends MicroserviceRestApplication implements C
 {
     public UmlRestApplication()
     {
-        mount("/api/1.0.0/uml-create", POST, UmlDiagramRequest.class);
+        mount("/api/1.0.0/uml/diagram/generate", UmlDiagramGenerate.class);
     }
 
     @Override
