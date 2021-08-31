@@ -18,15 +18,13 @@
 
 package com.telenav.kivakit.examples.microservice.webapp;
 
-import com.telenav.kivakit.service.registry.server.ServiceRegistryServer;
+import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.web.wicket.components.header.HeaderPanel;
 import com.telenav.kivakit.web.wicket.theme.KivaKitTheme;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
-import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.markup.html.basic.Label;
 
 /**
  * Base class for web pages within the {@link UmlWebApplication}. Gives a consistent look and feel and applies a header
@@ -39,9 +37,7 @@ public class UmlWebPage extends WebPage
 {
     public UmlWebPage()
     {
-        add(new Label("page-title", "KivaKit " + title));
-        add(new HeaderPanel("header", ServiceRegistryServer.get().version(), title));
-        add(new WebMarkupContainer("menu"));
+        add(new HeaderPanel("header", Application.get().version(), "Microservice Example"));
     }
 
     @Override

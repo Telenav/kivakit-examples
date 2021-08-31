@@ -20,8 +20,8 @@ package com.telenav.kivakit.examples.microservice.rest;
 
 import com.telenav.kivakit.examples.microservice.rest.protocol.UmlDiagramRequest;
 import com.telenav.kivakit.examples.microservice.rest.protocol.UmlDiagramResponse;
-import com.telenav.kivakit.kernel.messaging.messages.Result;
 import com.telenav.kivakit.microservice.rest.MicroserviceRestResource;
+import com.telenav.kivakit.microservice.rest.protocol.MicroserviceResponse;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -78,7 +78,7 @@ public class UmlRestResource extends MicroserviceRestResource
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(operationId = "uml",
                method = "POST",
-               description = "Locates all safety incidents within the given search rectangle")
+               description = "Produces a UML diagram for the given GitHub folder")
     @ApiResponses({
             @ApiResponse(responseCode = "200",
                          description = "Success",
@@ -89,7 +89,7 @@ public class UmlRestResource extends MicroserviceRestResource
                          content = @Content(schema = @Schema(implementation = UmlDiagramResponse.class))
             )
     })
-    public UmlDiagramResponse onUml
+    public MicroserviceResponse onUml
     (
             @Parameter(name = "request",
                        description = "The UML request",
@@ -100,20 +100,6 @@ public class UmlRestResource extends MicroserviceRestResource
             @Context final HttpServletResponse servletResponse
     )
     {
-        narrate("Received incident query request: $", request);
-
-        final var response = new UmlDiagramResponse(request);
-        final var error = request.isValid().validate();
-        if (error != null)
-        {
-            response.problem().result(Result.failed(error));
-        }
-        else
-        {
-            response.result(Result.succeeded(request.incidents()));
-        }
-
-        narrate("Returning incident query response: $", response);
-        return response;
+        return request.respond();
     }
 }

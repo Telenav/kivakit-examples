@@ -18,10 +18,9 @@
 
 package com.telenav.kivakit.examples.microservice;
 
+import com.telenav.kivakit.kernel.language.collections.set.ObjectSet;
 import com.telenav.kivakit.kernel.project.Project;
 import com.telenav.kivakit.microservice.MicroserviceProject;
-
-import java.util.Set;
 
 /**
  * Project class for example microservice
@@ -31,8 +30,8 @@ import java.util.Set;
 public class UmlMicroserviceProject extends MicroserviceProject
 {
     @Override
-    public Set<Project> dependencies()
+    public ObjectSet<Project> dependencies()
     {
-        return Set.of(MicroserviceProject.get());
+        return ObjectSet.empty();
     }
 }

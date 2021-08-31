@@ -24,37 +24,81 @@ import com.telenav.kivakit.kernel.data.validation.BaseValidator;
 import com.telenav.kivakit.kernel.data.validation.ValidationType;
 import com.telenav.kivakit.kernel.data.validation.Validator;
 import com.telenav.kivakit.kernel.language.reflection.property.KivaKitIncludeProperty;
-import com.telenav.kivakit.kernel.language.strings.formatting.ObjectFormatter;
+import com.telenav.kivakit.kernel.language.strings.Strings;
 import com.telenav.kivakit.kernel.language.vm.Processes;
-import com.telenav.kivakit.kernel.messaging.Listener;
+import com.telenav.kivakit.kernel.messaging.messages.status.Problem;
 import com.telenav.kivakit.microservice.rest.protocol.MicroserviceRequest;
 import com.telenav.kivakit.network.http.HttpNetworkLocation;
 import com.telenav.kivakit.resource.resources.jar.launcher.JarLauncher;
 import io.swagger.v3.oas.annotations.media.Schema;
 
-import static com.telenav.kivakit.kernel.language.strings.formatting.ObjectFormatter.Format.SINGLE_LINE;
 import static com.telenav.kivakit.resource.resources.jar.launcher.JarLauncher.ProcessType.CHILD;
 import static com.telenav.kivakit.resource.resources.jar.launcher.JarLauncher.RedirectTo.CONSOLE;
 
 /**
- * Requests for a UML diagram for a package on GitHub
+ * Requests for a UML diagram for a package on GitHub.
+ *
+ * <p>
+ * When {@link #respond()} is called, the following happens, in the given order:
+ * </p>
+ *
+ * <ol>
+ *     <li>The method {@link #newResponse()} is called by KivaKit, and returns an instance of {@link UmlDiagramResponse}</li>
+ *     <li>{@link #validator(ValidationType)} is called to create a {@link Validator} for the request</li>
+ *     <li>KivaKit invokes the {@link Validator} with {@link UmlDiagramResponse} as the listener to capture any validation problems</li>
+ *     <ol type="a">
+ *         <li>If the request passed validation, {@link #onRespond(UmlDiagramResponse)} is invoked, the specified
+ *         source code is accessed on GitHub, and if Lexakai successfully processes it, the resulting UML diagram is returned</li>
+ *         <li>If the request did not pass validation, a {@link Problem} is returned with the response</li>
+ *     </ol>
+ * </ol>
  *
  * @author jonathanl (shibo)
  */
 @Schema(description = "A request for a UML diagram of a GitHub package")
-public class UmlDiagramRequest extends MicroserviceRequest
+public class UmlDiagramRequest extends MicroserviceRequest<UmlDiagramResponse>
 {
     @KivaKitIncludeProperty
     @JsonProperty
     @Schema(description = "The GitHub folder to process")
     private Folder folder;
 
-    @Override
-    public String toString()
+    /**
+     * {@inheritDoc}
+     */
+    public void onRespond(final UmlDiagramResponse response)
     {
-        return new ObjectFormatter(this).toString(SINGLE_LINE);
+        // Materialize the source code from GitHub,
+        var source = folder.materialize();
+
+        // and run Lexakai (https://www.lexakai.org) on it.
+        var lexakai = HttpNetworkLocation.parse(this,
+                "https://repo1.maven.org/maven2/com/telenav/lexakai/lexakai/1.0.0/lexakai-1.0.0.jar");
+
+        var process = listenTo(new JarLauncher()
+                .processType(CHILD)
+                .arguments("-deployment=local -console-output=true " + source))
+                .addJarSource(lexakai)
+                .redirectTo(CONSOLE)
+                .run();
+
+        // If Lexakai produced a diagram as output,
+        final String diagram = Processes.captureOutput(process);
+        if (!Strings.isEmpty(diagram))
+        {
+            // then return that in the response
+            response.diagram(diagram);
+        }
+        else
+        {
+            // otherwise return an error
+            response.problem("No output captured from Lexakai");
+        }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Validator validator(final ValidationType type)
     {
@@ -70,27 +114,11 @@ public class UmlDiagramRequest extends MicroserviceRequest
     }
 
     /**
-     * @return The UML diagram for the given folder
+     * {@inheritDoc}
      */
-    String diagram(Listener listener)
+    @Override
+    protected UmlDiagramResponse newResponse()
     {
-        if (isValid(listener))
-        {
-            var lexakai = HttpNetworkLocation.parse(this,
-                    "https://repo1.maven.org/maven2/com/telenav/lexakai/lexakai/1.0.0/lexakai-1.0.0.jar");
-
-            var source = folder.materialize();
-
-            var process = listenTo(new JarLauncher()
-                    .processType(CHILD)
-                    .arguments("-deployment=local -console-output=true " + source))
-                    .addJarSource(lexakai)
-                    .redirectTo(CONSOLE)
-                    .run();
-
-            return Processes.captureOutput(process);
-        }
-
-        return null;
+        return new UmlDiagramResponse();
     }
 }

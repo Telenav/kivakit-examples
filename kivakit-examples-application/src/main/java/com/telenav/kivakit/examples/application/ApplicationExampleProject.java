@@ -1,5 +1,6 @@
 package com.telenav.kivakit.examples.application;
 
+import com.telenav.kivakit.kernel.language.collections.set.ObjectSet;
 import com.telenav.kivakit.kernel.language.objects.Lazy;
 import com.telenav.kivakit.kernel.project.Project;
 import com.telenav.kivakit.resource.project.ResourceProject;
@@ -20,7 +21,7 @@ public class ApplicationExampleProject extends Project
     }
 
     @Override
-    public Set<Project> dependencies()
+    public ObjectSet<Project> dependencies()
     {
         return Set.of(ResourceProject.get());
     }

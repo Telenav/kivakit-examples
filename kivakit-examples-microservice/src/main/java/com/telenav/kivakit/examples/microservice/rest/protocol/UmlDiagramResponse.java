@@ -19,7 +19,6 @@
 package com.telenav.kivakit.examples.microservice.rest.protocol;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.telenav.kivakit.kernel.language.reflection.property.KivaKitIncludeProperty;
 import com.telenav.kivakit.microservice.rest.protocol.MicroserviceResponse;
 import io.swagger.v3.oas.annotations.media.Schema;
 
@@ -33,16 +32,10 @@ public class UmlDiagramResponse extends MicroserviceResponse
 {
     @JsonProperty
     @Schema(description = "The requested plant UML diagram")
-    private String diagram;
+    String diagram;
 
-    public UmlDiagramResponse(final UmlDiagramRequest request)
+    void diagram(String diagram)
     {
-        this.diagram = request.diagram(this);
-    }
-
-    @KivaKitIncludeProperty
-    public String diagram()
-    {
-        return diagram;
+        this.diagram = diagram;
     }
 }
