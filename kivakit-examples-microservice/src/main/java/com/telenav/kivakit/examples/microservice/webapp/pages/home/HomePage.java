@@ -18,35 +18,50 @@
 
 package com.telenav.kivakit.examples.microservice.webapp.pages.home;
 
-import com.telenav.kivakit.examples.microservice.rest.requests.UmlDiagramRequest;
-import com.telenav.kivakit.examples.microservice.webapp.UmlWebPage;
+import com.telenav.kivakit.examples.microservice.rest.requests.LexakaiRequest;
+import com.telenav.kivakit.examples.microservice.webapp.LexakaiWebPage;
 import com.telenav.kivakit.web.wicket.components.feedback.FeedbackPanel;
-import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 
 /**
- * Home page to allow user to enter a GitHub URL.
+ * Home page to allow user to enter a public GitHub repository and branch.
  *
  * @author jonathanl (shibo)
  */
-@LexakaiJavadoc(complete = true)
-public class HomePage extends UmlWebPage
+public class HomePage extends LexakaiWebPage
 {
+    private final TextField<Object> owner = new TextField<>("owner");
+
+    private final TextField<Object> repository = new TextField<>("repository");
+
+    private final TextField<Object> branch = new TextField<>("branch");
+
+    private final FeedbackPanel feedback = new FeedbackPanel("feedback");
+
     public HomePage()
     {
-        add(new FeedbackPanel("feedback"));
         var form = new Form<String>("form")
         {
             @Override
             protected void onSubmit()
             {
-                final UmlDiagramRequest.Response response = new UmlDiagramRequest().respond();
-                getResponse().write(response.diagram());
+                // Execute a request (without REST) to process the given branch of the given repository.
+                // Any problems and warnings will be shown in the feedback panel.
+                new LexakaiRequest()
+                        .owner(owner.getValue())
+                        .repository(repository.getValue())
+                        .branch(branch.getValue())
+                        .respond(feedback);
             }
         };
-        var gitHubFolder = new TextField<>("gitHubFolder");
-        form.add(gitHubFolder);
+
+        add(feedback);
+
+        form.add(owner);
+        form.add(repository);
+        form.add(branch);
+
         add(form);
     }
 }

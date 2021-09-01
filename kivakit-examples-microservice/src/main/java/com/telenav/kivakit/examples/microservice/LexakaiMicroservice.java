@@ -6,8 +6,8 @@
 
 package com.telenav.kivakit.examples.microservice;
 
-import com.telenav.kivakit.examples.microservice.rest.UmlRestApplication;
-import com.telenav.kivakit.examples.microservice.webapp.UmlWebApplication;
+import com.telenav.kivakit.examples.microservice.rest.LexakaiRestApplication;
+import com.telenav.kivakit.examples.microservice.webapp.LexakaiWebApplication;
 import com.telenav.kivakit.microservice.Microservice;
 
 /**
@@ -15,16 +15,16 @@ import com.telenav.kivakit.microservice.Microservice;
  *
  * @author jonathanl (shibo)
  */
-public class UmlMicroservice extends Microservice
+public class LexakaiMicroservice extends Microservice
 {
     public static void main(final String[] arguments)
     {
-        new UmlMicroservice().run(arguments);
+        new LexakaiMicroservice().run(arguments);
     }
 
-    protected UmlMicroservice()
+    protected LexakaiMicroservice()
     {
-        super(new UmlMicroserviceProject());
+        super(new LexakaiMicroserviceProject());
     }
 
     @Override
@@ -33,14 +33,14 @@ public class UmlMicroservice extends Microservice
         return "KivaKit UML microservice example";
     }
 
-    protected UmlRestApplication restApplication()
+    protected LexakaiRestApplication restApplication()
     {
-        return new UmlRestApplication();
+        return new LexakaiRestApplication();
     }
 
     @Override
-    protected UmlWebApplication webApplication()
+    protected LexakaiWebApplication webApplication()
     {
-        return new UmlWebApplication();
+        return new LexakaiWebApplication();
     }
 }

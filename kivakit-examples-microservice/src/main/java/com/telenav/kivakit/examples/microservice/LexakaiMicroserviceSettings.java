@@ -3,11 +3,11 @@ package com.telenav.kivakit.examples.microservice;
 import com.telenav.kivakit.microservice.MicroserviceSettings;
 
 /**
- * Settings for {@link UmlMicroservice}
+ * Settings for {@link LexakaiMicroservice}
  *
  * @author jonathanl (shibo)
  */
 @SuppressWarnings("unused")
-public class UmlMicroserviceSettings extends MicroserviceSettings
+public class LexakaiMicroserviceSettings extends MicroserviceSettings
 {
 }

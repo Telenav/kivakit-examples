@@ -14,6 +14,19 @@ open module kivakit.examples.microservice
 
     // Serialization
     requires org.danekja.jdk.serializable.functional;
+    requires org.apache.httpcomponents.httpclient;
+
+    // Jersey
+    requires jersey.common;
+    requires jakarta.inject;
+    requires jersey.container.servlet;
+    requires jersey.container.servlet.core;
+    requires jersey.server;
+    requires jersey.client;
+
+    // GitHub
+    requires org.eclipse.jgit;
+    requires github.api;
 
     // Swagger annotations
     requires io.swagger.v3.oas.annotations;
