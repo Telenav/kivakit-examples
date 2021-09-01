@@ -18,7 +18,8 @@
 
 package com.telenav.kivakit.examples.microservice.rest;
 
-import com.telenav.kivakit.examples.microservice.rest.requests.UmlDiagramRequest;
+import com.telenav.kivakit.examples.microservice.rest.requests.LexakaiRequest;
+import com.telenav.kivakit.examples.microservice.rest.requests.LexakaiResponse;
 import com.telenav.kivakit.microservice.rest.MicroserviceRestRequest;
 import com.telenav.kivakit.web.jersey.BaseRestResource;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
@@ -53,37 +54,35 @@ import javax.ws.rs.core.MediaType;
         license = @License(name = "Apache License 2.0")
 ))
 @Path("api/1.0.0")
-public class UmlOpenApiRestResource extends BaseRestResource
+public class LexakaiRestResource extends BaseRestResource
 {
     @POST
-    @Path("uml")
+    @Path("lexakai/jersey")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(operationId = "uml",
+    @Operation(operationId = "lexakai",
                method = "POST",
-               description = "Produces a UML diagram for the given GitHub folder")
+               description = "Produces a pull request for the given public GitHub owner/repository and branch")
     @ApiResponses({
             @ApiResponse(responseCode = "200",
                          description = "Success",
-                         content = @Content(
-                                 schema = @Schema(implementation = UmlDiagramRequest.Response.class))
+                         content = @Content(schema = @Schema(implementation = LexakaiResponse.class))
             ),
             @ApiResponse(responseCode = "500",
                          description = "Failure",
-                         content = @Content(
-                                 schema = @Schema(implementation = UmlDiagramRequest.Response.class))
+                         content = @Content(schema = @Schema(implementation = LexakaiResponse.class))
             )
     })
     public MicroserviceRestRequest.MicroserviceResponse onUml(
             @Parameter(name = "request",
                        description = "The UML request",
                        required = true,
-                       schema = @Schema(implementation = UmlDiagramRequest.class))
+                       schema = @Schema(implementation = LexakaiRequest.class))
 
-            final UmlDiagramRequest request,
+            final LexakaiRequest request,
             @Context final HttpServletResponse servletResponse
     )
     {
-        return request.respond();
+        return request.respond(this);
     }
 }

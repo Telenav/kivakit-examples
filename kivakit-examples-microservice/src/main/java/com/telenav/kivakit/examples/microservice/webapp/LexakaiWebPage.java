@@ -28,18 +28,18 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 
 /**
- * Base class for web pages within the {@link UmlWebApplication}. Gives a consistent look and feel and applies a header
- * area to each page subclass.
+ * Base class for web pages within the {@link LexakaiWebApplication}. Gives a consistent look and feel and applies a
+ * header area to each page subclass.
  *
  * @author jonathanl (shibo)
  */
 @LexakaiJavadoc(complete = true)
-public class UmlWebPage extends WebPage
+public class LexakaiWebPage extends WebPage
 {
-    public UmlWebPage()
+    public LexakaiWebPage()
     {
-        add(new Label("page-title", "KivaKit Microservice Example"));
-        add(new HeaderPanel("header", Application.get().version(), "KivaKit Microservice Example"));
+        add(new Label("page-title", "Lexakai Microservice"));
+        add(new HeaderPanel("header", Application.get().version(), "Lexakai Microservice"));
     }
 
     @Override

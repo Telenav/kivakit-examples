@@ -29,7 +29,7 @@ import org.apache.wicket.Page;
  * @author jonathanl (shibo)
  */
 @LexakaiJavadoc(complete = true)
-public class UmlWebApplication extends MicroserviceWebApplication
+public class LexakaiWebApplication extends MicroserviceWebApplication
 {
     @Override
     public Class<? extends Page> getHomePage()

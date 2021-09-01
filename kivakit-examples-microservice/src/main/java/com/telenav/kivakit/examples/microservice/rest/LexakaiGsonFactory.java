@@ -16,15 +16,21 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-package com.telenav.kivakit.examples.microservice;
+package com.telenav.kivakit.examples.microservice.rest;
 
-import com.telenav.kivakit.microservice.MicroserviceProject;
+import com.google.gson.GsonBuilder;
+import com.telenav.kivakit.microservice.rest.MicroserviceGsonFactory;
 
 /**
- * Project class for example microservice
+ * Factory for GSON serializers
  *
  * @author jonathanl (shibo)
  */
-public class UmlMicroserviceProject extends MicroserviceProject
+public class LexakaiGsonFactory extends MicroserviceGsonFactory
 {
+    @Override
+    protected GsonBuilder onAddSerializers(final GsonBuilder builder)
+    {
+        return builder;
+    }
 }

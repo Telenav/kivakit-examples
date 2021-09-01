@@ -18,7 +18,7 @@
 
 package com.telenav.kivakit.examples.microservice.rest;
 
-import com.telenav.kivakit.examples.microservice.rest.requests.UmlDiagramRequest;
+import com.telenav.kivakit.examples.microservice.rest.requests.LexakaiRequest;
 import com.telenav.kivakit.microservice.rest.MicroserviceGsonFactory;
 import com.telenav.kivakit.microservice.rest.MicroserviceRestApplication;
 
@@ -27,16 +27,16 @@ import com.telenav.kivakit.microservice.rest.MicroserviceRestApplication;
  *
  * @author jonathanl (shibo)
  */
-public class UmlRestApplication extends MicroserviceRestApplication
+public class LexakaiRestApplication extends MicroserviceRestApplication
 {
-    public UmlRestApplication()
+    public LexakaiRestApplication()
     {
-        mount("/uml/diagram/generate", UmlDiagramRequest.class);
+        mount("/lexakai/kivakit", LexakaiRequest.class);
     }
 
     @Override
     public MicroserviceGsonFactory gsonFactory()
     {
-        return new UmlGsonFactory();
+        return new LexakaiGsonFactory();
     }
 }
