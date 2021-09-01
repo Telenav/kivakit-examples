@@ -1,0 +1,28 @@
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+
+    <span class="kivakit-indent">
+
+        <div class="kivakit-wide-panel">
+            <div wicket:id="feedback"/>
+            <span class="kivakit-panel-title kivakit-wide-bottom-margin">Generate UML</span>
+            <div class="kivakit-wide-bottom-margin">
+                Enter a path to a public GitHub Java package, like:
+                <pre>
+github://[user]/[repository]/master/kivakit-configuration/src/main/java/com/telenav/kivakit/configuration/settings
+                </pre>
+                <form wicket:id="form">
+                    <span class="kivakit-medium-field-label kivakit-right-space">GitHub folder:</span>
+                    <input type="text" wicket:id="gitHubFolder"/>
+                <br/>
+                <input type="submit"/>
+            </form>
+            </div>
+        </div>
+
+    </span>
+
+</wicket:extend>
+</body>
+</html>
