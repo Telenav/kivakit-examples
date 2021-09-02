@@ -146,7 +146,7 @@
 
         <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jakarta.activation.version>1.2.2</jakarta.activation.version>
+        <jakarta.activation.version>2.0.0</jakarta.activation.version>
         <java-mail.version>1.6.2</java-mail.version>
 
         <!-- AWS -->
@@ -198,14 +198,14 @@
 
         <jetty.version>9.4.36.v20210114</jetty.version>
         <jersey.version>2.33</jersey.version>
-        <swagger.version>2.1.6</swagger.version>
+        <swagger.version>2.1.10</swagger.version>
         <httpclient.version>4.5.13</httpclient.version>
         <wicket-jquery.version>8.8.0</wicket-jquery.version>
         <wicket.version>9.2.0</wicket.version>
 
         <!-- XML -->
 
-        <jackson.version>2.12.2</jackson.version>
+        <jackson.version>2.12.3</jackson.version>
         <xerces.version>2.11.0</xerces.version>
 
     </properties>
