@@ -1,0 +1,39 @@
+#///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#
+#  © 2021 Telenav, Inc.
+#  Licensed under Apache License, Version 2.0
+#
+#///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#
+# GitHub action that builds feature branches when code is checked into a branch named feature/*
+#
+
+name: Build Feature Branch
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ feature/* ]
+  pull_request:
+    branches: [ feature/* ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 16
+
+      - name: Build
+        run: |
+          ./.github/scripts/build.sh
+        shell: bash
