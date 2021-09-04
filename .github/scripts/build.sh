@@ -32,7 +32,7 @@ $CLONE https://github.com/Telenav/kivakit.git
 
 echo "Installing kivakit super POM"
 cd "$ROOT"/kivakit/superpom
-$SUPERPOM_BUILD
+$SUPERPOM_INSTALL
 
 echo "Building kivakit"
 cd "$ROOT"/kivakit
