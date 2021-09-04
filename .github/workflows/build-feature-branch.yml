@@ -35,5 +35,5 @@ jobs:
 
       - name: Build
         run: |
-          ./.github/scripts/build.sh
+          ./.github/scripts/build.sh build
         shell: bash
