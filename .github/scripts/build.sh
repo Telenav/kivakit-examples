@@ -21,7 +21,7 @@ CLONE="git clone --branch "$BRANCH" --quiet"
 # Build kivakit
 #
 
-echo "Cloning kivakit in $ROOT"
+echo "Cloning kivakit"
 cd "$ROOT"
 $CLONE https://github.com/Telenav/kivakit.git
 
@@ -37,7 +37,7 @@ $BUILD
 # Build kivakit-extensions
 #
 
-echo "Cloning kivakit-extensions in $ROOT"
+echo "Cloning kivakit-extensions"
 cd "$ROOT"
 $CLONE https://github.com/Telenav/kivakit-extensions.git
 
@@ -49,7 +49,7 @@ $BUILD
 # Build kivakit-examples
 #
 
-echo "Cloning kivakit-examples in $ROOT"
+echo "Cloning kivakit-examples"
 cd "$ROOT"
 $CLONE https://github.com/Telenav/kivakit-examples.git
 
