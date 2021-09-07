@@ -29,6 +29,6 @@ clone("$github/kivakit", "dependency");
 clone("$github/kivakit-extensions", "dependency");
 clone("$github/kivakit-examples", "build");
 
-build_kivakit("package");
-build_kivakit_extensions("package");
+build_kivakit($build_type);
+build_kivakit_extensions($build_type);
 build_kivakit_examples($build_type);
