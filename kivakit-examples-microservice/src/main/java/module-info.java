@@ -1,6 +1,7 @@
 open module kivakit.examples.microservice
 {
     // KivaKit
+    requires kivakit.microservice;
     requires kivakit.web.jetty;
     requires kivakit.web.wicket;
     requires kivakit.web.jersey;
@@ -31,7 +32,6 @@ open module kivakit.examples.microservice
     // Swagger annotations
     requires io.swagger.v3.oas.annotations;
     requires kivakit.application;
-    requires kivakit.microservice;
     requires kivakit.serialization.json;
 
     // Module exports
