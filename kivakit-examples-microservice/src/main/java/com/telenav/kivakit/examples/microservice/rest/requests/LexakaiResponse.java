@@ -1,7 +1,6 @@
 package com.telenav.kivakit.examples.microservice.rest.requests;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.telenav.kivakit.microservice.rest.MicroserviceRestRequest;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 /**
@@ -10,7 +9,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * @author jonathanl (shibo)
  */
 @Schema(description = "The UML diagram response")
-public class LexakaiResponse extends MicroserviceRestRequest.MicroserviceResponse
+public class LexakaiResponse
 {
     @JsonProperty
     @Schema(description = "The identifier of the pull request that was created")

@@ -30,7 +30,7 @@ public class LexakaiMicroservice extends Microservice
     }
 
     @Override
-    protected MicroserviceMetadata metadata()
+    public MicroserviceMetadata metadata()
     {
         return new MicroserviceMetadata()
                 .withName("lexakai-microservice")

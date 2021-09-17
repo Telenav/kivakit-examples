@@ -20,7 +20,7 @@ package com.telenav.kivakit.examples.microservice.rest;
 
 import com.telenav.kivakit.examples.microservice.rest.requests.LexakaiRequest;
 import com.telenav.kivakit.examples.microservice.rest.requests.LexakaiResponse;
-import com.telenav.kivakit.microservice.rest.MicroserviceRestRequest;
+import com.telenav.kivakit.microservice.rest.microservlet.cycle.MicroserviceResponse;
 import com.telenav.kivakit.web.jersey.BaseRestResource;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
@@ -73,7 +73,7 @@ public class LexakaiRestResource extends BaseRestResource
                          content = @Content(schema = @Schema(implementation = LexakaiResponse.class))
             )
     })
-    public MicroserviceRestRequest.MicroserviceResponse onUml(
+    public MicroserviceResponse onUml(
             @Parameter(name = "request",
                        description = "The UML request",
                        required = true,
