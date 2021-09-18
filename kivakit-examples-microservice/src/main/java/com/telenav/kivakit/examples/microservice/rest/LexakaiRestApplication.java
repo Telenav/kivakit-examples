@@ -18,25 +18,24 @@
 
 package com.telenav.kivakit.examples.microservice.rest;
 
+import com.telenav.kivakit.examples.microservice.rest.requests.CreateLexakaiPullRequest;
 import com.telenav.kivakit.microservice.Microservice;
-import com.telenav.kivakit.microservice.rest.MicroserviceGsonFactory;
 import com.telenav.kivakit.microservice.rest.MicroserviceRestApplication;
 
 /**
- * REST interface for the KivaKit example microservice
+ * REST interface for the Lexakai microservice example
  *
  * @author jonathanl (shibo)
  */
 public class LexakaiRestApplication extends MicroserviceRestApplication
 {
+    /**
+     * Construct and mount requests
+     */
     public LexakaiRestApplication(Microservice microservice)
     {
         super(microservice);
-    }
 
-    @Override
-    public MicroserviceGsonFactory gsonFactory()
-    {
-        return new LexakaiGsonFactory();
+        mount("api/1.0", CreateLexakaiPullRequest.class);
     }
 }

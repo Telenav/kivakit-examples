@@ -24,33 +24,38 @@ import com.telenav.kivakit.kernel.data.validation.BaseValidator;
 import com.telenav.kivakit.kernel.data.validation.ValidationType;
 import com.telenav.kivakit.kernel.data.validation.Validator;
 import com.telenav.kivakit.kernel.language.reflection.property.KivaKitIncludeProperty;
-import com.telenav.kivakit.kernel.messaging.messages.status.Problem;
-import com.telenav.kivakit.microservice.rest.methods.MicroservicePostRequest;
+import com.telenav.kivakit.kernel.language.strings.Strings;
+import com.telenav.kivakit.microservice.rest.microservlet.MicroservletRequest;
+import com.telenav.kivakit.microservice.rest.microservlet.MicroservletResponse;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 /**
- * A REST method that generates a UML diagram for a package on GitHub.
- *
- * <p>
- * When {@link #respond()} is called, the following happens, in the given order:
- * </p>
- *
- * <ol>
- *     <li>The method {@link #newResponse()} is called by KivaKit, and returns an instance of {@link LexakaiResponse}</li>
- *     <li>{@link #validator(ValidationType)} is called to create a {@link Validator} for the request</li>
- *     <li>KivaKit invokes the {@link Validator} with {@link LexakaiResponse} as the listener to capture any validation problems</li>
- *     <ol type="a">
- *         <li>If the request passed validation, {@link #onRespond(LexakaiResponse)} is invoked, the specified
- *         source code is accessed on GitHub, and if Lexakai successfully processes it, the resulting UML diagram is returned</li>
- *         <li>If the request did not pass validation, a {@link Problem} is returned with the response</li>
- *     </ol>
- * </ol>
+ * A {@link MicroservletRequest} handler that generates a UML diagram for a package on GitHub.
  *
  * @author jonathanl (shibo)
+ * @see MicroservletRequest
  */
 @Schema(description = "A request for a UML diagram of a GitHub package")
-public class LexakaiRequest extends MicroservicePostRequest<LexakaiResponse>
+public class CreateLexakaiPullRequest implements MicroservletRequest
 {
+    /**
+     * Response object that holds the pull request identifier created by processing this request
+     *
+     * @author jonathanl (shibo)
+     */
+    @Schema(description = "The UML diagram response")
+    public static class LexakaiResponse implements MicroservletResponse
+    {
+        @JsonProperty
+        @Schema(description = "The identifier of the pull request that was created")
+        long pullRequestIdentifier;
+
+        public long pullRequestIdentifier()
+        {
+            return pullRequestIdentifier;
+        }
+    }
+
     @KivaKitIncludeProperty
     @JsonProperty
     @Schema(description = "The owner of the GitHub repository to process")
@@ -66,46 +71,26 @@ public class LexakaiRequest extends MicroservicePostRequest<LexakaiResponse>
     @Schema(description = "The branch to process")
     private String branch;
 
-    public String branch()
+    @Override
+    public LexakaiResponse respond()
     {
-        return branch;
+        // Create our response object from the nested class,
+        var response = new LexakaiResponse();
+
+        // process the requested GitHub project branch,
+        final var pullRequest = response
+                .listenTo(new LexakaiProcessor())
+                .process(owner, repository, branch);
+
+        // and return the pull request identifier
+        response.pullRequestIdentifier = pullRequest.getId();
+        return response;
     }
 
-    public LexakaiRequest branch(final String branch)
+    @Override
+    public Class<MicroservletResponse> responseType()
     {
-        this.branch = branch;
-        return this;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void onRespond(final LexakaiResponse response)
-    {
-        final var request = response.listenTo(new LexakaiProcessor()).process(owner, repository, branch);
-        response.pullRequestIdentifier = request.getId();
-    }
-
-    public LexakaiRequest owner(final String owner)
-    {
-        this.owner = owner;
-        return this;
-    }
-
-    public String owner()
-    {
-        return owner;
-    }
-
-    public LexakaiRequest repository(final String repository)
-    {
-        this.repository = repository;
-        return this;
-    }
-
-    public String repository()
-    {
-        return repository;
+        return MicroservletResponse.class;
     }
 
     /**
@@ -126,17 +111,8 @@ public class LexakaiRequest extends MicroservicePostRequest<LexakaiResponse>
         };
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected LexakaiResponse newResponse()
-    {
-        return new LexakaiResponse();
-    }
-
     private boolean isGitHubIdentifier(String text)
     {
-        return text.matches("[A-Za-z0-9-]+");
+        return !Strings.isEmpty(text) && text.matches("[A-Za-z0-9-]+");
     }
 }

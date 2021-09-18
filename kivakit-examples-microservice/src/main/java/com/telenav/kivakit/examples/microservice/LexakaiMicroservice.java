@@ -17,6 +17,7 @@ import com.telenav.kivakit.microservice.MicroserviceMetadata;
  *
  * @author jonathanl (shibo)
  */
+@SuppressWarnings("ClassEscapesDefinedScope")
 public class LexakaiMicroservice extends Microservice
 {
     public static void main(final String[] arguments)
@@ -24,11 +25,9 @@ public class LexakaiMicroservice extends Microservice
         new LexakaiMicroservice().run(arguments);
     }
 
-    protected LexakaiMicroservice()
-    {
-        super(new LexakaiMicroserviceProject());
-    }
-
+    /**
+     * @return Metadata describing this microservice
+     */
     @Override
     public MicroserviceMetadata metadata()
     {
@@ -38,11 +37,17 @@ public class LexakaiMicroservice extends Microservice
                 .withVersion(Version.parse("1.0"));
     }
 
+    /**
+     * @return The REST application for this microservice
+     */
     protected LexakaiRestApplication restApplication()
     {
-        return new LexakaiRestApplication();
+        return new LexakaiRestApplication(this);
     }
 
+    /**
+     * @return The Apache Wicket web application for this microservice
+     */
     @Override
     protected LexakaiWebApplication webApplication()
     {
