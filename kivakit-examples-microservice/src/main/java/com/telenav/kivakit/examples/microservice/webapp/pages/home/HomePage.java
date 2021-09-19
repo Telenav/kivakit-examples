@@ -18,7 +18,7 @@
 
 package com.telenav.kivakit.examples.microservice.webapp.pages.home;
 
-import com.telenav.kivakit.examples.microservice.lexakai.LexakaiProcessor;
+import com.telenav.kivakit.examples.microservice.LexakaiProcessor;
 import com.telenav.kivakit.examples.microservice.webapp.LexakaiWebPage;
 import com.telenav.kivakit.web.wicket.components.feedback.FeedbackPanel;
 import org.apache.wicket.markup.html.form.Form;

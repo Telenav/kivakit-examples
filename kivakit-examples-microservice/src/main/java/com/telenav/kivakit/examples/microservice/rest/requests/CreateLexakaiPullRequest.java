@@ -19,24 +19,26 @@
 package com.telenav.kivakit.examples.microservice.rest.requests;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.telenav.kivakit.examples.microservice.lexakai.LexakaiProcessor;
+import com.telenav.kivakit.examples.microservice.LexakaiProcessor;
 import com.telenav.kivakit.kernel.data.validation.BaseValidator;
 import com.telenav.kivakit.kernel.data.validation.ValidationType;
 import com.telenav.kivakit.kernel.data.validation.Validator;
-import com.telenav.kivakit.kernel.language.reflection.property.KivaKitIncludeProperty;
 import com.telenav.kivakit.kernel.language.strings.Strings;
-import com.telenav.kivakit.microservice.rest.microservlet.MicroservletRequest;
-import com.telenav.kivakit.microservice.rest.microservlet.MicroservletResponse;
+import com.telenav.kivakit.microservice.rest.microservlet.model.BaseMicroservletResponse;
+import com.telenav.kivakit.microservice.rest.microservlet.model.MicroservletResponse;
+import com.telenav.kivakit.microservice.rest.microservlet.model.methods.MicroservletGet;
+import com.telenav.kivakit.microservice.rest.microservlet.model.methods.MicroservletPost;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 /**
- * A {@link MicroservletRequest} handler that generates a UML diagram for a package on GitHub.
+ * A {@link MicroservletGet} request that generates a UML diagram for a package on GitHub.
  *
  * @author jonathanl (shibo)
- * @see MicroservletRequest
+ * @see MicroservletGet
+ * @see MicroservletResponse
  */
-@Schema(description = "A request for a UML diagram of a GitHub package")
-public class CreateLexakaiPullRequest implements MicroservletRequest
+public class CreateLexakaiPullRequest extends MicroservletPost
 {
     /**
      * Response object that holds the pull request identifier created by processing this request
@@ -44,7 +46,7 @@ public class CreateLexakaiPullRequest implements MicroservletRequest
      * @author jonathanl (shibo)
      */
     @Schema(description = "The UML diagram response")
-    public static class LexakaiResponse implements MicroservletResponse
+    public static class Response extends BaseMicroservletResponse
     {
         @JsonProperty
         @Schema(description = "The identifier of the pull request that was created")
@@ -56,26 +58,24 @@ public class CreateLexakaiPullRequest implements MicroservletRequest
         }
     }
 
-    @KivaKitIncludeProperty
     @JsonProperty
     @Schema(description = "The owner of the GitHub repository to process")
     private String owner;
 
-    @KivaKitIncludeProperty
     @JsonProperty
     @Schema(description = "The public GitHub repository to process")
     private String repository;
 
-    @KivaKitIncludeProperty
     @JsonProperty
     @Schema(description = "The branch to process")
     private String branch;
 
     @Override
-    public LexakaiResponse respond()
+    @Operation(summary = "A request for a UML diagram of a GitHub package")
+    public Response onPost()
     {
         // Create our response object from the nested class,
-        var response = new LexakaiResponse();
+        var response = listenTo(new Response());
 
         // process the requested GitHub project branch,
         final var pullRequest = response
@@ -88,9 +88,9 @@ public class CreateLexakaiPullRequest implements MicroservletRequest
     }
 
     @Override
-    public Class<MicroservletResponse> responseType()
+    public Class<Response> responseType()
     {
-        return MicroservletResponse.class;
+        return Response.class;
     }
 
     /**

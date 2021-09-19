@@ -13,7 +13,7 @@ import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.MicroserviceMetadata;
 
 /**
- * Microservice example, including Apache Wicket, REST and Swagger interfaces.
+ * Microservice example, including Apache Wicket, REST and Swagger support.
  *
  * @author jonathanl (shibo)
  */
@@ -51,6 +51,6 @@ public class LexakaiMicroservice extends Microservice
     @Override
     protected LexakaiWebApplication webApplication()
     {
-        return new LexakaiWebApplication();
+        return new LexakaiWebApplication(this);
     }
 }

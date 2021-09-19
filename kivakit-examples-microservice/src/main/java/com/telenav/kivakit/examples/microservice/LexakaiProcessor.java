@@ -1,4 +1,4 @@
-package com.telenav.kivakit.examples.microservice.lexakai;
+package com.telenav.kivakit.examples.microservice;
 
 import com.telenav.kivakit.component.BaseComponent;
 import com.telenav.kivakit.filesystem.Folder;

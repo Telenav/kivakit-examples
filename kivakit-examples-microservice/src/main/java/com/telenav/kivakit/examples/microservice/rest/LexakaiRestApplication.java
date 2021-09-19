@@ -36,6 +36,6 @@ public class LexakaiRestApplication extends MicroserviceRestApplication
     {
         super(microservice);
 
-        mount("api/1.0", CreateLexakaiPullRequest.class);
+        mount("api/1.0/create-pull-request", CreateLexakaiPullRequest.class);
     }
 }

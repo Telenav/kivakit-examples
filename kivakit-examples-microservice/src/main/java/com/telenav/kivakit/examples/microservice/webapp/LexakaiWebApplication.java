@@ -18,6 +18,7 @@
 
 package com.telenav.kivakit.examples.microservice.webapp;
 
+import com.telenav.kivakit.examples.microservice.LexakaiMicroservice;
 import com.telenav.kivakit.examples.microservice.webapp.pages.home.HomePage;
 import com.telenav.kivakit.microservice.web.MicroserviceWebApplication;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
@@ -31,6 +32,10 @@ import org.apache.wicket.Page;
 @LexakaiJavadoc(complete = true)
 public class LexakaiWebApplication extends MicroserviceWebApplication
 {
+    public LexakaiWebApplication(LexakaiMicroservice ignored)
+    {
+    }
+
     @Override
     public Class<? extends Page> getHomePage()
     {
