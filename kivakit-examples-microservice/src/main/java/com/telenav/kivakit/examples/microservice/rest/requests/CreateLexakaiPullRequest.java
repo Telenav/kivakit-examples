@@ -24,21 +24,20 @@ import com.telenav.kivakit.kernel.data.validation.BaseValidator;
 import com.telenav.kivakit.kernel.data.validation.ValidationType;
 import com.telenav.kivakit.kernel.data.validation.Validator;
 import com.telenav.kivakit.kernel.language.strings.Strings;
-import com.telenav.kivakit.microservice.rest.microservlet.model.BaseMicroservletResponse;
 import com.telenav.kivakit.microservice.rest.microservlet.model.MicroservletResponse;
-import com.telenav.kivakit.microservice.rest.microservlet.model.methods.MicroservletGet;
-import com.telenav.kivakit.microservice.rest.microservlet.model.methods.MicroservletPost;
+import com.telenav.kivakit.microservice.rest.microservlet.model.requests.MicroservletGetRequest;
+import com.telenav.kivakit.microservice.rest.microservlet.model.requests.MicroservletPostRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 /**
- * A {@link MicroservletGet} request that generates a UML diagram for a package on GitHub.
+ * A {@link MicroservletGetRequest} request that generates a UML diagram for a package on GitHub.
  *
  * @author jonathanl (shibo)
- * @see MicroservletGet
+ * @see MicroservletGetRequest
  * @see MicroservletResponse
  */
-public class CreateLexakaiPullRequest extends MicroservletPost
+public class CreateLexakaiPullRequest extends MicroservletPostRequest
 {
     /**
      * Response object that holds the pull request identifier created by processing this request
@@ -46,7 +45,7 @@ public class CreateLexakaiPullRequest extends MicroservletPost
      * @author jonathanl (shibo)
      */
     @Schema(description = "The UML diagram response")
-    public static class Response extends BaseMicroservletResponse
+    public static class Response extends MicroservletResponse
     {
         @JsonProperty
         @Schema(description = "The identifier of the pull request that was created")
@@ -75,7 +74,7 @@ public class CreateLexakaiPullRequest extends MicroservletPost
     public Response onPost()
     {
         // Create our response object from the nested class,
-        var response = listenTo(new Response());
+        final var response = listenTo(new Response());
 
         // process the requested GitHub project branch,
         final var pullRequest = response
@@ -111,7 +110,7 @@ public class CreateLexakaiPullRequest extends MicroservletPost
         };
     }
 
-    private boolean isGitHubIdentifier(String text)
+    private boolean isGitHubIdentifier(final String text)
     {
         return !Strings.isEmpty(text) && text.matches("[A-Za-z0-9-]+");
     }

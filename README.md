@@ -36,6 +36,7 @@ This repository contains working example code to show what KivaKit can do.
 
 [**kivakit-examples-application**](kivakit-examples-application/README.md)  
 [**kivakit-examples-configuration**](kivakit-examples-configuration/README.md)  
+[**kivakit-examples-microservice**](kivakit-examples-microservice/README.md)  
 
 <img src="https://www.kivakit.org/images/horizontal-line-128.png" srcset="https://www.kivakit.org/images/horizontal-line-128-2x.png 2x"/>
 
@@ -44,7 +45,9 @@ This repository contains working example code to show what KivaKit can do.
 &nbsp; <img src="https://www.kivakit.org/images/meter-70-96.png" srcset="https://www.kivakit.org/images/meter-70-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-examples-application**](kivakit-examples-application/README.md)  
 &nbsp; <img src="https://www.kivakit.org/images/meter-70-96.png" srcset="https://www.kivakit.org/images/meter-70-96-2x.png 2x"/>
- &nbsp; &nbsp; [**kivakit-examples-configuration**](kivakit-examples-configuration/README.md)
+ &nbsp; &nbsp; [**kivakit-examples-configuration**](kivakit-examples-configuration/README.md)  
+&nbsp; <img src="https://www.kivakit.org/images/meter-60-96.png" srcset="https://www.kivakit.org/images/meter-60-96-2x.png 2x"/>
+ &nbsp; &nbsp; [**kivakit-examples-microservice**](kivakit-examples-microservice/README.md)
 
 [//]: # (start-user-text)
 
