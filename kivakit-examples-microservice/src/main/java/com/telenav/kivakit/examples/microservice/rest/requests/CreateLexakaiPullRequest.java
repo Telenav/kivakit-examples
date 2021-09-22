@@ -82,7 +82,11 @@ public class CreateLexakaiPullRequest extends MicroservletPostRequest
                 .process(owner, repository, branch);
 
         // and return the pull request identifier
-        response.pullRequestIdentifier = pullRequest.getId();
+        if (pullRequest != null)
+        {
+            response.pullRequestIdentifier = pullRequest.getId();
+        }
+        
         return response;
     }
 
