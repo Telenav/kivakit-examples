@@ -32,7 +32,7 @@ public class RegistryExample extends BaseComponent
     {
         // Register the quantum database containing alien information,
         final var database = new QuantumDatabase();
-        registerObject(database);
+        register(database);
 
         // then create Zim with his spaceship and launch an attack.
         final var zim = new Alien(new Spaceship());

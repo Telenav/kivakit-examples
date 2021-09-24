@@ -32,10 +32,10 @@ public class Spaceship extends BaseComponent
         }
 
         // engage engines,
-        println("Liftoff for $", settingsRegistry());
+        println("Liftoff for $", settings());
 
         // then if the spaceship has air conditioning,
-        if (settingsRegistry().airConditioning())
+        if (settings().airConditioning())
         {
             // turn it on
             ONE_SECOND.sleep();
@@ -43,7 +43,7 @@ public class Spaceship extends BaseComponent
         }
 
         // and if the spaceship has cruise control
-        if (settingsRegistry().cruiseControl())
+        if (settings().cruiseControl())
         {
             // engage it.
             ONE_SECOND.sleep();
@@ -60,7 +60,7 @@ public class Spaceship extends BaseComponent
     /**
      * @return Retrieve spaceship settings from whoever provided them to the {@link Settings} registry
      */
-    private SpaceshipSettings settingsRegistry()
+    private SpaceshipSettings settings()
     {
         return require(SpaceshipSettings.class);
     }
