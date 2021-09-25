@@ -24,11 +24,12 @@ import com.telenav.kivakit.kernel.data.validation.BaseValidator;
 import com.telenav.kivakit.kernel.data.validation.ValidationType;
 import com.telenav.kivakit.kernel.data.validation.Validator;
 import com.telenav.kivakit.kernel.language.strings.Strings;
+import com.telenav.kivakit.microservice.rest.microservlet.jetty.openapi.annotations.OpenApiIncludeMember;
+import com.telenav.kivakit.microservice.rest.microservlet.jetty.openapi.annotations.OpenApiIncludeType;
+import com.telenav.kivakit.microservice.rest.microservlet.jetty.openapi.annotations.OpenApiRequestHandler;
 import com.telenav.kivakit.microservice.rest.microservlet.model.MicroservletResponse;
 import com.telenav.kivakit.microservice.rest.microservlet.model.requests.MicroservletGetRequest;
 import com.telenav.kivakit.microservice.rest.microservlet.model.requests.MicroservletPostRequest;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Schema;
 
 /**
  * A {@link MicroservletGetRequest} request that generates a UML diagram for a package on GitHub.
@@ -44,11 +45,11 @@ public class CreateLexakaiPullRequest extends MicroservletPostRequest
      *
      * @author jonathanl (shibo)
      */
-    @Schema(description = "The UML diagram response")
+    @OpenApiIncludeType(description = "The UML diagram response")
     public static class Response extends MicroservletResponse
     {
         @JsonProperty
-        @Schema(description = "The identifier of the pull request that was created")
+        @OpenApiIncludeMember(description = "The identifier of the pull request that was created")
         long pullRequestIdentifier;
 
         public long pullRequestIdentifier()
@@ -58,19 +59,19 @@ public class CreateLexakaiPullRequest extends MicroservletPostRequest
     }
 
     @JsonProperty
-    @Schema(description = "The owner of the GitHub repository to process")
+    @OpenApiIncludeMember(description = "The owner of the GitHub repository to process")
     private String owner;
 
     @JsonProperty
-    @Schema(description = "The public GitHub repository to process")
+    @OpenApiIncludeMember(description = "The public GitHub repository to process")
     private String repository;
 
     @JsonProperty
-    @Schema(description = "The branch to process")
+    @OpenApiIncludeMember(description = "The branch to process")
     private String branch;
 
     @Override
-    @Operation(summary = "A request for a UML diagram of a GitHub package")
+    @OpenApiRequestHandler(summary = "A request for a UML diagram of a GitHub package")
     public Response onPost()
     {
         // Create our response object from the nested class,
@@ -86,7 +87,7 @@ public class CreateLexakaiPullRequest extends MicroservletPostRequest
         {
             response.pullRequestIdentifier = pullRequest.getId();
         }
-        
+
         return response;
     }
 
