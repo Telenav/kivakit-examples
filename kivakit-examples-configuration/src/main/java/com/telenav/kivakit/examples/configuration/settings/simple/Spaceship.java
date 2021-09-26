@@ -54,7 +54,7 @@ public class Spaceship extends BaseComponent
     @Override
     public String toString()
     {
-        return settings().toString();
+        return settingsRegistry().toString();
     }
 
     /**

@@ -24,4 +24,3 @@ public class ApplicationExampleProject extends Project
         return ObjectSet.of(ResourceProject.get());
     }
 }
-

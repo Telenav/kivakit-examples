@@ -18,7 +18,7 @@
 
 package com.telenav.kivakit.examples.microservice.webapp.pages.home;
 
-import com.telenav.kivakit.examples.microservice.rest.requests.LexakaiRequest;
+import com.telenav.kivakit.examples.microservice.LexakaiProcessor;
 import com.telenav.kivakit.examples.microservice.webapp.LexakaiWebPage;
 import com.telenav.kivakit.web.wicket.components.feedback.FeedbackPanel;
 import org.apache.wicket.markup.html.form.Form;
@@ -46,13 +46,9 @@ public class HomePage extends LexakaiWebPage
             @Override
             protected void onSubmit()
             {
-                // Execute a request (without REST) to process the given branch of the given repository.
-                // Any problems and warnings will be shown in the feedback panel.
-                new LexakaiRequest()
-                        .owner(owner.getValue())
-                        .repository(repository.getValue())
-                        .branch(branch.getValue())
-                        .respond(feedback);
+                // Process the selected branch with Lexakai. Problems and warnings will be shown in the feedback panel.
+                final var pullRequest = feedback.listenTo(new LexakaiProcessor())
+                        .process(owner.getValue(), repository.getValue(), branch.getValue());
             }
         };
 
