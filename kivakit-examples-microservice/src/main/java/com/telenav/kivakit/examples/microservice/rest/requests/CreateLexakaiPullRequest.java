@@ -24,12 +24,12 @@ import com.telenav.kivakit.kernel.data.validation.BaseValidator;
 import com.telenav.kivakit.kernel.data.validation.ValidationType;
 import com.telenav.kivakit.kernel.data.validation.Validator;
 import com.telenav.kivakit.kernel.language.strings.Strings;
-import com.telenav.kivakit.microservice.rest.microservlet.jetty.openapi.annotations.OpenApiIncludeMember;
-import com.telenav.kivakit.microservice.rest.microservlet.jetty.openapi.annotations.OpenApiIncludeType;
-import com.telenav.kivakit.microservice.rest.microservlet.jetty.openapi.annotations.OpenApiRequestHandler;
-import com.telenav.kivakit.microservice.rest.microservlet.model.MicroservletResponse;
-import com.telenav.kivakit.microservice.rest.microservlet.model.requests.MicroservletGetRequest;
-import com.telenav.kivakit.microservice.rest.microservlet.model.requests.MicroservletPostRequest;
+import com.telenav.kivakit.microservice.rest.microservlet.openapi.OpenApiIncludeMember;
+import com.telenav.kivakit.microservice.rest.microservlet.openapi.OpenApiIncludeType;
+import com.telenav.kivakit.microservice.rest.microservlet.openapi.OpenApiRequestHandler;
+import com.telenav.kivakit.microservice.rest.microservlet.MicroservletResponse;
+import com.telenav.kivakit.microservice.rest.microservlet.requests.MicroservletGetRequest;
+import com.telenav.kivakit.microservice.rest.microservlet.requests.MicroservletPostRequest;
 
 /**
  * A {@link MicroservletGetRequest} request that generates a UML diagram for a package on GitHub.
