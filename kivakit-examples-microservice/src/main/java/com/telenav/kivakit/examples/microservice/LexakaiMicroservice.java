@@ -40,7 +40,7 @@ public class LexakaiMicroservice extends Microservice
     /**
      * @return The REST application for this microservice
      */
-    protected LexakaiRestApplication restApplication()
+    public LexakaiRestApplication restApplication()
     {
         return new LexakaiRestApplication(this);
     }

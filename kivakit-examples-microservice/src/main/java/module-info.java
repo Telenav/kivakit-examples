@@ -2,8 +2,6 @@ open module kivakit.examples.microservice
 {
     // KivaKit
     requires kivakit.microservice;
-    requires kivakit.web.jersey;
-    requires kivakit.web.wicket;
 
     // Wicket
     requires wicket.extensions;
@@ -14,9 +12,6 @@ open module kivakit.examples.microservice
     // GitHub
     requires org.eclipse.jgit;
     requires github.api;
-
-    // Swagger annotations
-    requires io.swagger.v3.oas.annotations;
 
     // Module exports
     exports com.telenav.kivakit.examples.microservice;
