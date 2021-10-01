@@ -18,24 +18,28 @@
 
 package com.telenav.kivakit.examples.microservice.rest;
 
-import com.telenav.kivakit.examples.microservice.rest.requests.CreateLexakaiPullRequest;
+import com.telenav.kivakit.examples.microservice.rest.requests.DivideRequest;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.rest.MicroserviceRestApplication;
 
 /**
- * REST interface for the Lexakai microservice example
+ * REST application that provides arithmetic division
  *
  * @author jonathanl (shibo)
  */
-public class LexakaiRestApplication extends MicroserviceRestApplication
+public class DivideRestApplication extends MicroserviceRestApplication
 {
     /**
      * Construct and mount requests
      */
-    public LexakaiRestApplication(Microservice microservice)
+    public DivideRestApplication(Microservice microservice)
     {
         super(microservice);
+    }
 
-        mount("api/1.0/create-pull-request", CreateLexakaiPullRequest.class);
+    @Override
+    public void onInitialize()
+    {
+        mount("divide", DivideRequest.class);
     }
 }
