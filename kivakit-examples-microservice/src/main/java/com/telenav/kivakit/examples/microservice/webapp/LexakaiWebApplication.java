@@ -32,8 +32,9 @@ import org.apache.wicket.Page;
 @LexakaiJavadoc(complete = true)
 public class LexakaiWebApplication extends MicroserviceWebApplication
 {
-    public LexakaiWebApplication(LexakaiMicroservice ignored)
+    public LexakaiWebApplication(LexakaiMicroservice microservice)
     {
+        super(microservice);
     }
 
     @Override
