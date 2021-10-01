@@ -50,15 +50,13 @@ None
 
 [*com.telenav.kivakit.examples.microservice*](https://www.kivakit.org/1.1.0-SNAPSHOT/lexakai/kivakit-examples/kivakit-examples-microservice/documentation/diagrams/com.telenav.kivakit.examples.microservice.svg)  
 [*com.telenav.kivakit.examples.microservice.rest*](https://www.kivakit.org/1.1.0-SNAPSHOT/lexakai/kivakit-examples/kivakit-examples-microservice/documentation/diagrams/com.telenav.kivakit.examples.microservice.rest.svg)  
-[*com.telenav.kivakit.examples.microservice.rest.requests*](https://www.kivakit.org/1.1.0-SNAPSHOT/lexakai/kivakit-examples/kivakit-examples-microservice/documentation/diagrams/com.telenav.kivakit.examples.microservice.rest.requests.svg)  
-[*com.telenav.kivakit.examples.microservice.webapp*](https://www.kivakit.org/1.1.0-SNAPSHOT/lexakai/kivakit-examples/kivakit-examples-microservice/documentation/diagrams/com.telenav.kivakit.examples.microservice.webapp.svg)  
-[*com.telenav.kivakit.examples.microservice.webapp.pages.home*](https://www.kivakit.org/1.1.0-SNAPSHOT/lexakai/kivakit-examples/kivakit-examples-microservice/documentation/diagrams/com.telenav.kivakit.examples.microservice.webapp.pages.home.svg)
+[*com.telenav.kivakit.examples.microservice.rest.requests*](https://www.kivakit.org/1.1.0-SNAPSHOT/lexakai/kivakit-examples/kivakit-examples-microservice/documentation/diagrams/com.telenav.kivakit.examples.microservice.rest.requests.svg)
 
 <img src="https://www.kivakit.org/images/horizontal-line-128.png" srcset="https://www.kivakit.org/images/horizontal-line-128-2x.png 2x"/>
 
 ### Javadoc <a name="javadoc"></a> &nbsp;&nbsp; <img src="https://www.kivakit.org/images/books-32.png" srcset="https://www.kivakit.org/images/books-32-2x.png 2x"/>
 
-Javadoc coverage for this project is 63.9%.  
+Javadoc coverage for this project is 55.6%.  
   
 &nbsp; &nbsp; <img src="https://www.kivakit.org/images/meter-60-96.png" srcset="https://www.kivakit.org/images/meter-60-96-2x.png 2x"/>
 
@@ -67,15 +65,12 @@ Javadoc coverage for this project is 63.9%.
 
 | Class | Documentation Sections |
 |---|---|
-| [*CreateLexakaiPullRequest*](https://www.kivakit.org/1.1.0-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/rest/requests/CreateLexakaiPullRequest.html) |  |  
-| [*CreateLexakaiPullRequest.Response*](https://www.kivakit.org/1.1.0-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/rest/requests/CreateLexakaiPullRequest.Response.html) |  |  
-| [*HomePage*](https://www.kivakit.org/1.1.0-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/webapp/pages/home/HomePage.html) |  |  
-| [*LexakaiMicroservice*](https://www.kivakit.org/1.1.0-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/LexakaiMicroservice.html) |  |  
-| [*LexakaiMicroserviceSettings*](https://www.kivakit.org/1.1.0-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/LexakaiMicroserviceSettings.html) |  |  
-| [*LexakaiProcessor*](https://www.kivakit.org/1.1.0-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/LexakaiProcessor.html) |  |  
-| [*LexakaiRestApplication*](https://www.kivakit.org/1.1.0-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/rest/LexakaiRestApplication.html) |  |  
-| [*LexakaiWebApplication*](https://www.kivakit.org/1.1.0-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/webapp/LexakaiWebApplication.html) |  |  
-| [*LexakaiWebPage*](https://www.kivakit.org/1.1.0-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/webapp/LexakaiWebPage.html) |  |  
+| [*DivideRequest*](https://www.kivakit.org/1.1.0-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/rest/requests/DivideRequest.html) |  |  
+| [*DivideRequest.DivideResponse*](https://www.kivakit.org/1.1.0-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/rest/requests/DivideRequest.DivideResponse.html) |  |  
+| [*DivideRestApplication*](https://www.kivakit.org/1.1.0-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/rest/DivideRestApplication.html) |  |  
+| [*DivisionClient*](https://www.kivakit.org/1.1.0-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/DivisionClient.html) |  |  
+| [*DivisionMicroservice*](https://www.kivakit.org/1.1.0-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/DivisionMicroservice.html) |  |  
+| [*DivisionMicroserviceSettings*](https://www.kivakit.org/1.1.0-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/DivisionMicroserviceSettings.html) |  |  
 
 [//]: # (start-user-text)
 
