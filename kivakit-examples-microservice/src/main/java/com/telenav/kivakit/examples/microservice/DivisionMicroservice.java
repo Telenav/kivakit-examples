@@ -6,7 +6,7 @@
 
 package com.telenav.kivakit.examples.microservice;
 
-import com.telenav.kivakit.examples.microservice.rest.DivideRestApplication;
+import com.telenav.kivakit.examples.microservice.rest.DivideRestService;
 import com.telenav.kivakit.kernel.language.values.version.Version;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.MicroserviceMetadata;
@@ -39,8 +39,8 @@ public class DivisionMicroservice extends Microservice
     /**
      * @return The REST application for this microservice
      */
-    public DivideRestApplication restApplication()
+    public DivideRestService restApplication()
     {
-        return new DivideRestApplication(this);
+        return new DivideRestService(this);
     }
 }

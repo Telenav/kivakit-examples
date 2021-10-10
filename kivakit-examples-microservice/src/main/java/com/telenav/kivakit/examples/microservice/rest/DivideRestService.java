@@ -20,19 +20,19 @@ package com.telenav.kivakit.examples.microservice.rest;
 
 import com.telenav.kivakit.examples.microservice.rest.requests.DivideRequest;
 import com.telenav.kivakit.microservice.Microservice;
-import com.telenav.kivakit.microservice.rest.MicroserviceRestApplication;
+import com.telenav.kivakit.microservice.microservlet.rest.MicroserviceRestService;
 
 /**
  * REST application that provides arithmetic division
  *
  * @author jonathanl (shibo)
  */
-public class DivideRestApplication extends MicroserviceRestApplication
+public class DivideRestService extends MicroserviceRestService
 {
     /**
      * Construct and mount requests
      */
-    public DivideRestApplication(Microservice microservice)
+    public DivideRestService(Microservice microservice)
     {
         super(microservice);
     }

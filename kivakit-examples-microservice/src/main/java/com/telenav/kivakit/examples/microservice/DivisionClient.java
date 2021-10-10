@@ -6,8 +6,8 @@ import com.telenav.kivakit.kernel.language.strings.AsciiArt;
 import com.telenav.kivakit.kernel.language.values.version.Version;
 import com.telenav.kivakit.kernel.messaging.Message;
 import com.telenav.kivakit.microservice.MicroserviceSettings;
-import com.telenav.kivakit.microservice.rest.MicroserviceGsonFactory;
-import com.telenav.kivakit.microservice.rest.microservlet.MicroservletClient;
+import com.telenav.kivakit.microservice.microservlet.rest.MicroserviceGsonFactory;
+import com.telenav.kivakit.microservice.microservlet.MicroservletClient;
 import com.telenav.kivakit.network.core.Host;
 
 /**
