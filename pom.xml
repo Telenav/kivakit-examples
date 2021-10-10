@@ -17,7 +17,6 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.telenav.kivakit</groupId>
     <artifactId>kivakit-examples</artifactId>
     <version>1.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -26,7 +25,7 @@
 
     <name>KivaKit Examples</name>
     <description>A collection of modules that demonstrate how to use features of KivaKit.</description>
-    <url>http://www.kivakit.org</url>
+    <url>https://www.kivakit.org</url>
     <inceptionYear>2011</inceptionYear>
     <organization>
         <name>Telenav</name>
@@ -54,7 +53,7 @@
             <name>Jonathan Locke (Luo Shibo)</name>
             <email>jonathanl@telenav.com</email>
             <organization>Telenav</organization>
-            <organizationUrl>http://www.telenav.com/</organizationUrl>
+            <organizationUrl>https://www.telenav.com/</organizationUrl>
             <roles>
                 <role>lead</role>
                 <role>administrator</role>
@@ -66,7 +65,7 @@
             <name>Haifeng Zhu</name>
             <email>hfzhu@telenav.com</email>
             <organization>Telenav</organization>
-            <organizationUrl>http://www.telenav.com/</organizationUrl>
+            <organizationUrl>https://www.telenav.com/</organizationUrl>
             <roles>
                 <role>developer</role>
                 <role>administrator</role>

@@ -22,6 +22,8 @@ import com.telenav.kivakit.examples.microservice.rest.requests.DivideRequest;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.microservlet.rest.MicroserviceRestService;
 
+import static com.telenav.kivakit.microservice.microservlet.rest.MicroserviceRestService.HttpMethod.POST;
+
 /**
  * REST application that provides arithmetic division
  *
@@ -40,6 +42,6 @@ public class DivideRestService extends MicroserviceRestService
     @Override
     public void onInitialize()
     {
-        mount("divide", DivideRequest.class);
+        mount("divide", POST, DivideRequest.class);
     }
 }
