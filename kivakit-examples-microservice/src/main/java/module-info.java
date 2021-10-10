@@ -1,7 +1,7 @@
 open module kivakit.examples.microservice
 {
     // KivaKit
-    requires kivakit.microservice;
+    requires transitive kivakit.microservice;
 
     // Wicket
     requires wicket.extensions;
@@ -11,10 +11,6 @@ open module kivakit.examples.microservice
 
     // Java
     requires java.sql;
-
-    // GitHub
-    requires org.eclipse.jgit;
-    requires github.api;
 
     // Module exports
     exports com.telenav.kivakit.examples.microservice;
