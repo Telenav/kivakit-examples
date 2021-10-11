@@ -11,6 +11,8 @@ open module kivakit.examples.microservice
     requires wicket.jquery.ui.core;
     requires wicket.util;
 
+    requires gson;
+
     // Java
     requires java.sql;
 
