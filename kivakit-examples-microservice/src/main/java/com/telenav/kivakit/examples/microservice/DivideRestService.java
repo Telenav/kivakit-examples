@@ -16,16 +16,16 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-package com.telenav.kivakit.examples.microservice.rest;
+package com.telenav.kivakit.examples.microservice;
 
-import com.telenav.kivakit.examples.microservice.rest.requests.DivideRequest;
+import com.telenav.kivakit.examples.microservice.requests.DivideRequest;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.microservlet.rest.MicroserviceRestService;
 
 import static com.telenav.kivakit.microservice.microservlet.rest.MicroserviceRestService.HttpMethod.POST;
 
 /**
- * REST application that provides arithmetic division
+ * REST service that provides arithmetic division
  *
  * @author jonathanl (shibo)
  */

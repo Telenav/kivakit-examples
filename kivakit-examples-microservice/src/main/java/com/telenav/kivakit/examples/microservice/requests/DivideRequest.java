@@ -16,12 +16,13 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-package com.telenav.kivakit.examples.microservice.rest.requests;
+package com.telenav.kivakit.examples.microservice.requests;
 
 import com.google.gson.annotations.Expose;
 import com.telenav.kivakit.kernel.data.validation.BaseValidator;
 import com.telenav.kivakit.kernel.data.validation.ValidationType;
 import com.telenav.kivakit.kernel.data.validation.Validator;
+import com.telenav.kivakit.kernel.language.values.version.Version;
 import com.telenav.kivakit.microservice.microservlet.BaseMicroservletRequest;
 import com.telenav.kivakit.microservice.microservlet.BaseMicroservletResponse;
 import com.telenav.kivakit.microservice.microservlet.MicroservletRequest;
@@ -75,14 +76,16 @@ public class DivideRequest extends BaseMicroservletRequest
                           example = "2")
     private int divisor;
 
-    public DivideRequest(final int dividend, final int divisor)
+    public DivideRequest(Version version, final int dividend, final int divisor)
     {
+        super(version);
         this.dividend = dividend;
         this.divisor = divisor;
     }
 
     public DivideRequest()
     {
+        super(null);
     }
 
     @Override
