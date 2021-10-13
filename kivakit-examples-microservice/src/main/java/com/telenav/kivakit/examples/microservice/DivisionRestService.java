@@ -18,21 +18,33 @@
 
 package com.telenav.kivakit.examples.microservice;
 
+import com.telenav.kivakit.examples.microservice.requests.DivideRequest;
+import com.telenav.kivakit.kernel.language.values.version.Version;
 import com.telenav.kivakit.microservice.Microservice;
-import com.telenav.kivakit.microservice.microservlet.grpc.MicroserviceGrpcService;
+import com.telenav.kivakit.microservice.protocols.rest.MicroserviceRestService;
+
+import static com.telenav.kivakit.microservice.protocols.rest.MicroserviceRestService.HttpMethod.POST;
 
 /**
- * GRPC service that provides arithmetic division
+ * REST service that provides arithmetic division
  *
  * @author jonathanl (shibo)
  */
-public class DivideGrpcService extends MicroserviceGrpcService
+public class DivisionRestService extends MicroserviceRestService
 {
+    public static Version VERSION = Version.parse("1.0");
+
     /**
      * Construct and mount requests
      */
-    public DivideGrpcService(Microservice microservice)
+    public DivisionRestService(Microservice microservice)
     {
         super(microservice);
+    }
+
+    @Override
+    public void onInitialize()
+    {
+        mount("divide", POST, DivideRequest.class);
     }
 }

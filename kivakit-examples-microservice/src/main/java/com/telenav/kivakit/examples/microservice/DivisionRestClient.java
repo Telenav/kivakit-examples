@@ -6,8 +6,8 @@ import com.telenav.kivakit.kernel.language.strings.AsciiArt;
 import com.telenav.kivakit.kernel.language.values.version.Version;
 import com.telenav.kivakit.kernel.messaging.Message;
 import com.telenav.kivakit.microservice.MicroserviceSettings;
-import com.telenav.kivakit.microservice.microservlet.rest.MicroserviceRestClient;
-import com.telenav.kivakit.microservice.microservlet.rest.gson.MicroserviceGsonFactory;
+import com.telenav.kivakit.microservice.protocols.rest.MicroserviceRestClient;
+import com.telenav.kivakit.microservice.protocols.rest.gson.MicroserviceGsonFactory;
 import com.telenav.kivakit.network.core.Host;
 
 /**
@@ -35,7 +35,7 @@ public class DivisionRestClient extends Application
 
         // then issue a divide request and read the response,
         var response = client.post("divide",
-                DivideRequest.DivideResponse.class, new DivideRequest(version, 9, 3));
+                DivideRequest.DivideResponse.class, new DivideRequest(9, 3));
 
         // then show the response
         Message.println(AsciiArt.box("response => $", response));

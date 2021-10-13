@@ -38,8 +38,8 @@ public class DivisionMicroservice extends Microservice
     /**
      * @return The REST application for this microservice
      */
-    public DivideRestService restService()
+    public DivisionRestService restService()
     {
-        return new DivideRestService(this);
+        return new DivisionRestService(this);
     }
 }

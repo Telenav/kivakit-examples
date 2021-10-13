@@ -22,14 +22,13 @@ import com.google.gson.annotations.Expose;
 import com.telenav.kivakit.kernel.data.validation.BaseValidator;
 import com.telenav.kivakit.kernel.data.validation.ValidationType;
 import com.telenav.kivakit.kernel.data.validation.Validator;
-import com.telenav.kivakit.kernel.language.values.version.Version;
 import com.telenav.kivakit.microservice.microservlet.BaseMicroservletRequest;
 import com.telenav.kivakit.microservice.microservlet.BaseMicroservletResponse;
 import com.telenav.kivakit.microservice.microservlet.MicroservletRequest;
 import com.telenav.kivakit.microservice.microservlet.MicroservletResponse;
-import com.telenav.kivakit.microservice.microservlet.rest.openapi.OpenApiIncludeMember;
-import com.telenav.kivakit.microservice.microservlet.rest.openapi.OpenApiIncludeType;
-import com.telenav.kivakit.microservice.microservlet.rest.openapi.OpenApiRequestHandler;
+import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
+import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
+import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiRequestHandler;
 
 /**
  * A {@link MicroservletRequest} that performs arithmetic division
@@ -76,16 +75,14 @@ public class DivideRequest extends BaseMicroservletRequest
                           example = "2")
     private int divisor;
 
-    public DivideRequest(Version version, final int dividend, final int divisor)
+    public DivideRequest(final int dividend, final int divisor)
     {
-        super(version);
         this.dividend = dividend;
         this.divisor = divisor;
     }
 
     public DivideRequest()
     {
-        super(null);
     }
 
     @Override

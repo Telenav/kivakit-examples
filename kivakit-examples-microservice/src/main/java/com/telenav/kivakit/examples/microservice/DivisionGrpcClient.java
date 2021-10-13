@@ -6,7 +6,7 @@ import com.telenav.kivakit.kernel.language.strings.AsciiArt;
 import com.telenav.kivakit.kernel.language.values.version.Version;
 import com.telenav.kivakit.kernel.messaging.Message;
 import com.telenav.kivakit.microservice.MicroserviceSettings;
-import com.telenav.kivakit.microservice.microservlet.grpc.MicroserviceGrpcClient;
+import com.telenav.kivakit.microservice.protocols.grpc.MicroserviceGrpcClient;
 import com.telenav.kivakit.network.core.Host;
 
 /**
@@ -32,7 +32,7 @@ public class DivisionGrpcClient extends Application
         var client = listenTo(new MicroserviceGrpcClient(port, version));
 
         // then issue a divide request and read the response,
-        var response = client.request("divide", new DivideRequest(version, 9, 3));
+        var response = client.request("divide", new DivideRequest(9, 3));
 
         // then show the response
         Message.println(AsciiArt.box("response => $", response));
