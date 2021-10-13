@@ -6,8 +6,8 @@ import com.telenav.kivakit.kernel.language.strings.AsciiArt;
 import com.telenav.kivakit.kernel.language.values.version.Version;
 import com.telenav.kivakit.kernel.messaging.Message;
 import com.telenav.kivakit.microservice.MicroserviceSettings;
-import com.telenav.kivakit.microservice.microservlet.rest.MicroserviceGsonFactory;
-import com.telenav.kivakit.microservice.microservlet.MicroservletClient;
+import com.telenav.kivakit.microservice.microservlet.rest.MicroservletRestClient;
+import com.telenav.kivakit.microservice.microservlet.rest.gson.MicroserviceGsonFactory;
 import com.telenav.kivakit.network.core.Host;
 
 /**
@@ -30,7 +30,7 @@ public class DivisionClient extends Application
         final var version = Version.parse("1.0");
 
         // create a client to talk to the microservice REST API,
-        var client = listenTo(new MicroservletClient(
+        var client = listenTo(new MicroservletRestClient(
                 new MicroserviceGsonFactory(), port, version));
 
         // then issue a divide request and read the response,
