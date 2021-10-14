@@ -16,37 +16,41 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-package com.telenav.kivakit.examples.microservice.rest.requests;
+package com.telenav.kivakit.examples.microservice.requests;
 
+import com.dyuproject.protostuff.Tag;
 import com.google.gson.annotations.Expose;
 import com.telenav.kivakit.kernel.data.validation.BaseValidator;
 import com.telenav.kivakit.kernel.data.validation.ValidationType;
 import com.telenav.kivakit.kernel.data.validation.Validator;
-import com.telenav.kivakit.microservice.rest.microservlet.MicroservletResponse;
-import com.telenav.kivakit.microservice.rest.microservlet.openapi.OpenApiIncludeMember;
-import com.telenav.kivakit.microservice.rest.microservlet.openapi.OpenApiIncludeType;
-import com.telenav.kivakit.microservice.rest.microservlet.openapi.OpenApiRequestHandler;
-import com.telenav.kivakit.microservice.rest.microservlet.requests.MicroservletPostRequest;
+import com.telenav.kivakit.microservice.microservlet.BaseMicroservletRequest;
+import com.telenav.kivakit.microservice.microservlet.BaseMicroservletResponse;
+import com.telenav.kivakit.microservice.microservlet.MicroservletRequest;
+import com.telenav.kivakit.microservice.microservlet.MicroservletResponse;
+import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
+import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
+import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiRequestHandler;
 
 /**
- * A {@link MicroservletPostRequest} that performs arithmetic division
+ * A {@link MicroservletRequest} that performs arithmetic division
  *
  * @author jonathanl (shibo)
- * @see MicroservletPostRequest
+ * @see MicroservletRequest
  * @see MicroservletResponse
  */
 @OpenApiIncludeType(description = "Request for divisive action")
-public class DivideRequest extends MicroservletPostRequest
+public class DivisionRequest extends BaseMicroservletRequest
 {
     @OpenApiIncludeType(description = "Response to a divide request")
-    public class DivideResponse extends MicroservletResponse
+    public class DivisionResponse extends BaseMicroservletResponse
     {
+        @Tag(1)
         @Expose
         @OpenApiIncludeMember(description = "The result of dividing the dividend by the divisor",
                               example = "42")
         int quotient;
 
-        public DivideResponse()
+        public DivisionResponse()
         {
             this.quotient = dividend / divisor;
         }
@@ -55,39 +59,47 @@ public class DivideRequest extends MicroservletPostRequest
         {
             return Integer.toString(quotient);
         }
+
+        @Override
+        public Validator validator(final ValidationType type)
+        {
+            return Validator.NULL;
+        }
     }
 
+    @Tag(1)
     @Expose
     @OpenApiIncludeMember(description = "The number to be divided",
                           example = "84")
     private int dividend;
 
+    @Tag(2)
     @Expose
     @OpenApiIncludeMember(description = "The number to divide the dividend by (dividend / divisor)",
                           example = "2")
     private int divisor;
 
-    public DivideRequest(final int dividend, final int divisor)
+    public DivisionRequest(final int dividend, final int divisor)
     {
         this.dividend = dividend;
         this.divisor = divisor;
     }
 
-    public DivideRequest()
+    public DivisionRequest()
     {
     }
 
     @Override
     @OpenApiRequestHandler(summary = "Divides two numbers")
-    public DivideResponse onPost()
+    public DivisionResponse onRequest()
     {
-        return listenTo(new DivideResponse());
+        return listenTo(new DivisionResponse());
     }
 
     @Override
-    public Class<DivideResponse> responseType()
+    public Class<DivisionResponse> responseType()
     {
-        return DivideResponse.class;
+        return DivisionResponse.class;
     }
 
     /**

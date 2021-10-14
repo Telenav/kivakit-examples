@@ -6,17 +6,16 @@
 
 package com.telenav.kivakit.examples.microservice;
 
-import com.telenav.kivakit.examples.microservice.rest.DivideRestApplication;
 import com.telenav.kivakit.kernel.language.values.version.Version;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.MicroserviceMetadata;
+import com.telenav.kivakit.microservice.protocols.grpc.MicroserviceGrpcService;
 
 /**
  * Microservice example, including REST and Swagger support.
  *
  * @author jonathanl (shibo)
  */
-@SuppressWarnings("ClassEscapesDefinedScope")
 public class DivisionMicroservice extends Microservice
 {
     public static void main(final String[] arguments)
@@ -31,16 +30,22 @@ public class DivisionMicroservice extends Microservice
     public MicroserviceMetadata metadata()
     {
         return new MicroserviceMetadata()
-                .withName("divide-microservice")
+                .withName("division-microservice")
                 .withDescription("Example microservice performing arithmetic division")
                 .withVersion(Version.parse("1.0"));
+    }
+
+    @Override
+    public MicroserviceGrpcService onNewGrpcService()
+    {
+        return new DivisionGrpcService(this);
     }
 
     /**
      * @return The REST application for this microservice
      */
-    public DivideRestApplication restApplication()
+    public DivisionRestService onNewRestService()
     {
-        return new DivideRestApplication(this);
+        return new DivisionRestService(this);
     }
 }
