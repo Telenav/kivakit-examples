@@ -38,7 +38,7 @@ public class DivisionMicroservice extends Microservice
     @Override
     public MicroserviceGrpcService onNewGrpcService()
     {
-        return new MicroserviceGrpcService(this);
+        return new DivisionGrpcService(this);
     }
 
     /**
