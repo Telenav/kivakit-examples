@@ -19,7 +19,6 @@
 package com.telenav.kivakit.examples.microservice;
 
 import com.telenav.kivakit.examples.microservice.requests.DivideRequest;
-import com.telenav.kivakit.kernel.language.values.version.Version;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.protocols.rest.MicroserviceRestService;
 
@@ -32,8 +31,6 @@ import static com.telenav.kivakit.microservice.protocols.rest.MicroserviceRestSe
  */
 public class DivisionRestService extends MicroserviceRestService
 {
-    public static Version VERSION = Version.parse("1.0");
-
     /**
      * Construct and mount requests
      */

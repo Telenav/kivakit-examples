@@ -40,14 +40,6 @@
             <groupId>com.telenav.kivakit</groupId>
             <artifactId>kivakit-microservice</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.telenav.kivakit</groupId>
-            <artifactId>kivakit-protostuff-merged</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.telenav.kivakit</groupId>
-            <artifactId>kivakit-protostuff-merged</artifactId>
-        </dependency>
 
         <!-- Wicket -->
 

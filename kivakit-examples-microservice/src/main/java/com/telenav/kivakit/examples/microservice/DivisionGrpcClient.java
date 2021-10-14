@@ -25,14 +25,14 @@ public class DivisionGrpcClient extends Application
     protected void onRun()
     {
         // Get the port and version of the microservice
-        final var port = Host.local().http(requireSettings(MicroserviceSettings.class).port());
+        final var port = Host.local().http(requireSettings(MicroserviceSettings.class).grpcPort());
         final var version = Version.parse("1.0");
 
         // create a client to talk to the microservice REST API,
         var client = listenTo(new MicroserviceGrpcClient(port, version));
 
         // then issue a divide request and read the response,
-        var response = client.request("divide", new DivideRequest(9, 3));
+        var response = client.request("/api/1.0/divide", new DivideRequest(9, 3));
 
         // then show the response
         Message.println(AsciiArt.box("response => $", response));
