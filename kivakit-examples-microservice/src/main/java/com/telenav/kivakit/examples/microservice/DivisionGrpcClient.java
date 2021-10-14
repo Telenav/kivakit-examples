@@ -1,8 +1,8 @@
 package com.telenav.kivakit.examples.microservice;
 
 import com.telenav.kivakit.application.Application;
-import com.telenav.kivakit.examples.microservice.requests.DivideRequest;
-import com.telenav.kivakit.examples.microservice.requests.DivideRequest.DivideResponse;
+import com.telenav.kivakit.examples.microservice.requests.DivisionRequest;
+import com.telenav.kivakit.examples.microservice.requests.DivisionRequest.DivisionResponse;
 import com.telenav.kivakit.kernel.language.strings.AsciiArt;
 import com.telenav.kivakit.kernel.language.values.version.Version;
 import com.telenav.kivakit.kernel.messaging.Message;
@@ -32,12 +32,12 @@ public class DivisionGrpcClient extends Application
         var client = listenTo(new MicroserviceGrpcClient(port, Version.parse("1.0")));
 
         // then issue a divide request and read the response,
-        var response = client.request("divide", new DivideRequest(9, 3), DivideResponse.class);
+        var response = client.request("divide", new DivisionRequest(9, 3), DivisionResponse.class);
 
         // then show the response
         Message.println(AsciiArt.box("response => $", response));
 
-        var future = client.requestFuture("divide", new DivideRequest(10, 5), DivideResponse.class);
+        var future = client.requestFuture("divide", new DivisionRequest(10, 5), DivisionResponse.class);
         Message.println(AsciiArt.box("future response => $", future.get()));
     }
 }
