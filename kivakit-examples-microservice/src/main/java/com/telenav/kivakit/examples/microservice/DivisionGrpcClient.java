@@ -26,7 +26,7 @@ public class DivisionGrpcClient extends Application
     protected void onRun()
     {
         // Get the port and version of the microservice
-        final var port = Host.local().http(requireSettings(MicroserviceSettings.class).grpcPort());
+        var port = Host.local().http(requireSettings(MicroserviceSettings.class).grpcPort());
 
         // create a client to talk to the microservice REST API,
         var client = listenTo(new MicroserviceGrpcClient(port, Version.parse("1.0")));
