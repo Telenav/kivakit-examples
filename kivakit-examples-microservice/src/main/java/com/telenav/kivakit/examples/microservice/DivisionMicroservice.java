@@ -18,7 +18,7 @@ import com.telenav.kivakit.microservice.protocols.grpc.MicroserviceGrpcService;
  */
 public class DivisionMicroservice extends Microservice
 {
-    public static void main(final String[] arguments)
+    public static void main(String[] arguments)
     {
         new DivisionMicroservice().run(arguments);
     }

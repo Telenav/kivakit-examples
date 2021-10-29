@@ -14,7 +14,7 @@ public class Alien extends BaseComponent
     /** The alien's spaceship */
     private final Spaceship spaceship;
 
-    public Alien(final Spaceship spaceship)
+    public Alien(Spaceship spaceship)
     {
         this.spaceship = spaceship;
     }
@@ -25,7 +25,7 @@ public class Alien extends BaseComponent
     public void attack()
     {
         // Look up the attack plan in the alien database and wait until it's time to attack
-        final var database = lookup(QuantumDatabase.class);
+        var database = lookup(QuantumDatabase.class);
         database.retrieveAttackPlan().waitForAttackTime();
 
         // then launch the attack. Prepare to meet your horrible doom!

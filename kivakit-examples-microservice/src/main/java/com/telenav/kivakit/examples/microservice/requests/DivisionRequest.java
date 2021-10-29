@@ -52,7 +52,7 @@ public class DivisionRequest extends BaseMicroservletRequest
 
         public DivisionResponse()
         {
-            this.quotient = dividend / divisor;
+            quotient = dividend / divisor;
         }
 
         public String toString()
@@ -61,7 +61,7 @@ public class DivisionRequest extends BaseMicroservletRequest
         }
 
         @Override
-        public Validator validator(final ValidationType type)
+        public Validator validator(ValidationType type)
         {
             return Validator.NULL;
         }
@@ -79,7 +79,7 @@ public class DivisionRequest extends BaseMicroservletRequest
                           example = "2")
     private int divisor;
 
-    public DivisionRequest(final int dividend, final int divisor)
+    public DivisionRequest(int dividend, int divisor)
     {
         this.dividend = dividend;
         this.divisor = divisor;
@@ -106,7 +106,7 @@ public class DivisionRequest extends BaseMicroservletRequest
      * {@inheritDoc}
      */
     @Override
-    public Validator validator(final ValidationType type)
+    public Validator validator(ValidationType type)
     {
         return new BaseValidator()
         {

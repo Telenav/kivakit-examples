@@ -20,7 +20,7 @@ import static com.telenav.kivakit.filesystem.File.fileArgumentParser;
  */
 public class ApplicationExample extends Application
 {
-    public static void main(final String[] arguments)
+    public static void main(String[] arguments)
     {
         new ApplicationExample().run(arguments);
     }
@@ -56,7 +56,7 @@ public class ApplicationExample extends Application
     @Override
     protected void onRun()
     {
-        final var input = argument(INPUT);
+        var input = argument(INPUT);
 
         if (input.exists())
         {
@@ -74,7 +74,7 @@ public class ApplicationExample extends Application
         return ObjectSet.of(SHOW_FILE_SIZE);
     }
 
-    private void showFile(final File input)
+    private void showFile(File input)
     {
         if (get(SHOW_FILE_SIZE))
         {
