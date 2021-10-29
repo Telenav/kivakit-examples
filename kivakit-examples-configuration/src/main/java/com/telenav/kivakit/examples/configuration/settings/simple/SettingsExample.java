@@ -9,9 +9,9 @@ import com.telenav.kivakit.configuration.settings.Settings;
  * <p>
  * The register and lookup pattern allows decoupling of settings from their use, but without violating the cardinal
  * object-oriented design principle of encapsulation. Objects that need an interface request it via {@link
- * Settings#requireSettings(Class)} and objects providing interfaces register them with {@link
- * Settings#register(Object)}. This prevents implementation details of the requesting object from being exposed (either
- * through primitive field access or getters and setters, see <a href="https://www.infoworld.com/article/2073723/why-getter-and-setter-methods-are-evil.html">Why
+ * Settings#requireSettings(Class)} and objects providing interfaces register them with {@link #register(Object)}. This
+ * prevents implementation details of the requesting object from being exposed (either through primitive field access or
+ * getters and setters, see <a href="https://www.infoworld.com/article/2073723/why-getter-and-setter-methods-are-evil.html">Why
  * Getter and Setter Methods are Evil, Infoworld, Alan Holub</a>).
  * </p>
  *
@@ -19,7 +19,7 @@ import com.telenav.kivakit.configuration.settings.Settings;
  */
 public class SettingsExample extends BaseComponent
 {
-    public static void main(final String[] arguments)
+    public static void main(String[] arguments)
     {
         new SettingsExample().run();
     }
@@ -27,7 +27,7 @@ public class SettingsExample extends BaseComponent
     public void run()
     {
         // Create the spaceship settings
-        final var settings = new SpaceshipSettings();
+        var settings = new SpaceshipSettings();
         settings.name("Zim's Awesome Spaceship");
         settings.airConditioning(true);
         settings.cruiseControl(true);
