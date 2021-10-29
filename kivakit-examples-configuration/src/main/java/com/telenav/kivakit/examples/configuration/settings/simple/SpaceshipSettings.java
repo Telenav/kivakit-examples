@@ -26,7 +26,7 @@ public class SpaceshipSettings implements Named
         return airConditioning;
     }
 
-    public void airConditioning(final boolean airConditioning)
+    public void airConditioning(boolean airConditioning)
     {
         this.airConditioning = airConditioning;
     }
@@ -36,7 +36,7 @@ public class SpaceshipSettings implements Named
         return cruiseControl;
     }
 
-    public void cruiseControl(final boolean cruiseControl)
+    public void cruiseControl(boolean cruiseControl)
     {
         this.cruiseControl = cruiseControl;
     }
@@ -46,7 +46,7 @@ public class SpaceshipSettings implements Named
         return missileLaunchers;
     }
 
-    public void missileLaunchers(final int missileLaunchers)
+    public void missileLaunchers(int missileLaunchers)
     {
         this.missileLaunchers = missileLaunchers;
     }
@@ -57,7 +57,7 @@ public class SpaceshipSettings implements Named
         return name;
     }
 
-    public void name(final String name)
+    public void name(String name)
     {
         this.name = name;
     }

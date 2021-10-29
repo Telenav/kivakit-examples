@@ -24,13 +24,13 @@ public class Spaceship extends BaseComponent
     public void startAttack()
     {
         // Get database from global lookup
-        final var database = lookup(QuantumDatabase.class);
+        var database = lookup(QuantumDatabase.class);
 
         // and launch an attack.
         launch(database.retrieveAttackPlan());
     }
 
-    private void launch(final AttackPlan plan)
+    private void launch(AttackPlan plan)
     {
         Message.println("Launching $", plan);
     }

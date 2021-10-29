@@ -7,6 +7,7 @@
 package com.telenav.kivakit.examples.microservice;
 
 import com.telenav.kivakit.kernel.language.values.version.Version;
+import com.telenav.kivakit.kernel.messaging.Listener;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.MicroserviceMetadata;
 import com.telenav.kivakit.microservice.protocols.grpc.MicroserviceGrpcService;
@@ -18,7 +19,7 @@ import com.telenav.kivakit.microservice.protocols.grpc.MicroserviceGrpcService;
  */
 public class DivisionMicroservice extends Microservice
 {
-    public static void main(final String[] arguments)
+    public static void main(String[] arguments)
     {
         new DivisionMicroservice().run(arguments);
     }
@@ -32,7 +33,7 @@ public class DivisionMicroservice extends Microservice
         return new MicroserviceMetadata()
                 .withName("division-microservice")
                 .withDescription("Example microservice performing arithmetic division")
-                .withVersion(Version.parse("1.0"));
+                .withVersion(Version.parse(Listener.none(), "1.0"));
     }
 
     @Override
@@ -44,6 +45,7 @@ public class DivisionMicroservice extends Microservice
     /**
      * @return The REST application for this microservice
      */
+    @Override
     public DivisionRestService onNewRestService()
     {
         return new DivisionRestService(this);

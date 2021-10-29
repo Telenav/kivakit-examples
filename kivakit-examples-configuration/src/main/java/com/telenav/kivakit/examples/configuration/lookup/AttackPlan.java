@@ -20,10 +20,10 @@ public class AttackPlan
     {
     }
 
-    protected AttackPlan(final AttackPlan that)
+    protected AttackPlan(AttackPlan that)
     {
-        this.planet = that.planet;
-        this.when = that.when;
+        planet = that.planet;
+        when = that.when;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class AttackPlan
      */
     public void waitForAttackTime()
     {
-        final var waitTime = this.when.fromNow();
+        var waitTime = when.fromNow();
         Message.println("Waiting until $ to launch $", when, this);
         waitTime.sleep();
     }
@@ -45,9 +45,9 @@ public class AttackPlan
     /**
      * Notice that this method is package private
      */
-    AttackPlan withPlanet(final String planet)
+    AttackPlan withPlanet(String planet)
     {
-        final var copy = new AttackPlan(this);
+        var copy = new AttackPlan(this);
         copy.planet = planet;
         return copy;
     }
@@ -55,9 +55,9 @@ public class AttackPlan
     /**
      * Notice that this method is package private
      */
-    AttackPlan withWhen(final Time when)
+    AttackPlan withWhen(Time when)
     {
-        final var copy = new AttackPlan(this);
+        var copy = new AttackPlan(this);
         copy.when = when;
         return copy;
     }

@@ -20,7 +20,7 @@ import com.telenav.kivakit.configuration.lookup.Registry;
  */
 public class RegistryExample extends BaseComponent
 {
-    public static void main(final String[] arguments)
+    public static void main(String[] arguments)
     {
         new RegistryExample().run();
     }
@@ -31,11 +31,11 @@ public class RegistryExample extends BaseComponent
     public void run()
     {
         // Register the quantum database containing alien information,
-        final var database = new QuantumDatabase();
+        var database = new QuantumDatabase();
         register(database);
 
         // then create Zim with his spaceship and launch an attack.
-        final var zim = new Alien(new Spaceship());
+        var zim = new Alien(new Spaceship());
         zim.attack();
     }
 }
