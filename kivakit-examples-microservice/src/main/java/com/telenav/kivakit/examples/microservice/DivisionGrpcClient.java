@@ -29,7 +29,7 @@ public class DivisionGrpcClient extends Application
         var port = Host.local().http(requireSettings(MicroserviceSettings.class).grpcPort());
 
         // create a client to talk to the microservice REST API,
-        var client = listenTo(new MicroserviceGrpcClient(port, Version.parse("1.0")));
+        var client = listenTo(new MicroserviceGrpcClient(port, Version.parse(this, "1.0")));
 
         // then issue a divide request and read the response,
         var response = client.request("divide", new DivisionRequest(9, 3), DivisionResponse.class);

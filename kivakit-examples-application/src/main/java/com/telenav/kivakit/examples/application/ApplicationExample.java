@@ -26,12 +26,12 @@ public class ApplicationExample extends Application
     }
 
     private final ArgumentParser<File> INPUT =
-            fileArgumentParser("Input text file")
+            fileArgumentParser(this, "Input text file")
                     .required()
                     .build();
 
     private final SwitchParser<Boolean> SHOW_FILE_SIZE =
-            booleanSwitchParser("show-file-size", "Show the file size in bytes")
+            booleanSwitchParser(this, "show-file-size", "Show the file size in bytes")
                     .optional()
                     .defaultValue(false)
                     .build();
@@ -71,7 +71,7 @@ public class ApplicationExample extends Application
     @Override
     protected ObjectSet<SwitchParser<?>> switchParsers()
     {
-        return ObjectSet.of(SHOW_FILE_SIZE);
+        return ObjectSet.objectSet(SHOW_FILE_SIZE);
     }
 
     private void showFile(File input)

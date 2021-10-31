@@ -32,7 +32,7 @@ public class DivisionMicroservice extends Microservice
         return new MicroserviceMetadata()
                 .withName("division-microservice")
                 .withDescription("Example microservice performing arithmetic division")
-                .withVersion(Version.parse("1.0"));
+                .withVersion(Version.parse(this, "1.0"));
     }
 
     @Override
