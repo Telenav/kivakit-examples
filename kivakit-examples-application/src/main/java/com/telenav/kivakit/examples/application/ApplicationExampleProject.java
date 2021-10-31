@@ -21,6 +21,6 @@ public class ApplicationExampleProject extends Project
     @Override
     public ObjectSet<Project> dependencies()
     {
-        return ObjectSet.of(ResourceProject.get());
+        return ObjectSet.objectSet(ResourceProject.get());
     }
 }

@@ -5,7 +5,6 @@ import com.telenav.kivakit.examples.microservice.requests.DivisionRequest;
 import com.telenav.kivakit.examples.microservice.requests.DivisionRequest.DivisionResponse;
 import com.telenav.kivakit.kernel.language.strings.AsciiArt;
 import com.telenav.kivakit.kernel.language.values.version.Version;
-import com.telenav.kivakit.kernel.messaging.Listener;
 import com.telenav.kivakit.kernel.messaging.Message;
 import com.telenav.kivakit.microservice.MicroserviceSettings;
 import com.telenav.kivakit.microservice.protocols.grpc.MicroserviceGrpcClient;
@@ -30,7 +29,7 @@ public class DivisionGrpcClient extends Application
         var port = Host.local().http(requireSettings(MicroserviceSettings.class).grpcPort());
 
         // create a client to talk to the microservice REST API,
-        var client = listenTo(new MicroserviceGrpcClient(port, Version.parse(Listener.none(), "1.0")));
+        var client = listenTo(new MicroserviceGrpcClient(port, Version.parse(this, "1.0")));
 
         // then issue a divide request and read the response,
         var response = client.request("divide", new DivisionRequest(9, 3), DivisionResponse.class);
