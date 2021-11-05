@@ -1,0 +1,1 @@
+HTML and graphic assets for the microservice should be placed in this folder
