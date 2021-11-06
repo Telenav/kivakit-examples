@@ -4,10 +4,6 @@ open module kivakit.examples.microservice
     requires kivakit.microservice;
 
     // Wicket
-    requires wicket.extensions;
-    requires wicket.jquery.ui;
-    requires wicket.jquery.ui.core;
-    requires wicket.util;
     requires kivakit.protostuff.merged;
     requires gson;
 
