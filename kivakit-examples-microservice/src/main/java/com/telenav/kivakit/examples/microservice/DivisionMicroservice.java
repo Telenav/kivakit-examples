@@ -16,7 +16,7 @@ import com.telenav.kivakit.microservice.protocols.grpc.MicroserviceGrpcService;
  *
  * @author jonathanl (shibo)
  */
-public class DivisionMicroservice extends Microservice
+public class DivisionMicroservice extends Microservice<String>
 {
     public static void main(String[] arguments)
     {
@@ -48,5 +48,11 @@ public class DivisionMicroservice extends Microservice
     public DivisionRestService onNewRestService()
     {
         return new DivisionRestService(this);
+    }
+
+    @Override
+    protected String onInitializeClusterMember()
+    {
+        return "ignored";
     }
 }
