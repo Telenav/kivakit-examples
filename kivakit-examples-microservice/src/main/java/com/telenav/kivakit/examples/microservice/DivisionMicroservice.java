@@ -51,7 +51,7 @@ public class DivisionMicroservice extends Microservice<String>
     }
 
     @Override
-    protected String onInitializeClusterMember()
+    protected String onCreateMember()
     {
         return "ignored";
     }
