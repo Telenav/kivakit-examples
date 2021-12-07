@@ -8,6 +8,7 @@ package com.telenav.kivakit.examples.microservice;
 
 import com.telenav.kivakit.kernel.language.values.version.Version;
 import com.telenav.kivakit.microservice.Microservice;
+import com.telenav.kivakit.microservice.MicroserviceClusterMember;
 import com.telenav.kivakit.microservice.MicroserviceMetadata;
 import com.telenav.kivakit.microservice.protocols.grpc.MicroserviceGrpcService;
 
@@ -51,8 +52,8 @@ public class DivisionMicroservice extends Microservice<String>
     }
 
     @Override
-    protected String onCreateMember()
+    protected MicroserviceClusterMember<String> onCreateMember()
     {
-        return "ignored";
+        return new MicroserviceClusterMember<>("ignored");
     }
 }
