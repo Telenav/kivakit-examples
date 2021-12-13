@@ -50,10 +50,4 @@ public class DivisionMicroservice extends Microservice<String>
     {
         return new DivisionRestService(this);
     }
-
-    @Override
-    protected MicroserviceClusterMember<String> onCreateMember()
-    {
-        return new MicroserviceClusterMember<>("ignored");
-    }
 }

@@ -31,7 +31,7 @@ public class DivisionGrpcService extends MicroserviceGrpcService
     /**
      * Construct and mount requests
      */
-    public DivisionGrpcService(Microservice microservice)
+    public DivisionGrpcService(Microservice<?> microservice)
     {
         super(microservice);
     }

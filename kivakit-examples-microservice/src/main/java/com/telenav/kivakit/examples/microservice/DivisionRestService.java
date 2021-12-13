@@ -34,7 +34,7 @@ public class DivisionRestService extends MicroserviceRestService
     /**
      * Construct and mount requests
      */
-    public DivisionRestService(Microservice microservice)
+    public DivisionRestService(Microservice<?> microservice)
     {
         super(microservice);
     }
