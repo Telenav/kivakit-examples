@@ -33,7 +33,7 @@ public class SettingsExample extends BaseComponent
         settings.missileLaunchers(7);
 
         // and register them for any interested components
-        registerSettings(settings);
+        registerSettingsObject(settings);
 
         // then launch a new spaceship.
         new Spaceship().launch();

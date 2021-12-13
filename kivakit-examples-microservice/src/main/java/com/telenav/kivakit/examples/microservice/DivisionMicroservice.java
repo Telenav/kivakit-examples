@@ -8,6 +8,7 @@ package com.telenav.kivakit.examples.microservice;
 
 import com.telenav.kivakit.kernel.language.values.version.Version;
 import com.telenav.kivakit.microservice.Microservice;
+import com.telenav.kivakit.microservice.MicroserviceClusterMember;
 import com.telenav.kivakit.microservice.MicroserviceMetadata;
 import com.telenav.kivakit.microservice.protocols.grpc.MicroserviceGrpcService;
 
@@ -16,7 +17,7 @@ import com.telenav.kivakit.microservice.protocols.grpc.MicroserviceGrpcService;
  *
  * @author jonathanl (shibo)
  */
-public class DivisionMicroservice extends Microservice
+public class DivisionMicroservice extends Microservice<String>
 {
     public static void main(String[] arguments)
     {
@@ -48,5 +49,11 @@ public class DivisionMicroservice extends Microservice
     public DivisionRestService onNewRestService()
     {
         return new DivisionRestService(this);
+    }
+
+    @Override
+    protected MicroserviceClusterMember<String> onCreateMember()
+    {
+        return new MicroserviceClusterMember<>("ignored");
     }
 }
