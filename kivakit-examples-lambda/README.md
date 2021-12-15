@@ -4,9 +4,9 @@
 
 [//]: # (end-user-text)
 
-# kivakit-examples-microservice 1.1.3-SNAPSHOT &nbsp;&nbsp; <img src="https://www.kivakit.org/images/kivakit-64.png" srcset="https://www.kivakit.org/images/kivakit-64-2x.png 2x"/>
+# kivakit-examples-lambda 1.2.0 &nbsp;&nbsp; <img src="https://www.kivakit.org/images/gears-32.png" srcset="https://www.kivakit.org/images/gears-32-2x.png 2x"/>
 
-Example using kivakit-microservice
+Example using AWS Lambda support in kivakit-microservice
 
 <img src="https://www.kivakit.org/images/horizontal-line-512.png" srcset="https://www.kivakit.org/images/horizontal-line-512-2x.png 2x"/>
 
@@ -20,14 +20,14 @@ Example using kivakit-microservice
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://www.kivakit.org/images/dependencies-32.png" srcset="https://www.kivakit.org/images/dependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.1.3-SNAPSHOT/lexakai/kivakit-examples/kivakit-examples-microservice/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.2.0/lexakai/kivakit-examples/kivakit-examples-lambda/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
-        <artifactId>kivakit-examples-microservice</artifactId>
-        <version>1.1.3-SNAPSHOT</version>
+        <artifactId>kivakit-examples-lambda</artifactId>
+        <version>1.2.0</version>
     </dependency>
 
 <img src="https://www.kivakit.org/images/horizontal-line-128.png" srcset="https://www.kivakit.org/images/horizontal-line-128-2x.png 2x"/>
@@ -48,30 +48,25 @@ None
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://www.kivakit.org/images/box-32.png" srcset="https://www.kivakit.org/images/box-32-2x.png 2x"/>
 
-[*com.telenav.kivakit.examples.microservice*](https://www.kivakit.org/1.1.3-SNAPSHOT/lexakai/kivakit-examples/kivakit-examples-microservice/documentation/diagrams/com.telenav.kivakit.examples.microservice.svg)  
-[*com.telenav.kivakit.examples.microservice.requests*](https://www.kivakit.org/1.1.3-SNAPSHOT/lexakai/kivakit-examples/kivakit-examples-microservice/documentation/diagrams/com.telenav.kivakit.examples.microservice.requests.svg)
+[*com.telenav.kivakit.examples.lambda*](https://www.kivakit.org/1.2.0/lexakai/kivakit-examples/kivakit-examples-lambda/documentation/diagrams/com.telenav.kivakit.examples.lambda.svg)  
+[*com.telenav.kivakit.examples.lambda.requests*](https://www.kivakit.org/1.2.0/lexakai/kivakit-examples/kivakit-examples-lambda/documentation/diagrams/com.telenav.kivakit.examples.lambda.requests.svg)
 
 <img src="https://www.kivakit.org/images/horizontal-line-128.png" srcset="https://www.kivakit.org/images/horizontal-line-128-2x.png 2x"/>
 
 ### Javadoc <a name="javadoc"></a> &nbsp;&nbsp; <img src="https://www.kivakit.org/images/books-32.png" srcset="https://www.kivakit.org/images/books-32-2x.png 2x"/>
 
-Javadoc coverage for this project is 56.3%.  
+Javadoc coverage for this project is 50.0%.  
   
-&nbsp; &nbsp; <img src="https://www.kivakit.org/images/meter-60-96.png" srcset="https://www.kivakit.org/images/meter-60-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://www.kivakit.org/images/meter-50-96.png" srcset="https://www.kivakit.org/images/meter-50-96-2x.png 2x"/>
 
 
 
 
 | Class | Documentation Sections |
 |---|---|
-| [*DivisionGrpcClient*](https://www.kivakit.org/1.1.3-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/DivisionGrpcClient.html) |  |  
-| [*DivisionGrpcService*](https://www.kivakit.org/1.1.3-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/DivisionGrpcService.html) |  |  
-| [*DivisionMicroservice*](https://www.kivakit.org/1.1.3-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/DivisionMicroservice.html) |  |  
-| [*DivisionMicroserviceSettings*](https://www.kivakit.org/1.1.3-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/DivisionMicroserviceSettings.html) |  |  
-| [*DivisionRequest*](https://www.kivakit.org/1.1.3-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/requests/DivisionRequest.html) |  |  
-| [*DivisionRequest.DivisionResponse*](https://www.kivakit.org/1.1.3-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/requests/DivisionRequest.DivisionResponse.html) |  |  
-| [*DivisionRestClient*](https://www.kivakit.org/1.1.3-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/DivisionRestClient.html) |  |  
-| [*DivisionRestService*](https://www.kivakit.org/1.1.3-SNAPSHOT/javadoc/kivakit-examples/com/telenav/kivakit/examples/microservice/DivisionRestService.html) |  |  
+| [*DivisionMicroservice*](https://www.kivakit.org/1.2.0/javadoc/kivakit-examples/com/telenav/kivakit/examples/lambda/DivisionMicroservice.html) |  |  
+| [*DivisionRequest*](https://www.kivakit.org/1.2.0/javadoc/kivakit-examples/com/telenav/kivakit/examples/lambda/requests/DivisionRequest.html) |  |  
+| [*DivisionRequest.DivisionResponse*](https://www.kivakit.org/1.2.0/javadoc/kivakit-examples/com/telenav/kivakit/examples/lambda/requests/DivisionRequest.DivisionResponse.html) |  |  
 
 [//]: # (start-user-text)
 
