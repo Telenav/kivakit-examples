@@ -5,6 +5,7 @@ import com.telenav.kivakit.kernel.language.values.version.Version;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.MicroserviceMetadata;
 import com.telenav.kivakit.microservice.microservlet.MicroservletRequest;
+import com.telenav.kivakit.microservice.protocols.lambda.MicroserviceLambdaService;
 
 import java.util.Set;
 
@@ -13,12 +14,6 @@ public class DivisionMicroservice extends Microservice<Void>
     public static void main(String[] arguments)
     {
         new DivisionMicroservice().run(arguments);
-    }
-
-    @Override
-    public Set<Class<? extends MicroservletRequest>> allowedLambdaRequests()
-    {
-        return Set.of(DivisionRequest.class);
     }
 
     /**
@@ -31,5 +26,11 @@ public class DivisionMicroservice extends Microservice<Void>
                 .withName("division-microservice")
                 .withDescription("Example microservice performing arithmetic division")
                 .withVersion(Version.parse(this, "1.0"));
+    }
+
+    @Override
+    public MicroserviceLambdaService onNewLambdaService()
+    {
+        return new DivisionLambdaService(this);
     }
 }
