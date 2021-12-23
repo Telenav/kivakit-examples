@@ -55,7 +55,7 @@ None
 
 ### Javadoc <a name="javadoc"></a> &nbsp;&nbsp; <img src="https://www.kivakit.org/images/books-32.png" srcset="https://www.kivakit.org/images/books-32-2x.png 2x"/>
 
-Javadoc coverage for this project is 50.0%.  
+Javadoc coverage for this project is 45.8%.  
   
 &nbsp; &nbsp; <img src="https://www.kivakit.org/images/meter-50-96.png" srcset="https://www.kivakit.org/images/meter-50-96-2x.png 2x"/>
 
@@ -64,6 +64,7 @@ Javadoc coverage for this project is 50.0%.
 
 | Class | Documentation Sections |
 |---|---|
+| [*DivisionLambdaService*](https://www.kivakit.org/1.2.1/javadoc/kivakit-examples/com/telenav/kivakit/examples/lambda/DivisionLambdaService.html) |  |  
 | [*DivisionMicroservice*](https://www.kivakit.org/1.2.1/javadoc/kivakit-examples/com/telenav/kivakit/examples/lambda/DivisionMicroservice.html) |  |  
 | [*DivisionRequest*](https://www.kivakit.org/1.2.1/javadoc/kivakit-examples/com/telenav/kivakit/examples/lambda/requests/DivisionRequest.html) |  |  
 | [*DivisionRequest.DivisionResponse*](https://www.kivakit.org/1.2.1/javadoc/kivakit-examples/com/telenav/kivakit/examples/lambda/requests/DivisionRequest.DivisionResponse.html) |  |  
