@@ -18,7 +18,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-examples 1.2.1 &nbsp;&nbsp; <img src="https://www.kivakit.org/images/kivakit-64.png" srcset="https://www.kivakit.org/images/kivakit-64-2x.png 2x"/>
+# kivakit-examples 1.2.2-SNAPSHOT &nbsp;&nbsp; <img src="https://www.kivakit.org/images/kivakit-64.png" srcset="https://www.kivakit.org/images/kivakit-64-2x.png 2x"/>
 
 This repository contains working example code to show what KivaKit can do.
 
