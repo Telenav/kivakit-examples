@@ -18,8 +18,6 @@
 
 package com.telenav.kivakit.examples.microservice.requests;
 
-import com.dyuproject.protostuff.Tag;
-import com.google.gson.annotations.Expose;
 import com.telenav.kivakit.kernel.data.validation.BaseValidator;
 import com.telenav.kivakit.kernel.data.validation.ValidationType;
 import com.telenav.kivakit.kernel.data.validation.Validator;
@@ -44,12 +42,6 @@ public class DivisionRequest extends BaseMicroservletRequest
     @OpenApiIncludeType(description = "Response to a divide request")
     public class DivisionResponse extends BaseMicroservletResponse
     {
-        @Tag(1)
-        @Expose
-        @OpenApiIncludeMember(description = "The result of dividing the dividend by the divisor",
-                              example = "42")
-        int quotient;
-
         public DivisionResponse()
         {
             quotient = dividend / divisor;
@@ -66,16 +58,16 @@ public class DivisionRequest extends BaseMicroservletRequest
         {
             return Validator.NULL;
         }
+
+        @OpenApiIncludeMember(description = "The result of dividing the dividend by the divisor",
+                              example = "42")
+        int quotient;
     }
 
-    @Tag(1)
-    @Expose
     @OpenApiIncludeMember(description = "The number to be divided",
                           example = "84")
     private int dividend;
 
-    @Tag(2)
-    @Expose
     @OpenApiIncludeMember(description = "The number to divide the dividend by (dividend / divisor)",
                           example = "2")
     private int divisor;
