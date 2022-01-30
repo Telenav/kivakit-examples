@@ -42,21 +42,10 @@ public class DivisionRequest extends BaseMicroservletRequest
     @OpenApiIncludeType(description = "Response to a divide request")
     public class DivisionResponse extends BaseMicroservletResponse
     {
-        public DivisionResponse()
+        @Override
+        public void prepare()
         {
             quotient = dividend / divisor;
-        }
-
-        @Override
-        public String toString()
-        {
-            return Integer.toString(quotient);
-        }
-
-        @Override
-        public Validator validator(ValidationType type)
-        {
-            return Validator.NULL;
         }
 
         @OpenApiIncludeMember(description = "The result of dividing the dividend by the divisor",
@@ -84,9 +73,9 @@ public class DivisionRequest extends BaseMicroservletRequest
 
     @Override
     @OpenApiRequestHandler(summary = "Divides two numbers")
-    public DivisionResponse onRequest()
+    public DivisionResponse onRespond()
     {
-        return listenTo(new DivisionResponse());
+        return new DivisionResponse();
     }
 
     @Override
