@@ -9,7 +9,6 @@ package com.telenav.kivakit.examples.microservice;
 import com.telenav.kivakit.kernel.language.values.version.Version;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.MicroserviceMetadata;
-import com.telenav.kivakit.microservice.protocols.grpc.MicroserviceGrpcService;
 
 /**
  * Microservice example, including REST and Swagger support.
@@ -32,13 +31,7 @@ public class DivisionMicroservice extends Microservice<Void>
         return new MicroserviceMetadata()
                 .withName("division-microservice")
                 .withDescription("Example microservice performing arithmetic division")
-                .withVersion(Version.parse(this, "1.0"));
-    }
-
-    @Override
-    public MicroserviceGrpcService onNewGrpcService()
-    {
-        return new DivisionGrpcService(this);
+                .withVersion(Version.of(1, 0));
     }
 
     /**

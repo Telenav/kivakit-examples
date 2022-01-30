@@ -31,9 +31,6 @@ import static com.telenav.kivakit.microservice.protocols.rest.MicroserviceRestSe
  */
 public class DivisionRestService extends MicroserviceRestService
 {
-    /**
-     * Construct and mount requests
-     */
     public DivisionRestService(Microservice<?> microservice)
     {
         super(microservice);
@@ -42,6 +39,6 @@ public class DivisionRestService extends MicroserviceRestService
     @Override
     public void onInitialize()
     {
-        mount("divide", POST, DivisionRequest.class);
+        mount("/api/1.0/divide", POST, DivisionRequest.class);
     }
 }
