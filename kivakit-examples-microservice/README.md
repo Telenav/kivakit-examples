@@ -20,7 +20,7 @@ Example using kivakit-microservice
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://www.kivakit.org/images/dependencies-32.png" srcset="https://www.kivakit.org/images/dependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.3.1-SNAPSHOT/lexakai/kivakit-examples/kivakit-examples-microservice//documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.3.1-SNAPSHOT/lexakai/kivakit-examples/kivakit-examples-microservice/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
@@ -48,8 +48,8 @@ None
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://www.kivakit.org/images/box-32.png" srcset="https://www.kivakit.org/images/box-32-2x.png 2x"/>
 
-[*com.telenav.kivakit.examples.microservice*](https://www.kivakit.org/1.3.1-SNAPSHOT/lexakai/kivakit-examples/kivakit-examples-microservice//documentation/diagrams/com.telenav.kivakit.examples.microservice.svg)  
-[*com.telenav.kivakit.examples.microservice.requests*](https://www.kivakit.org/1.3.1-SNAPSHOT/lexakai/kivakit-examples/kivakit-examples-microservice//documentation/diagrams/com.telenav.kivakit.examples.microservice.requests.svg)
+[*com.telenav.kivakit.examples.microservice*](https://www.kivakit.org/1.3.1-SNAPSHOT/lexakai/kivakit-examples/kivakit-examples-microservice/documentation/diagrams/com.telenav.kivakit.examples.microservice.svg)  
+[*com.telenav.kivakit.examples.microservice.requests*](https://www.kivakit.org/1.3.1-SNAPSHOT/lexakai/kivakit-examples/kivakit-examples-microservice/documentation/diagrams/com.telenav.kivakit.examples.microservice.requests.svg)
 
 <img src="https://www.kivakit.org/images/horizontal-line-128.png" srcset="https://www.kivakit.org/images/horizontal-line-128-2x.png 2x"/>
 
