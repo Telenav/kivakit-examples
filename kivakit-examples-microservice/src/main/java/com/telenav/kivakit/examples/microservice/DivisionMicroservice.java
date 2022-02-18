@@ -9,6 +9,7 @@ package com.telenav.kivakit.examples.microservice;
 import com.telenav.kivakit.kernel.language.values.version.Version;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.MicroserviceMetadata;
+import com.telenav.kivakit.microservice.web.MicroserviceWebApplication;
 
 /**
  * Microservice example, including REST and Swagger support.
@@ -41,5 +42,11 @@ public class DivisionMicroservice extends Microservice<Void>
     public DivisionRestService onNewRestService()
     {
         return new DivisionRestService(this);
+    }
+
+    @Override
+    public MicroserviceWebApplication onNewWebApplication()
+    {
+        return new DivisionWebApplication(this);
     }
 }
