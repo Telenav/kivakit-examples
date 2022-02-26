@@ -10,16 +10,16 @@ import com.telenav.kivakit.kernel.language.strings.formatting.ObjectFormatter;
 public class SpaceshipSettings implements Named
 {
     @KivaKitIncludeProperty
-    private String name;
+    private boolean airConditioning;
 
     @KivaKitIncludeProperty
     private boolean cruiseControl;
 
     @KivaKitIncludeProperty
-    private boolean airConditioning;
+    private int missileLaunchers;
 
     @KivaKitIncludeProperty
-    private int missileLaunchers;
+    private String name;
 
     public boolean airConditioning()
     {
