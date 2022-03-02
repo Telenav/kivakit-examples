@@ -1,7 +1,7 @@
 package com.telenav.kivakit.examples.configuration.lookup;
 
-import com.telenav.kivakit.kernel.language.time.Time;
-import com.telenav.kivakit.kernel.messaging.Message;
+import com.telenav.kivakit.language.time.Time;
+import com.telenav.kivakit.core.messaging.Message;
 
 /**
  * Defines when and where an alien attack should occur.

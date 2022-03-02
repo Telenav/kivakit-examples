@@ -1,8 +1,8 @@
 package com.telenav.kivakit.examples.configuration.settings.simple;
 
 import com.telenav.kivakit.interfaces.naming.Named;
-import com.telenav.kivakit.kernel.language.reflection.property.KivaKitIncludeProperty;
-import com.telenav.kivakit.kernel.language.strings.formatting.ObjectFormatter;
+import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.strings.formatting.ObjectFormatter;
 
 /**
  * Settings for spaceships participating in Operation Impending Doom III

@@ -6,7 +6,7 @@
 
 package com.telenav.kivakit.examples.microservice;
 
-import com.telenav.kivakit.kernel.language.values.version.Version;
+import com.telenav.kivakit.language.version.Version;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.MicroserviceMetadata;
 

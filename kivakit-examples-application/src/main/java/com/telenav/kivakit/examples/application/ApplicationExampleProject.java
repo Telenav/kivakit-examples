@@ -1,8 +1,8 @@
 package com.telenav.kivakit.examples.application;
 
-import com.telenav.kivakit.kernel.language.collections.set.ObjectSet;
-import com.telenav.kivakit.kernel.language.objects.Lazy;
-import com.telenav.kivakit.kernel.project.Project;
+import com.telenav.kivakit.collections.set.ObjectSet;
+import com.telenav.kivakit.core.object.Lazy;
+import com.telenav.kivakit.coreproject.Project;
 import com.telenav.kivakit.resource.ResourceProject;
 
 public class ApplicationExampleProject extends Project

@@ -4,12 +4,12 @@ import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.commandline.ArgumentParser;
 import com.telenav.kivakit.commandline.SwitchParser;
 import com.telenav.kivakit.filesystem.File;
-import com.telenav.kivakit.kernel.language.collections.set.ObjectSet;
-import com.telenav.kivakit.kernel.language.values.count.Count;
+import com.telenav.kivakit.collections.set.ObjectSet;
+import com.telenav.kivakit.language.count.Count;
 
 import java.util.List;
 
-import static com.telenav.kivakit.commandline.SwitchParser.booleanSwitchParser;
+import static com.telenav.kivakit.commandline.SwitchParsers.booleanSwitchParser;
 import static com.telenav.kivakit.filesystem.File.fileArgumentParser;
 
 /**

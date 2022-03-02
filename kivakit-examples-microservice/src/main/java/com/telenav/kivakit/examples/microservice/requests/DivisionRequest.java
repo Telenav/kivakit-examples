@@ -18,9 +18,9 @@
 
 package com.telenav.kivakit.examples.microservice.requests;
 
-import com.telenav.kivakit.kernel.data.validation.BaseValidator;
-import com.telenav.kivakit.kernel.data.validation.ValidationType;
-import com.telenav.kivakit.kernel.data.validation.Validator;
+import com.telenav.kivakit.coredata.validation.BaseValidator;
+import com.telenav.kivakit.coredata.validation.ValidationType;
+import com.telenav.kivakit.coredata.validation.Validator;
 import com.telenav.kivakit.microservice.microservlet.BaseMicroservletRequest;
 import com.telenav.kivakit.microservice.microservlet.BaseMicroservletResponse;
 import com.telenav.kivakit.microservice.microservlet.MicroservletRequest;

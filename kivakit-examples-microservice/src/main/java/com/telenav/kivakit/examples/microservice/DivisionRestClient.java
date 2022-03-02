@@ -2,9 +2,9 @@ package com.telenav.kivakit.examples.microservice;
 
 import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.examples.microservice.requests.DivisionRequest;
-import com.telenav.kivakit.kernel.language.strings.AsciiArt;
-import com.telenav.kivakit.kernel.language.values.version.Version;
-import com.telenav.kivakit.kernel.messaging.Message;
+import com.telenav.kivakit.core.language.strings.AsciiArt;
+import com.telenav.kivakit.language.version.Version;
+import com.telenav.kivakit.core.messaging.Message;
 import com.telenav.kivakit.microservice.MicroserviceSettings;
 import com.telenav.kivakit.microservice.protocols.rest.MicroserviceRestClient;
 import com.telenav.kivakit.network.core.Host;
