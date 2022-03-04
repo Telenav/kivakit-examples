@@ -1,6 +1,6 @@
 package com.telenav.kivakit.examples.application;
 
-import com.telenav.kivakit.collections.set.ObjectSet;
+import com.telenav.kivakit.core.collections.set.ObjectSet;
 import com.telenav.kivakit.core.object.Lazy;
 import com.telenav.kivakit.coreproject.Project;
 import com.telenav.kivakit.resource.ResourceProject;

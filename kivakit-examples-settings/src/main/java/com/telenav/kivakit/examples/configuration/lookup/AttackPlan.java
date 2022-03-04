@@ -1,6 +1,6 @@
 package com.telenav.kivakit.examples.configuration.lookup;
 
-import com.telenav.kivakit.language.time.Time;
+import com.telenav.kivakit.core.time.Time;
 import com.telenav.kivakit.core.messaging.Message;
 
 /**

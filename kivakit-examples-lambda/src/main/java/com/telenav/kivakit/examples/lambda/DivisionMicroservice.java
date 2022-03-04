@@ -1,6 +1,6 @@
 package com.telenav.kivakit.examples.lambda;
 
-import com.telenav.kivakit.language.version.Version;
+import com.telenav.kivakit.core.version.Version;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.MicroserviceMetadata;
 import com.telenav.kivakit.microservice.protocols.lambda.MicroserviceLambdaService;

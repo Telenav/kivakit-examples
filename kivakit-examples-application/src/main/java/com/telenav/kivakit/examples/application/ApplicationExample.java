@@ -4,8 +4,8 @@ import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.commandline.ArgumentParser;
 import com.telenav.kivakit.commandline.SwitchParser;
 import com.telenav.kivakit.filesystem.File;
-import com.telenav.kivakit.collections.set.ObjectSet;
-import com.telenav.kivakit.language.count.Count;
+import com.telenav.kivakit.core.collections.set.ObjectSet;
+import com.telenav.kivakit.core.value.count.Count;
 
 import java.util.List;
 

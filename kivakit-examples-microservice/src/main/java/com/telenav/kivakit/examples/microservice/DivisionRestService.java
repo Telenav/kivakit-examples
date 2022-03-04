@@ -19,7 +19,7 @@
 package com.telenav.kivakit.examples.microservice;
 
 import com.telenav.kivakit.examples.microservice.requests.DivisionRequest;
-import com.telenav.kivakit.language.version.Version;
+import com.telenav.kivakit.core.version.Version;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.protocols.rest.MicroserviceRestService;
 
