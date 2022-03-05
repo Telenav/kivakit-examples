@@ -3,8 +3,8 @@ package com.telenav.kivakit.examples.configuration.settings.simple;
 import com.telenav.kivakit.component.BaseComponent;
 import com.telenav.kivakit.settings.settings.Settings;
 
-import static com.telenav.kivakit.language.time.Duration.ONE_SECOND;
-import static com.telenav.kivakit.core.messaging.Message.println;
+import static com.telenav.kivakit.core.os.Console.println;
+import static com.telenav.kivakit.core.time.Duration.ONE_SECOND;
 
 /**
  * Spaceship implementation for Operation Impending Doom III.

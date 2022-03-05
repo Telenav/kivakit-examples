@@ -18,8 +18,8 @@
 
 package com.telenav.kivakit.examples.microservice;
 
-import com.telenav.kivakit.examples.microservice.requests.DivisionRequest;
 import com.telenav.kivakit.core.version.Version;
+import com.telenav.kivakit.examples.microservice.requests.DivisionRequest;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.protocols.rest.MicroserviceRestService;
 
@@ -40,7 +40,7 @@ public class DivisionRestService extends MicroserviceRestService
     @Override
     public void onInitialize()
     {
-        var v1 = Version.parse("1.0");
+        var v1 = Version.version("1.0");
 
         mount(v1, "/divide", POST, DivisionRequest.class);
     }

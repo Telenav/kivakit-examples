@@ -1,10 +1,10 @@
 package com.telenav.kivakit.examples.microservice;
 
 import com.telenav.kivakit.application.Application;
-import com.telenav.kivakit.examples.microservice.requests.DivisionRequest;
+import com.telenav.kivakit.core.os.Console;
 import com.telenav.kivakit.core.string.AsciiArt;
 import com.telenav.kivakit.core.version.Version;
-import com.telenav.kivakit.core.messaging.Message;
+import com.telenav.kivakit.examples.microservice.requests.DivisionRequest;
 import com.telenav.kivakit.microservice.MicroserviceSettings;
 import com.telenav.kivakit.microservice.protocols.rest.MicroserviceRestClient;
 import com.telenav.kivakit.network.core.Host;
@@ -27,7 +27,7 @@ public class DivisionRestClient extends Application
     {
         // Get the port and version of the microservice
         var port = Host.local().http(requireSettings(MicroserviceSettings.class).port());
-        var version = Version.parse(this, "1.0");
+        var version = Version.version("1.0");
 
         // create a client to talk to the microservice REST API,
         var client = listenTo(new MicroserviceRestClient(new DefaultGsonFactory(this), port, version));
@@ -37,6 +37,6 @@ public class DivisionRestClient extends Application
                 DivisionRequest.DivisionResponse.class, new DivisionRequest(9, 3));
 
         // then show the response
-        Message.println(AsciiArt.box("response => $", response));
+        Console.println(AsciiArt.box("response => $", response));
     }
 }

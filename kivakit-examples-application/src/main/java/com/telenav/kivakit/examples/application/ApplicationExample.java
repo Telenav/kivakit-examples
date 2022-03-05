@@ -3,9 +3,9 @@ package com.telenav.kivakit.examples.application;
 import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.commandline.ArgumentParser;
 import com.telenav.kivakit.commandline.SwitchParser;
-import com.telenav.kivakit.filesystem.File;
 import com.telenav.kivakit.core.collections.set.ObjectSet;
 import com.telenav.kivakit.core.value.count.Count;
+import com.telenav.kivakit.filesystem.File;
 
 import java.util.List;
 
@@ -35,11 +35,6 @@ public class ApplicationExample extends Application
                     .optional()
                     .defaultValue(false)
                     .build();
-
-    private ApplicationExample()
-    {
-        super(ApplicationExampleProject.get());
-    }
 
     @Override
     public String description()
