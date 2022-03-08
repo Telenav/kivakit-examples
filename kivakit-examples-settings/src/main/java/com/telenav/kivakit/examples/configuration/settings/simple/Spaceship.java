@@ -1,7 +1,7 @@
 package com.telenav.kivakit.examples.configuration.settings.simple;
 
 import com.telenav.kivakit.component.BaseComponent;
-import com.telenav.kivakit.settings.settings.Settings;
+import com.telenav.kivakit.settings.Settings;
 
 import static com.telenav.kivakit.core.os.Console.println;
 import static com.telenav.kivakit.core.time.Duration.ONE_SECOND;
