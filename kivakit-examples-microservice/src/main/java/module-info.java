@@ -2,7 +2,7 @@ open module kivakit.examples.microservice
 {
     // KivaKit
     requires kivakit.microservice;
-    requires gson;
+    requires kivakit.serialization.gson;
 
     // Module exports
     exports com.telenav.kivakit.examples.microservice;
