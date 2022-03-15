@@ -1,8 +1,8 @@
 package com.telenav.kivakit.examples.configuration.settings.simple;
 
-import com.telenav.kivakit.kernel.interfaces.naming.Named;
-import com.telenav.kivakit.kernel.language.reflection.property.KivaKitIncludeProperty;
-import com.telenav.kivakit.kernel.language.strings.formatting.ObjectFormatter;
+import com.telenav.kivakit.interfaces.naming.Named;
+import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.object.ObjectFormatter;
 
 /**
  * Settings for spaceships participating in Operation Impending Doom III
@@ -10,16 +10,16 @@ import com.telenav.kivakit.kernel.language.strings.formatting.ObjectFormatter;
 public class SpaceshipSettings implements Named
 {
     @KivaKitIncludeProperty
-    private String name;
+    private boolean airConditioning;
 
     @KivaKitIncludeProperty
     private boolean cruiseControl;
 
     @KivaKitIncludeProperty
-    private boolean airConditioning;
+    private int missileLaunchers;
 
     @KivaKitIncludeProperty
-    private int missileLaunchers;
+    private String name;
 
     public boolean airConditioning()
     {

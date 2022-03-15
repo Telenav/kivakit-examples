@@ -1,8 +1,8 @@
 package com.telenav.kivakit.examples.configuration.lookup;
 
-import com.telenav.kivakit.kernel.language.time.Time;
+import com.telenav.kivakit.core.time.Time;
 
-import static com.telenav.kivakit.kernel.language.time.Duration.ONE_MINUTE;
+import static com.telenav.kivakit.core.time.Duration.ONE_MINUTE;
 
 /**
  * Mock implementation of quantum storage for attack plans and other alien-related information.

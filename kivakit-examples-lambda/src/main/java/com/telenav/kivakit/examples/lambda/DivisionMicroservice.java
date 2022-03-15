@@ -1,6 +1,6 @@
 package com.telenav.kivakit.examples.lambda;
 
-import com.telenav.kivakit.kernel.language.values.version.Version;
+import com.telenav.kivakit.core.version.Version;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.MicroserviceMetadata;
 import com.telenav.kivakit.microservice.protocols.lambda.MicroserviceLambdaService;
@@ -21,7 +21,7 @@ public class DivisionMicroservice extends Microservice<Void>
         return new MicroserviceMetadata()
                 .withName("division-microservice")
                 .withDescription("Example microservice performing arithmetic division")
-                .withVersion(Version.parse(this, "1.0"));
+                .withVersion(Version.version("1.0"));
     }
 
     @Override

@@ -1,7 +1,8 @@
 package com.telenav.kivakit.examples.configuration.lookup;
 
-import com.telenav.kivakit.kernel.language.time.Time;
-import com.telenav.kivakit.kernel.messaging.Message;
+import com.telenav.kivakit.core.os.Console;
+import com.telenav.kivakit.core.string.Strings;
+import com.telenav.kivakit.core.time.Time;
 
 /**
  * Defines when and where an alien attack should occur.
@@ -29,7 +30,7 @@ public class AttackPlan
     @Override
     public String toString()
     {
-        return Message.format("attack on $ at $ (in $)", planet, when, when.fromNow());
+        return Strings.format("attack on $ at $ (in $)", planet, when, when.fromNow());
     }
 
     /**
@@ -38,7 +39,7 @@ public class AttackPlan
     public void waitForAttackTime()
     {
         var waitTime = when.fromNow();
-        Message.println("Waiting until $ to launch $", when, this);
+        Console.println("Waiting until $ to launch $", when, this);
         waitTime.sleep();
     }
 

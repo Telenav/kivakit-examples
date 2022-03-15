@@ -1,7 +1,7 @@
 package com.telenav.kivakit.examples.configuration.lookup;
 
 import com.telenav.kivakit.component.BaseComponent;
-import com.telenav.kivakit.configuration.lookup.Registry;
+import com.telenav.kivakit.core.registry.Registry;
 
 /**
  * Shows how to register a quantum database in the global {@link Registry}. The database is then used by {@link Alien}

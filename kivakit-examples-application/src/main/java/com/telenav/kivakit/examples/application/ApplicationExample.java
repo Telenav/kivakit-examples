@@ -3,13 +3,14 @@ package com.telenav.kivakit.examples.application;
 import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.commandline.ArgumentParser;
 import com.telenav.kivakit.commandline.SwitchParser;
+import com.telenav.kivakit.core.collections.set.ObjectSet;
+import com.telenav.kivakit.core.value.count.Count;
 import com.telenav.kivakit.filesystem.File;
-import com.telenav.kivakit.kernel.language.collections.set.ObjectSet;
-import com.telenav.kivakit.kernel.language.values.count.Count;
 
 import java.util.List;
 
-import static com.telenav.kivakit.commandline.SwitchParser.booleanSwitchParser;
+import static com.telenav.kivakit.commandline.SwitchParsers.booleanSwitchParser;
+import static com.telenav.kivakit.core.collections.set.ObjectSet.objectSet;
 import static com.telenav.kivakit.filesystem.File.fileArgumentParser;
 
 /**
@@ -35,11 +36,6 @@ public class ApplicationExample extends Application
                     .optional()
                     .defaultValue(false)
                     .build();
-
-    private ApplicationExample()
-    {
-        super(ApplicationExampleProject.get());
-    }
 
     @Override
     public String description()
@@ -71,7 +67,7 @@ public class ApplicationExample extends Application
     @Override
     protected ObjectSet<SwitchParser<?>> switchParsers()
     {
-        return ObjectSet.objectSet(SHOW_FILE_SIZE);
+        return objectSet(SHOW_FILE_SIZE);
     }
 
     private void showFile(File input)

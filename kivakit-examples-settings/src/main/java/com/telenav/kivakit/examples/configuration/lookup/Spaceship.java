@@ -1,9 +1,9 @@
 package com.telenav.kivakit.examples.configuration.lookup;
 
 import com.telenav.kivakit.component.BaseComponent;
+import com.telenav.kivakit.core.os.Console;
 import com.telenav.kivakit.examples.configuration.settings.simple.SettingsExample;
 import com.telenav.kivakit.examples.configuration.settings.simple.SpaceshipSettings;
-import com.telenav.kivakit.kernel.messaging.Message;
 
 /**
  * Spaceship implementation for Operation Impending Doom III.
@@ -32,6 +32,6 @@ public class Spaceship extends BaseComponent
 
     private void launch(AttackPlan plan)
     {
-        Message.println("Launching $", plan);
+        Console.println("Launching $", plan);
     }
 }
