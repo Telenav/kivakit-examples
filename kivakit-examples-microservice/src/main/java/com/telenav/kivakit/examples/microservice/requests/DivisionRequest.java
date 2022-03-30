@@ -43,7 +43,7 @@ public class DivisionRequest extends BaseMicroservletRequest
     public class DivisionResponse extends BaseMicroservletResponse
     {
         @Override
-        public void prepare()
+        public void prepareResponse()
         {
             quotient = dividend / divisor;
         }
@@ -75,7 +75,7 @@ public class DivisionRequest extends BaseMicroservletRequest
     @OpenApiRequestHandler(summary = "Divides two numbers")
     public DivisionResponse onRespond()
     {
-        return new DivisionResponse();
+        return listenTo(new DivisionResponse());
     }
 
     @Override
