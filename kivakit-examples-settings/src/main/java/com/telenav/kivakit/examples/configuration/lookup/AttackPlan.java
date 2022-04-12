@@ -30,7 +30,7 @@ public class AttackPlan
     @Override
     public String toString()
     {
-        return Strings.format("attack on $ at $ (in $)", planet, when, when.fromNow());
+        return Strings.format("attack on $ at $ (in $)", planet, when, when.until());
     }
 
     /**
@@ -38,7 +38,7 @@ public class AttackPlan
      */
     public void waitForAttackTime()
     {
-        var waitTime = when.fromNow();
+        var waitTime = when.until();
         Console.println("Waiting until $ to launch $", when, this);
         waitTime.sleep();
     }
@@ -46,6 +46,7 @@ public class AttackPlan
     /**
      * Notice that this method is package private
      */
+    @SuppressWarnings("SameParameterValue")
     AttackPlan withPlanet(String planet)
     {
         var copy = new AttackPlan(this);
