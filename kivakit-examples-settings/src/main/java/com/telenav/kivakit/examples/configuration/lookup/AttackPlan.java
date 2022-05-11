@@ -30,7 +30,7 @@ public class AttackPlan
     @Override
     public String toString()
     {
-        return Strings.format("attack on $ at $ (in $)", planet, when, when.until());
+        return Strings.format("attack on $ at $ (in $)", planet, when, when.untilNow());
     }
 
     /**
@@ -38,7 +38,7 @@ public class AttackPlan
      */
     public void waitForAttackTime()
     {
-        var waitTime = when.until();
+        var waitTime = when.untilNow();
         Console.println("Waiting until $ to launch $", when, this);
         waitTime.sleep();
     }
