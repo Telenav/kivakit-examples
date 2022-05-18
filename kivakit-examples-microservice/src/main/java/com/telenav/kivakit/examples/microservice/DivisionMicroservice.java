@@ -9,6 +9,7 @@ package com.telenav.kivakit.examples.microservice;
 import com.telenav.kivakit.core.version.Version;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.MicroserviceMetadata;
+import com.telenav.kivakit.microservice.protocols.grpc.MicroserviceGrpcService;
 
 /**
  * Microservice example, including REST and Swagger support.
@@ -35,7 +36,16 @@ public class DivisionMicroservice extends Microservice<Void>
     }
 
     /**
-     * @return The REST application for this microservice
+     * @return The GRPC service for this microservice
+     */
+    @Override
+    public MicroserviceGrpcService onNewGrpcService()
+    {
+        return new DivisionGrpcService(this);
+    }
+
+    /**
+     * @return The REST service for this microservice
      */
     @Override
     public DivisionRestService onNewRestService()
