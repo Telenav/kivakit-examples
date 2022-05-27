@@ -16,6 +16,7 @@
     </parent>
 
     <artifactId>kivakit-examples-application</artifactId>
+    <version>1.5.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -25,7 +26,7 @@
         <dependency>
             <groupId>com.telenav.kivakit</groupId>
             <artifactId>kivakit-application</artifactId>
-            <version>${kivakit.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.telenav.kivakit</groupId>
