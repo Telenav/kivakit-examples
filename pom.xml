@@ -14,7 +14,7 @@
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>superpom</artifactId>
         <version>1.5.1-SNAPSHOT</version>
-        <relativePath>../superpom</relativePath>
+        <relativePath>../kivakit/superpom</relativePath>
     </parent>
 
     <artifactId>kivakit-examples</artifactId>
