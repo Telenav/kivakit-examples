@@ -17,8 +17,9 @@
 
     <parent>
         <groupId>com.telenav.kivakit</groupId>
-        <artifactId>kivakit-examples</artifactId>
+        <artifactId>kivakit</artifactId>
         <version>1.5.1-SNAPSHOT</version>
+        <relativePath/>
     </parent>
 
     <artifactId>kivakit-examples-settings</artifactId>
