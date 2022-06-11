@@ -1,4 +1,4 @@
-package com.telenav.kivakit.examples.configuration.settings.simple;
+package com.telenav.kivakit.examples.settings.simple;
 
 import com.telenav.kivakit.interfaces.naming.Named;
 import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
@@ -7,6 +7,7 @@ import com.telenav.kivakit.core.language.object.ObjectFormatter;
 /**
  * Settings for spaceships participating in Operation Impending Doom III
  */
+@SuppressWarnings("unused")
 public class SpaceshipSettings implements Named
 {
     @KivaKitIncludeProperty
