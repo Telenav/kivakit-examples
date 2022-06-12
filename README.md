@@ -26,7 +26,12 @@ This repository contains working example code to show what KivaKit can do.
 
 [//]: # (start-user-text)
 
+### Quick Start <a name = "quick-start"></a>&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/rocket-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/rocket-32-2x.png 2x"/>
+
+[**Tutorial Articles**](https://state-of-the-art.org/)  
+[**Example Code**](https://github.com/Telenav/kivakit-examples)  
 [**KivaKit Blog Articles**](https://state-of-the-art.org/)  
+[**How to Build This Project**](https://github.com/Telenav/telenav-build/blob/develop/documentation/building.md) <!-- [branch-name] -->   
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
