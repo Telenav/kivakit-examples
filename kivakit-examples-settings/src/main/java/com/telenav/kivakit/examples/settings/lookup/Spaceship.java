@@ -1,9 +1,9 @@
-package com.telenav.kivakit.examples.configuration.lookup;
+package com.telenav.kivakit.examples.settings.lookup;
 
 import com.telenav.kivakit.component.BaseComponent;
 import com.telenav.kivakit.core.os.Console;
-import com.telenav.kivakit.examples.configuration.settings.simple.SettingsExample;
-import com.telenav.kivakit.examples.configuration.settings.simple.SpaceshipSettings;
+import com.telenav.kivakit.examples.settings.simple.SettingsExample;
+import com.telenav.kivakit.examples.settings.simple.SpaceshipSettings;
 
 /**
  * Spaceship implementation for Operation Impending Doom III.

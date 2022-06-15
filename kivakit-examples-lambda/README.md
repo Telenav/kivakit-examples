@@ -4,11 +4,11 @@
 
 [//]: # (end-user-text)
 
-# kivakit-examples-lambda 1.5.0 &nbsp;&nbsp; <img src="https://www.kivakit.org/images/gears-32.png" srcset="https://www.kivakit.org/images/gears-32-2x.png 2x"/>
+# kivakit-examples-lambda 1.6.0 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons//gears-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons//gears-32-2x.png 2x"/>
 
 Example using AWS Lambda support in kivakit-microservice
 
-<img src="https://www.kivakit.org/images/horizontal-line-512.png" srcset="https://www.kivakit.org/images/horizontal-line-512-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512-2x.png 2x"/>
 
 ### Index
 
@@ -16,21 +16,21 @@ Example using AWS Lambda support in kivakit-microservice
 
 [**Dependencies**](#dependencies) | [**Class Diagrams**](#class-diagrams) | [**Package Diagrams**](#package-diagrams) | [**Javadoc**](#javadoc)
 
-<img src="https://www.kivakit.org/images/horizontal-line-512.png" srcset="https://www.kivakit.org/images/horizontal-line-512-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512-2x.png 2x"/>
 
-### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://www.kivakit.org/images/dependencies-32.png" srcset="https://www.kivakit.org/images/dependencies-32-2x.png 2x"/>
+### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/dependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/dependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.5.0/lexakai/kivakit-examples/kivakit-examples-lambda/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.6.0/lexakai/kivakit-examples/kivakit-examples-lambda/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-examples-lambda</artifactId>
-        <version>1.5.0</version>
+        <version>1.6.0</version>
     </dependency>
 
-<img src="https://www.kivakit.org/images/horizontal-line-128.png" srcset="https://www.kivakit.org/images/horizontal-line-128-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
 [//]: # (start-user-text)
 
@@ -38,36 +38,36 @@ Example using AWS Lambda support in kivakit-microservice
 
 [//]: # (end-user-text)
 
-<img src="https://www.kivakit.org/images/horizontal-line-128.png" srcset="https://www.kivakit.org/images/horizontal-line-128-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
-### Class Diagrams <a name="class-diagrams"></a> &nbsp; &nbsp; <img src="https://www.kivakit.org/images/diagram-40.png" srcset="https://www.kivakit.org/images/diagram-40-2x.png 2x"/>
+### Class Diagrams <a name="class-diagrams"></a> &nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/diagram-40.png" srcset="https://telenav.github.io/telenav-assets/images/icons/diagram-40-2x.png 2x"/>
 
 None
 
-<img src="https://www.kivakit.org/images/horizontal-line-128.png" srcset="https://www.kivakit.org/images/horizontal-line-128-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
-### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://www.kivakit.org/images/box-32.png" srcset="https://www.kivakit.org/images/box-32-2x.png 2x"/>
+### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-24-2x.png 2x"/>
 
-[*com.telenav.kivakit.examples.lambda*](https://www.kivakit.org/1.5.0/lexakai/kivakit-examples/kivakit-examples-lambda/documentation/diagrams/com.telenav.kivakit.examples.lambda.svg)  
-[*com.telenav.kivakit.examples.lambda.requests*](https://www.kivakit.org/1.5.0/lexakai/kivakit-examples/kivakit-examples-lambda/documentation/diagrams/com.telenav.kivakit.examples.lambda.requests.svg)
+[*com.telenav.kivakit.examples.lambda*](https://www.kivakit.org/1.6.0/lexakai/kivakit-examples/kivakit-examples-lambda/documentation/diagrams/com.telenav.kivakit.examples.lambda.svg)  
+[*com.telenav.kivakit.examples.lambda.requests*](https://www.kivakit.org/1.6.0/lexakai/kivakit-examples/kivakit-examples-lambda/documentation/diagrams/com.telenav.kivakit.examples.lambda.requests.svg)
 
-<img src="https://www.kivakit.org/images/horizontal-line-128.png" srcset="https://www.kivakit.org/images/horizontal-line-128-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
-### Javadoc <a name="javadoc"></a> &nbsp;&nbsp; <img src="https://www.kivakit.org/images/books-32.png" srcset="https://www.kivakit.org/images/books-32-2x.png 2x"/>
+### Javadoc <a name="javadoc"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/books-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/books-24-2x.png 2x"/>
 
 Javadoc coverage for this project is 45.8%.  
   
-&nbsp; &nbsp; <img src="https://www.kivakit.org/images/meter-50-96.png" srcset="https://www.kivakit.org/images/meter-50-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-50-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-50-96-2x.png 2x"/>
 
 
 
 
 | Class | Documentation Sections |
 |---|---|
-| [*DivisionLambdaService*](https://www.kivakit.org/1.5.0/javadoc/kivakit-examples/com/telenav/kivakit/examples/lambda/DivisionLambdaService.html) |  |  
-| [*DivisionMicroservice*](https://www.kivakit.org/1.5.0/javadoc/kivakit-examples/com/telenav/kivakit/examples/lambda/DivisionMicroservice.html) |  |  
-| [*DivisionRequest*](https://www.kivakit.org/1.5.0/javadoc/kivakit-examples/com/telenav/kivakit/examples/lambda/requests/DivisionRequest.html) |  |  
-| [*DivisionRequest.DivisionResponse*](https://www.kivakit.org/1.5.0/javadoc/kivakit-examples/com/telenav/kivakit/examples/lambda/requests/DivisionRequest.DivisionResponse.html) |  |  
+| [*DivisionLambdaService*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples//////////////////////////////////////////////////////////.html) |  |  
+| [*DivisionMicroservice*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples/////////////////////////////////////////////////////////.html) |  |  
+| [*DivisionRequest*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples/////////////////////////////////////////////////////////////.html) |  |  
+| [*DivisionRequest.DivisionResponse*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples//////////////////////////////////////////////////////////////////////////////.html) |  |  
 
 [//]: # (start-user-text)
 
@@ -75,8 +75,7 @@ Javadoc coverage for this project is 45.8%.
 
 [//]: # (end-user-text)
 
-<img src="https://www.kivakit.org/images/horizontal-line-512.png" srcset="https://www.kivakit.org/images/horizontal-line-512-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512-2x.png 2x"/>
 
 <sub>Copyright &#169; 2011-2021 [Telenav](https://telenav.com), Inc. Distributed under [Apache License, Version 2.0](LICENSE)</sub>  
 <sub>This documentation was generated by [Lexakai](https://lexakai.org). UML diagrams courtesy of [PlantUML](https://plantuml.com).</sub>
-

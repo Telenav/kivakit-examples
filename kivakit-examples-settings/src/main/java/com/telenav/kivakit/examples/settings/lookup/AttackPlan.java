@@ -1,4 +1,4 @@
-package com.telenav.kivakit.examples.configuration.lookup;
+package com.telenav.kivakit.examples.settings.lookup;
 
 import com.telenav.kivakit.core.os.Console;
 import com.telenav.kivakit.core.string.Strings;
