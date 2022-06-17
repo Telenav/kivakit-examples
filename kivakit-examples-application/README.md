@@ -4,7 +4,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-examples 1.6.0 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-64.png" srcset="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-64-2x.png 2x"/>
+# kivakit-examples 1.6.0 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/kivakit-64.png" srcset="https://telenav.github.io/telenav-assets/images/icons/kivakit-64-2x.png 2x"/>
 
 This repository contains working example code to show what KivaKit can do.
 
@@ -56,7 +56,7 @@ None
 
 Javadoc coverage for this project is 90.0%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-90-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-90-96-2x.png 2x"/>
 
 
 

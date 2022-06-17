@@ -4,7 +4,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-examples-settings 1.6.0 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-64.png" srcset="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-64-2x.png 2x"/>
+# kivakit-examples-settings 1.6.0 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/kivakit-64.png" srcset="https://telenav.github.io/telenav-assets/images/icons/kivakit-64-2x.png 2x"/>
 
 Example using kivakit-settings.
 
@@ -48,8 +48,8 @@ None
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-24-2x.png 2x"/>
 
-[*com.telenav.kivakit.examples.configuration.lookup*](https://www.kivakit.org/1.6.0/lexakai/kivakit-examples/kivakit-examples-settings/documentation/diagrams/com.telenav.kivakit.examples.configuration.lookup.svg)  
-[*com.telenav.kivakit.examples.configuration.settings.simple*](https://www.kivakit.org/1.6.0/lexakai/kivakit-examples/kivakit-examples-settings/documentation/diagrams/com.telenav.kivakit.examples.configuration.settings.simple.svg)
+[*com.telenav.kivakit.examples.settings.lookup*](https://www.kivakit.org/1.6.0/lexakai/kivakit-examples/kivakit-examples-settings/documentation/diagrams/com.telenav.kivakit.examples.settings.lookup.svg)  
+[*com.telenav.kivakit.examples.settings.simple*](https://www.kivakit.org/1.6.0/lexakai/kivakit-examples/kivakit-examples-settings/documentation/diagrams/com.telenav.kivakit.examples.settings.simple.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
@@ -57,20 +57,20 @@ None
 
 Javadoc coverage for this project is 73.8%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-70-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-70-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-70-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-70-96-2x.png 2x"/>
 
 
 
 
 | Class | Documentation Sections |
 |---|---|
-| [*Alien*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples////////////////////////////////////////////////////////.html) |  |  
-| [*AttackPlan*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples/////////////////////////////////////////////////////////////.html) |  |  
-| [*QuantumDatabase*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples//////////////////////////////////////////////////////////////////.html) |  |  
-| [*RegistryExample*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples//////////////////////////////////////////////////////////////////.html) |  |  
-| [*SettingsExample*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples///////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*Spaceship*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples////////////////////////////////////////////////////////////.html) |  |  
-| [*SpaceshipSettings*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples/////////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*Alien*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples///////////////////////////////////////////////////.html) |  |  
+| [*AttackPlan*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples////////////////////////////////////////////////////////.html) |  |  
+| [*QuantumDatabase*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples/////////////////////////////////////////////////////////////.html) |  |  
+| [*RegistryExample*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples/////////////////////////////////////////////////////////////.html) |  |  
+| [*SettingsExample*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples/////////////////////////////////////////////////////////////.html) |  |  
+| [*Spaceship*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples///////////////////////////////////////////////////////.html) |  |  
+| [*SpaceshipSettings*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples///////////////////////////////////////////////////////////////.html) |  |  
 
 [//]: # (start-user-text)
 
