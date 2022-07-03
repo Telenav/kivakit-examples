@@ -1,0 +1,3 @@
+module:kivakit.examples.settings
+com.telenav.kivakit.examples.settings.lookup
+com.telenav.kivakit.examples.settings.simple
