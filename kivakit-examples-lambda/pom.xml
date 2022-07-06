@@ -45,6 +45,10 @@
                 <version>${maven-shade-plugin.version}</version>
                 <configuration>
                     <createDependencyReducedPom>false</createDependencyReducedPom>
+                    <!-- We need a separate attached artifact, or javadoc builds
+                         will break. -->
+                    <shadedArtifactAttached>true</shadedArtifactAttached>
+                    <shadedClassifierName>app</shadedClassifierName>
                 </configuration>
                 <executions>
                     <execution>
