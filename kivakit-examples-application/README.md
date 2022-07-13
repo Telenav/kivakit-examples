@@ -4,7 +4,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-examples 1.6.0 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-64.png" srcset="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-64-2x.png 2x"/>
+# kivakit-examples 1.6.1 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/kivakit-64.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/kivakit-64-2x.png 2x"/>
 
 This repository contains working example code to show what KivaKit can do.
 
@@ -20,14 +20,14 @@ This repository contains working example code to show what KivaKit can do.
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/dependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/dependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.6.0/lexakai/kivakit-examples/kivakit-examples-application/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.6.1/lexakai/kivakit-examples/kivakit-examples-application/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-examples-application</artifactId>
-        <version>1.6.0</version>
+        <version>1.6.1</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
@@ -48,7 +48,7 @@ None
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-24-2x.png 2x"/>
 
-[*com.telenav.kivakit.examples.application*](https://www.kivakit.org/1.6.0/lexakai/kivakit-examples/kivakit-examples-application/documentation/diagrams/com.telenav.kivakit.examples.application.svg)
+[*com.telenav.kivakit.examples.application*](https://www.kivakit.org/1.6.1/lexakai/kivakit-examples/kivakit-examples-application/documentation/diagrams/com.telenav.kivakit.examples.application.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
@@ -63,7 +63,7 @@ Javadoc coverage for this project is 90.0%.
 
 | Class | Documentation Sections |
 |---|---|
-| [*ApplicationExample*](https://www.kivakit.org/1.6.0/javadoc/kivakit-examples////////////////////////////////////////////////////////////.html) |  |  
+| [*ApplicationExample*](https://www.kivakit.org/1.6.1/javadoc/kivakit-examples////////////////////////////////////////////////////////////.html) |  |  
 
 [//]: # (start-user-text)
 
