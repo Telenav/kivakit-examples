@@ -4,7 +4,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-examples-lambda 1.6.1 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/gears-32.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/gears-32-2x.png 2x"/>
+# kivakit-examples-lambda 1.6.1 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/gears-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/gears-32-2x.png 2x"/>
 
 Example using AWS Lambda support in kivakit-microservice
 

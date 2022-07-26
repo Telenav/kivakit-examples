@@ -4,7 +4,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-examples 1.6.1 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/kivakit-64.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/kivakit-64-2x.png 2x"/>
+# kivakit-examples 1.6.1 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/kivakit-64.png" srcset="https://telenav.github.io/telenav-assets/images/icons/kivakit-64-2x.png 2x"/>
 
 This repository contains working example code to show what KivaKit can do.
 

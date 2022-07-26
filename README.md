@@ -14,11 +14,12 @@
 
 <p></p>
 
+
 <img src="https://telenav.github.io/telenav-assets/images/backgrounds/kivakit-background.png" srcset="https://telenav.github.io/telenav-assets/images/backgrounds/kivakit-background-2x.png 2x"/>
 
 [//]: # (end-user-text)
 
-# kivakit-examples 1.6.1 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/logos/kivakit/kivakit-64.png" srcset="https://telenav.github.io/telenav-assets/images/images/logos/kivakit/kivakit-64-2x.png 2x"/>
+# kivakit-examples 1.6.1 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-64.png" srcset="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-64-2x.png 2x"/>
 
 This repository contains working example code to show what KivaKit can do.
 
