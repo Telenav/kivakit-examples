@@ -14,7 +14,7 @@ defaults:
     shell: bash
 
 env:
-    CACTUS_VERSION: 1.5.18
+    CACTUS_V: 1.5.18
 
 name: "Build Branch"
 
@@ -81,7 +81,7 @@ jobs:
           maven-version: 3.8.5
 
       - name: Clone Telenav-Build
-        run: git clone https://github.com/Telenav/telenav-build.git
+        run: git clone https://github.com/Telenav/telenav-build.git -b develop
 
       - name: Init Submodules
         run: cd $GITHUB_WORKSPACE/telenav-build && git submodule init
@@ -114,7 +114,7 @@ jobs:
       # See: https://www.baeldung.com/maven-logging for a summary of logging
       # options
       - name: Write Maven JVM Options Config File
-        run: echo "-XX:+UseG1GC -Dcactus-maven-plugin.version=$CACTUS_VERSION -Dorg.slf4j.simpleLogger.defaultLogLevel=warn -Dmaven.repo.local=$MAVEN_REPO --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.text=ALL-UNNAMED --add-opens=java.desktop/java.awt.font=ALL-UNNAMED" >> $GITHUB_WORKSPACE/telenav-build/.mvn/jvm.config
+        run: echo "-XX:+UseG1GC -Dcactus-maven-plugin.version=$CACTUS_V -Dorg.slf4j.simpleLogger.defaultLogLevel=warn -Dmaven.repo.local=$MAVEN_REPO --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.text=ALL-UNNAMED --add-opens=java.desktop/java.awt.font=ALL-UNNAMED" >> $GITHUB_WORKSPACE/telenav-build/.mvn/jvm.config
 
       # Maven arguments we want for everything.
       # RESIST the temptation to add --quiet here - it will suppress critical
@@ -134,9 +134,16 @@ jobs:
       - name: Update Submodules
         run: cd $GITHUB_WORKSPACE/telenav-build && git submodule update
 
-      # This will fail over to the develop branch
+      # We need findable superpoms to be able to run the plugin to check out the
+      # target branch at all, so build them once even though we will probably
+      # clobber them with a different version momentarily
+      - name: Build Local Superpoms
+        run: cd $GITHUB_WORKSPACE/telenav-build/telenav-superpom && mvn install
+
+      # This will fail over to the develop branch if the target branch does not
+      # exist.
       - name: Checkout Branch
-        run: cd $GITHUB_WORKSPACE/telenav-build && mvn -Dcactus.permit-local-changes=true -Dcactus.base-branch=develop -Dcactus.fetch-first=false -Dcactus.scope=all-project-families -Dcactus.create-branches=true -Dcactus.target-branch=$GITHUB_REF_NAME -Dcactus.permit-local-changes=false -Dcactus.update-root=false -Dpush=false com.telenav.cactus:cactus-maven-plugin:$CACTUS_VERSION:checkout
+        run: cd $GITHUB_WORKSPACE/telenav-build && mvn -Dcactus.permit-local-changes=true -Dcactus.base-branch=develop -Dcactus.fetch-first=false -Dcactus.scope=all-project-families -Dcactus.create-branches=true -Dcactus.target-branch=$GITHUB_REF_NAME -Dcactus.permit-local-changes=false -Dcactus.update-root=false -Dpush=false com.telenav.cactus:cactus-maven-plugin:$CACTUS_V:checkout
 
       # Check out the pull request branch or commit that we
       # want to test
