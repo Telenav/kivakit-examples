@@ -21,6 +21,8 @@
         <relativePath/>
     </parent>
 
+    <!-- test pr content -->
+
     <groupId>com.telenav.kivakit</groupId>
     <artifactId>kivakit-examples</artifactId>
     <version>1.6.3-SNAPSHOT</version>
