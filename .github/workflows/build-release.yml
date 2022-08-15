@@ -12,26 +12,22 @@ defaults:
   run:
     shell: bash
 
-name: "Build Feature, Hotfix or Bugfix"
+name: "Build Release"
 
 on:
   workflow_dispatch:
   push:
     paths-ignore:
-        - 'documentation/**'
-        - '**/*.md'
+      - 'documentation/**'
+      - '**/*.md'
     branches:
-      - 'feature/**'
-      - 'hotfix/**'
-      - 'bugfix/**'
+      - 'release/**'
   pull_request:
     paths-ignore:
-        - 'documentation/**'
-        - '**/*.md'
+      - 'documentation/**'
+      - '**/*.md'
     branches:
-      - 'feature/**'
-      - 'hotfix/**'
-      - 'bugfix/**'
+      - 'release/**'
 
 jobs:
   build:
