@@ -37,6 +37,7 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>kivakit-serialization-gson</artifactId>
         </dependency>
+
     </dependencies>
 
 </project>
