@@ -23,7 +23,7 @@ import com.telenav.kivakit.examples.microservice.requests.DivisionRequest;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.protocols.rest.http.RestService;
 
-import static com.telenav.kivakit.microservice.protocols.rest.http.RestService.HttpMethod.POST;
+import static com.telenav.kivakit.network.http.HttpMethod.POST;
 
 /**
  * REST service that provides arithmetic division
