@@ -4,7 +4,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-examples-lambda 1.6.1 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/gears-32.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/gears-32-2x.png 2x"/>
+# kivakit-examples-lambda 1.7.0 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/gears-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/gears-32-2x.png 2x"/>
 
 Example using AWS Lambda support in kivakit-microservice
 
@@ -20,14 +20,14 @@ Example using AWS Lambda support in kivakit-microservice
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/dependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/dependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.6.1/lexakai/kivakit-examples/kivakit-examples-lambda/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.7.0/lexakai/kivakit-examples/kivakit-examples-lambda/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-examples-lambda</artifactId>
-        <version>1.6.1</version>
+        <version>1.7.0</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
@@ -48,8 +48,8 @@ None
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-24-2x.png 2x"/>
 
-[*com.telenav.kivakit.examples.lambda*](https://www.kivakit.org/1.6.1/lexakai/kivakit-examples/kivakit-examples-lambda/documentation/diagrams/com.telenav.kivakit.examples.lambda.svg)  
-[*com.telenav.kivakit.examples.lambda.requests*](https://www.kivakit.org/1.6.1/lexakai/kivakit-examples/kivakit-examples-lambda/documentation/diagrams/com.telenav.kivakit.examples.lambda.requests.svg)
+[*com.telenav.kivakit.examples.lambda*](https://www.kivakit.org/1.7.0/lexakai/kivakit-examples/kivakit-examples-lambda/documentation/diagrams/com.telenav.kivakit.examples.lambda.svg)  
+[*com.telenav.kivakit.examples.lambda.requests*](https://www.kivakit.org/1.7.0/lexakai/kivakit-examples/kivakit-examples-lambda/documentation/diagrams/com.telenav.kivakit.examples.lambda.requests.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
@@ -64,10 +64,10 @@ Javadoc coverage for this project is 45.8%.
 
 | Class | Documentation Sections |
 |---|---|
-| [*DivisionLambdaService*](https://www.kivakit.org/1.6.1/javadoc/kivakit-examples//////////////////////////////////////////////////////////.html) |  |  
-| [*DivisionMicroservice*](https://www.kivakit.org/1.6.1/javadoc/kivakit-examples/////////////////////////////////////////////////////////.html) |  |  
-| [*DivisionRequest*](https://www.kivakit.org/1.6.1/javadoc/kivakit-examples/////////////////////////////////////////////////////////////.html) |  |  
-| [*DivisionRequest.DivisionResponse*](https://www.kivakit.org/1.6.1/javadoc/kivakit-examples//////////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*DivisionLambdaService*](https://www.kivakit.org/1.7.0/javadoc/kivakit-examples//////////////////////////////////////////////////////////.html) |  |  
+| [*DivisionMicroservice*](https://www.kivakit.org/1.7.0/javadoc/kivakit-examples/////////////////////////////////////////////////////////.html) |  |  
+| [*DivisionRequest*](https://www.kivakit.org/1.7.0/javadoc/kivakit-examples/////////////////////////////////////////////////////////////.html) |  |  
+| [*DivisionRequest.DivisionResponse*](https://www.kivakit.org/1.7.0/javadoc/kivakit-examples//////////////////////////////////////////////////////////////////////////////.html) |  |  
 
 [//]: # (start-user-text)
 

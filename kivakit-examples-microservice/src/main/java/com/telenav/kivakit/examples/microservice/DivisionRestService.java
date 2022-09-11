@@ -21,16 +21,16 @@ package com.telenav.kivakit.examples.microservice;
 import com.telenav.kivakit.core.version.Version;
 import com.telenav.kivakit.examples.microservice.requests.DivisionRequest;
 import com.telenav.kivakit.microservice.Microservice;
-import com.telenav.kivakit.microservice.protocols.rest.MicroserviceRestService;
+import com.telenav.kivakit.microservice.protocols.rest.http.RestService;
 
-import static com.telenav.kivakit.microservice.protocols.rest.MicroserviceRestService.HttpMethod.POST;
+import static com.telenav.kivakit.network.http.HttpMethod.POST;
 
 /**
  * REST service that provides arithmetic division
  *
  * @author jonathanl (shibo)
  */
-public class DivisionRestService extends MicroserviceRestService
+public class DivisionRestService extends RestService
 {
     public DivisionRestService(Microservice<?> microservice)
     {
