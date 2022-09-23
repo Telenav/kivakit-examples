@@ -2,7 +2,9 @@ package com.telenav.kivakit.examples.settings.simple;
 
 import com.telenav.kivakit.component.BaseComponent;
 import com.telenav.kivakit.settings.Settings;
+import com.telenav.kivakit.settings.SettingsTrait;
 
+import static com.telenav.kivakit.core.os.Console.println;
 import static com.telenav.kivakit.core.time.Duration.ONE_SECOND;
 
 /**
@@ -16,7 +18,7 @@ import static com.telenav.kivakit.core.time.Duration.ONE_SECOND;
  * @see SettingsExample
  * @see SpaceshipSettings
  */
-public class Spaceship extends BaseComponent
+public class Spaceship extends BaseComponent implements SettingsTrait
 {
     /**
      * Commence the mission!

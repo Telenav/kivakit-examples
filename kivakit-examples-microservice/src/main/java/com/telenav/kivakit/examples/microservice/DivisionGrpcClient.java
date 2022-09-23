@@ -10,6 +10,8 @@ import com.telenav.kivakit.microservice.MicroserviceSettings;
 import com.telenav.kivakit.microservice.protocols.grpc.MicroserviceGrpcClient;
 import com.telenav.kivakit.network.core.Host;
 
+import static com.telenav.kivakit.core.os.Console.println;
+
 /**
  * Client application that divides two numbers by using the {@link DivisionMicroservice}, running in another process.
  *

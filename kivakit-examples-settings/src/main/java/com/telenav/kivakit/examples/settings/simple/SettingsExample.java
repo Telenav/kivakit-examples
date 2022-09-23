@@ -1,6 +1,7 @@
 package com.telenav.kivakit.examples.settings.simple;
 
 import com.telenav.kivakit.component.BaseComponent;
+import com.telenav.kivakit.settings.SettingsTrait;
 
 /**
  * Shows how to configure a spaceship and launch it as part of Operation Impending Doom III. See <a
@@ -16,7 +17,8 @@ import com.telenav.kivakit.component.BaseComponent;
  *
  * @author jonathanl (shibo)
  */
-public class SettingsExample extends BaseComponent
+@SuppressWarnings("SpellCheckingInspection")
+public class SettingsExample extends BaseComponent implements SettingsTrait
 {
     public static void main(String[] arguments)
     {
