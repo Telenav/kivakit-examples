@@ -27,7 +27,7 @@ public class DivisionRestClient extends Application
     protected void onRun()
     {
         // Get the port and version of the microservice
-        var port = Host.local().http(requireSettings(MicroserviceSettings.class).port());
+        var port = Host.localhost().http(requireSettings(MicroserviceSettings.class).port());
         var version = Version.version("1.0");
 
         // create a client to talk to the microservice REST API,
