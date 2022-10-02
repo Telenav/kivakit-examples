@@ -9,7 +9,7 @@ import com.telenav.kivakit.microservice.MicroserviceSettings;
 import com.telenav.kivakit.microservice.protocols.rest.http.RestClient;
 import com.telenav.kivakit.network.core.Host;
 import com.telenav.kivakit.serialization.gson.GsonObjectSerializer;
-import com.telenav.kivakit.serialization.gson.factory.CoreGsonFactory;
+import com.telenav.kivakit.serialization.gson.factory.KivaKitCoreGsonFactory;
 
 /**
  * Client application that divides two numbers by using the {@link DivisionMicroservice}, running in another process.
@@ -31,7 +31,7 @@ public class DivisionRestClient extends Application
         var version = Version.version("1.0");
 
         // create a client to talk to the microservice REST API,
-        register(new CoreGsonFactory(this));
+        register(new KivaKitCoreGsonFactory(this));
         var client = listenTo(new RestClient(new GsonObjectSerializer(), port, version));
 
         // then issue a divide request and read the response,
