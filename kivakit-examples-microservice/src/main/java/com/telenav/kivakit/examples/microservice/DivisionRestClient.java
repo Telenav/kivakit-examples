@@ -8,6 +8,7 @@ import com.telenav.kivakit.examples.microservice.requests.DivisionRequest;
 import com.telenav.kivakit.microservice.MicroserviceSettings;
 import com.telenav.kivakit.microservice.protocols.rest.http.RestClient;
 import com.telenav.kivakit.network.core.Host;
+import com.telenav.kivakit.network.core.LocalHost;
 import com.telenav.kivakit.serialization.gson.GsonObjectSerializer;
 import com.telenav.kivakit.serialization.gson.factory.KivaKitCoreGsonFactory;
 
@@ -27,7 +28,7 @@ public class DivisionRestClient extends Application
     protected void onRun()
     {
         // Get the port and version of the microservice
-        var port = Host.localhost().http(requireSettings(MicroserviceSettings.class).port());
+        var port = LocalHost.localhost().http(requireSettings(MicroserviceSettings.class).port());
         var version = Version.version("1.0");
 
         // create a client to talk to the microservice REST API,
