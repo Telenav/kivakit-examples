@@ -1,7 +1,7 @@
 package com.telenav.kivakit.examples.settings.simple;
 
 import com.telenav.kivakit.component.BaseComponent;
-import com.telenav.kivakit.settings.SettingsTrait;
+import com.telenav.kivakit.settings.SettingsRegistryTrait;
 
 /**
  * Shows how to configure a spaceship and launch it as part of Operation Impending Doom III. See <a
@@ -18,11 +18,11 @@ import com.telenav.kivakit.settings.SettingsTrait;
  * @author jonathanl (shibo)
  */
 @SuppressWarnings("SpellCheckingInspection")
-public class SettingsExample extends BaseComponent implements SettingsTrait
+public class SettingsRegistryExample extends BaseComponent implements SettingsRegistryTrait
 {
     public static void main(String[] arguments)
     {
-        new SettingsExample().run();
+        new SettingsRegistryExample().run();
     }
 
     public void run()
@@ -35,7 +35,7 @@ public class SettingsExample extends BaseComponent implements SettingsTrait
         settings.missileLaunchers(7);
 
         // and register them for any interested components
-        registerSettingsObject(settings);
+        registerSettings(settings);
 
         // then launch a new spaceship.
         new Spaceship().launch();
