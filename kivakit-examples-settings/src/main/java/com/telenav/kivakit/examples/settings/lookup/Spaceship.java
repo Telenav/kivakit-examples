@@ -2,7 +2,7 @@ package com.telenav.kivakit.examples.settings.lookup;
 
 import com.telenav.kivakit.component.BaseComponent;
 import com.telenav.kivakit.core.os.Console;
-import com.telenav.kivakit.examples.settings.simple.SettingsExample;
+import com.telenav.kivakit.examples.settings.simple.SettingsRegistryExample;
 import com.telenav.kivakit.examples.settings.simple.SpaceshipSettings;
 
 /**
@@ -13,7 +13,7 @@ import com.telenav.kivakit.examples.settings.simple.SpaceshipSettings;
  * </p>
  *
  * @author jonathanl (shibo)
- * @see SettingsExample
+ * @see SettingsRegistryExample
  * @see SpaceshipSettings
  */
 public class Spaceship extends BaseComponent

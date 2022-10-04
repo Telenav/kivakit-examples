@@ -1,8 +1,10 @@
 package com.telenav.kivakit.examples.settings.simple;
 
 import com.telenav.kivakit.component.BaseComponent;
-import com.telenav.kivakit.settings.Settings;
+import com.telenav.kivakit.settings.SettingsRegistry;
+import com.telenav.kivakit.settings.SettingsRegistryTrait;
 
+import static com.telenav.kivakit.core.os.Console.println;
 import static com.telenav.kivakit.core.time.Duration.ONE_SECOND;
 
 /**
@@ -13,10 +15,10 @@ import static com.telenav.kivakit.core.time.Duration.ONE_SECOND;
  * </p>
  *
  * @author jonathanl (shibo)
- * @see SettingsExample
+ * @see SettingsRegistryExample
  * @see SpaceshipSettings
  */
-public class Spaceship extends BaseComponent
+public class Spaceship extends BaseComponent implements SettingsRegistryTrait
 {
     /**
      * Commence the mission!
@@ -57,7 +59,7 @@ public class Spaceship extends BaseComponent
     }
 
     /**
-     * @return Retrieve spaceship settings from whoever provided them to the {@link Settings} registry
+     * @return Retrieve spaceship settings from whoever provided them to the {@link SettingsRegistry} registry
      */
     private SpaceshipSettings settings()
     {
