@@ -58,7 +58,7 @@ public class DivisionRequest extends BaseMicroservletRequest
         @Override
         public Validator validator(ValidationType type)
         {
-            return Validator.NULL;
+            return Validator.nullValidator();
         }
 
         @Tag(1)

@@ -16,6 +16,6 @@ public class DivisionLambdaService extends MicroserviceLambdaService
     {
         // Associates the "division" lambda function (version 1.0) with the DivisionRequest
         // microservlet request handler
-        mount("division", "1.0", DivisionRequest.class);
+        mountLambdaRequestHandler("division", "1.0", DivisionRequest.class);
     }
 }
