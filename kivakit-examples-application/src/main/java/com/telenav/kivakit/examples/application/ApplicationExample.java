@@ -77,6 +77,6 @@ public class ApplicationExample extends Application
             information("File size = $", input.sizeInBytes());
         }
 
-        information("Lines = $", Count.count(input.reader().lines()));
+        information("Lines = $", Count.count(input.reader().readLines()));
     }
 }
