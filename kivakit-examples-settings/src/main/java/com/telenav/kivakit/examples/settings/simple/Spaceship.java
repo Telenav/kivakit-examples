@@ -4,7 +4,7 @@ import com.telenav.kivakit.component.BaseComponent;
 import com.telenav.kivakit.settings.SettingsRegistry;
 import com.telenav.kivakit.settings.SettingsRegistryTrait;
 
-import static com.telenav.kivakit.core.os.Console.println;
+import static com.telenav.kivakit.core.os.Console.console;
 import static com.telenav.kivakit.core.time.Duration.ONE_SECOND;
 
 /**
@@ -28,19 +28,19 @@ public class Spaceship extends BaseComponent implements SettingsRegistryTrait
         // Count down
         for (var count = 10; count > 0; count--)
         {
-            println("$", count);
+            console().println("$", count);
             ONE_SECOND.sleep();
         }
 
         // engage engines,
-        println("Liftoff for $", settings());
+        console().println("Liftoff for $", settings());
 
         // then if the spaceship has air conditioning,
         if (settings().airConditioning())
         {
             // turn it on
             ONE_SECOND.sleep();
-            println("Air conditioning set to 'high'");
+            console().println("Air conditioning set to 'high'");
         }
 
         // and if the spaceship has cruise control
@@ -48,7 +48,7 @@ public class Spaceship extends BaseComponent implements SettingsRegistryTrait
         {
             // engage it.
             ONE_SECOND.sleep();
-            println("Cruise control engaged");
+            console().println("Cruise control engaged");
         }
     }
 
