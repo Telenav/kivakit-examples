@@ -37,9 +37,9 @@ public class DivisionGrpcClient extends Application
         var response = client.request("divide", new DivisionRequest(9, 3), DivisionResponse.class);
 
         // then show the response
-        console().println(AsciiArt.box("response => $", response));
+        console().println(AsciiArt.textBox("response => $", response));
 
         var future = client.requestFuture("divide", new DivisionRequest(10, 5), DivisionResponse.class);
-        console().println(AsciiArt.box("future response => $", future.get()));
+        console().println(AsciiArt.textBox("future response => $", future.get()));
     }
 }

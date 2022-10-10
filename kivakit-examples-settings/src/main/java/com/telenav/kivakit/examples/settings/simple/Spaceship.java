@@ -2,7 +2,7 @@ package com.telenav.kivakit.examples.settings.simple;
 
 import com.telenav.kivakit.component.BaseComponent;
 import com.telenav.kivakit.settings.SettingsRegistry;
-import com.telenav.kivakit.settings.SettingsRegistryTrait;
+import com.telenav.kivakit.settings.SettingsTrait;
 
 import static com.telenav.kivakit.core.os.Console.console;
 import static com.telenav.kivakit.core.time.Duration.ONE_SECOND;
@@ -18,7 +18,7 @@ import static com.telenav.kivakit.core.time.Duration.ONE_SECOND;
  * @see SettingsRegistryExample
  * @see SpaceshipSettings
  */
-public class Spaceship extends BaseComponent implements SettingsRegistryTrait
+public class Spaceship extends BaseComponent implements SettingsTrait
 {
     /**
      * Commence the mission!
@@ -55,7 +55,7 @@ public class Spaceship extends BaseComponent implements SettingsRegistryTrait
     @Override
     public String toString()
     {
-        return settingsRegistry().toString();
+        return settingsForThis().toString();
     }
 
     /**

@@ -40,6 +40,6 @@ public class DivisionRestClient extends Application
                 DivisionRequest.DivisionResponse.class, new DivisionRequest(9, 3));
 
         // then show the response
-        console().println(AsciiArt.box("response => $", response));
+        console().println(AsciiArt.textBox("response => $", response));
     }
 }
