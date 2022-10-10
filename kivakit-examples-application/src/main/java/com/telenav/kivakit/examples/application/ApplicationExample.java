@@ -11,7 +11,7 @@ import java.util.List;
 
 import static com.telenav.kivakit.commandline.SwitchParsers.booleanSwitchParser;
 import static com.telenav.kivakit.core.collections.set.ObjectSet.objectSet;
-import static com.telenav.kivakit.filesystem.File.fileArgumentParser;
+import static com.telenav.kivakit.filesystem.Files.fileArgumentParser;
 
 /**
  * Example application that counts the lines in its file argument. With no arguments, the application gives usage help.
