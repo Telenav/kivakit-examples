@@ -13,7 +13,7 @@ public class DivisionMicroservice extends Microservice<Void>
     }
 
     /**
-     * @return Metadata describing this microservice
+     * Returns metadata describing this microservice
      */
     @Override
     public MicroserviceMetadata metadata()

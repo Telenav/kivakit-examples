@@ -59,7 +59,7 @@ public class Spaceship extends BaseComponent implements SettingsRegistryTrait
     }
 
     /**
-     * @return Retrieve spaceship settings from whoever provided them to the {@link SettingsRegistry} registry
+     * Returns retrieve spaceship settings from whoever provided them to the {@link SettingsRegistry} registry
      */
     private SpaceshipSettings settings()
     {
