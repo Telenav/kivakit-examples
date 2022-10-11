@@ -10,7 +10,7 @@ import com.telenav.kivakit.filesystem.File;
 import java.util.List;
 
 import static com.telenav.kivakit.commandline.SwitchParsers.booleanSwitchParser;
-import static com.telenav.kivakit.core.collections.set.ObjectSet.objectSet;
+import static com.telenav.kivakit.core.collections.set.ObjectSet.set;
 import static com.telenav.kivakit.filesystem.Files.fileArgumentParser;
 
 /**
@@ -67,7 +67,7 @@ public class ApplicationExample extends Application
     @Override
     protected ObjectSet<SwitchParser<?>> switchParsers()
     {
-        return objectSet(SHOW_FILE_SIZE);
+        return ObjectSet.set(SHOW_FILE_SIZE);
     }
 
     private void showFile(File input)
