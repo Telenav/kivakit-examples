@@ -1,7 +1,7 @@
 package com.telenav.kivakit.examples.settings.simple;
 
 import com.telenav.kivakit.interfaces.naming.Named;
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.core.string.ObjectFormatter;
 
 /**
@@ -10,16 +10,16 @@ import com.telenav.kivakit.core.string.ObjectFormatter;
 @SuppressWarnings("unused")
 public class SpaceshipSettings implements Named
 {
-    @KivaKitIncludeProperty
+    @IncludeProperty
     private boolean airConditioning;
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     private boolean cruiseControl;
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     private int missileLaunchers;
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     private String name;
 
     public boolean airConditioning()
