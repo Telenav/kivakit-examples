@@ -6,7 +6,7 @@ import com.telenav.kivakit.microservice.protocols.lambda.MicroserviceLambdaServi
 
 public class DivisionLambdaService extends MicroserviceLambdaService
 {
-    public DivisionLambdaService(final Microservice<?> microservice)
+    public DivisionLambdaService(Microservice<?> microservice)
     {
         super(microservice);
     }

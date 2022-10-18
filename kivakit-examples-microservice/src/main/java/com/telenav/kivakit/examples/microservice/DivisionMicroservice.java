@@ -24,7 +24,7 @@ public class DivisionMicroservice extends Microservice<Void>
     }
 
     /**
-     * @return Metadata describing this microservice
+     * Returns metadata describing this microservice
      */
     @Override
     public MicroserviceMetadata metadata()
@@ -36,7 +36,7 @@ public class DivisionMicroservice extends Microservice<Void>
     }
 
     /**
-     * @return The GRPC service for this microservice
+     * Returns the GRPC service for this microservice
      */
     @Override
     public MicroserviceGrpcService onNewGrpcService()
@@ -45,7 +45,7 @@ public class DivisionMicroservice extends Microservice<Void>
     }
 
     /**
-     * @return The REST service for this microservice
+     * Returns the REST service for this microservice
      */
     @Override
     public DivisionRestService onNewRestService()

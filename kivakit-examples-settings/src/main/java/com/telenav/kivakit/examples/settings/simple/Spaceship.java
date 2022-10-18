@@ -2,9 +2,9 @@ package com.telenav.kivakit.examples.settings.simple;
 
 import com.telenav.kivakit.component.BaseComponent;
 import com.telenav.kivakit.settings.SettingsRegistry;
-import com.telenav.kivakit.settings.SettingsRegistryTrait;
+import com.telenav.kivakit.settings.SettingsTrait;
 
-import static com.telenav.kivakit.core.os.Console.println;
+import static com.telenav.kivakit.core.os.Console.console;
 import static com.telenav.kivakit.core.time.Duration.ONE_SECOND;
 
 /**
@@ -18,7 +18,7 @@ import static com.telenav.kivakit.core.time.Duration.ONE_SECOND;
  * @see SettingsRegistryExample
  * @see SpaceshipSettings
  */
-public class Spaceship extends BaseComponent implements SettingsRegistryTrait
+public class Spaceship extends BaseComponent implements SettingsTrait
 {
     /**
      * Commence the mission!
@@ -28,19 +28,19 @@ public class Spaceship extends BaseComponent implements SettingsRegistryTrait
         // Count down
         for (var count = 10; count > 0; count--)
         {
-            println("$", count);
+            console().println("$", count);
             ONE_SECOND.sleep();
         }
 
         // engage engines,
-        println("Liftoff for $", settings());
+        console().println("Liftoff for $", settings());
 
         // then if the spaceship has air conditioning,
         if (settings().airConditioning())
         {
             // turn it on
             ONE_SECOND.sleep();
-            println("Air conditioning set to 'high'");
+            console().println("Air conditioning set to 'high'");
         }
 
         // and if the spaceship has cruise control
@@ -48,18 +48,18 @@ public class Spaceship extends BaseComponent implements SettingsRegistryTrait
         {
             // engage it.
             ONE_SECOND.sleep();
-            println("Cruise control engaged");
+            console().println("Cruise control engaged");
         }
     }
 
     @Override
     public String toString()
     {
-        return settingsRegistry().toString();
+        return settingsForThis().toString();
     }
 
     /**
-     * @return Retrieve spaceship settings from whoever provided them to the {@link SettingsRegistry} registry
+     * Returns retrieve spaceship settings from whoever provided them to the {@link SettingsRegistry} registry
      */
     private SpaceshipSettings settings()
     {
