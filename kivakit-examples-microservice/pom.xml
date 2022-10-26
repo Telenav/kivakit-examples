@@ -33,11 +33,6 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>kivakit-microservice</artifactId>
         </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-serialization-gson</artifactId>
-        </dependency>
-
-    </dependencies>
+        </dependencies>
 
 </project>
