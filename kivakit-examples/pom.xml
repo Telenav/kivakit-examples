@@ -10,6 +10,13 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>com.telenav</groupId>
+        <artifactId>telenav-root-superpom</artifactId>
+        <version>1.0.3</version>
+        <relativePath/>
+    </parent>
+
     <groupId>com.telenav.kivakit</groupId>
     <artifactId>kivakit-examples</artifactId>
     <version>1.8.2</version>
