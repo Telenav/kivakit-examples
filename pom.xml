@@ -8,27 +8,59 @@
 <!-- suppress MavenModelInspection -->
 
 <project
-     xmlns="http://maven.apache.org/POM/4.0.0"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>com.telenav</groupId>
-        <artifactId>telenav-superpom-project-family</artifactId>
-        <version>2.0.4</version>
+        <artifactId>telenav-root-superpom</artifactId>
+        <version>1.0.3</version>
         <relativePath/>
     </parent>
 
     <groupId>com.telenav.kivakit</groupId>
-    <artifactId>kivakit-examples</artifactId>
+    <artifactId>kivakit-examples-parent</artifactId>
     <version>1.8.2</version>
 
     <packaging>pom</packaging>
     <description>
         A collection of modules that demonstrate how to use features of KivaKit.
     </description>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- Pull in libraries defined in Kivakit -->
+            <dependency>
+                <groupId>com.telenav.kivakit</groupId>
+                <artifactId>kivakit</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Pull in libraries defined in Kivakit Extensions -->
+            <dependency>
+                <groupId>com.telenav.kivakit</groupId>
+                <artifactId>kivakit-extensions</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            
+            <dependency>
+                <groupId>com.telenav.kivakit</groupId>
+                <artifactId>kivakit-examples</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            
+        </dependencies>
+    </dependencyManagement>
 
     <!-- Licensing -->
 
@@ -43,6 +75,7 @@
     <!-- Modules -->
 
     <modules>
+        <module>kivakit-examples</module>
         <module>kivakit-examples-settings</module>
         <module>kivakit-examples-lambda</module>
         <module>kivakit-examples-application</module>
