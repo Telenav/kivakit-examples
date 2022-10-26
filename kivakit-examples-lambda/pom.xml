@@ -22,8 +22,6 @@
     </parent>
 
     <artifactId>kivakit-examples-lambda</artifactId>
-    <version>1.8.2</version>
-
     <dependencies>
 
         <!-- KivaKit -->
