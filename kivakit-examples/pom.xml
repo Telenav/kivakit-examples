@@ -5,12 +5,8 @@
 <!-- Licensed under Apache License, Version 2.0 -->
 <!--  -->
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- suppress MavenModelInspection -->
-
-<project
-    xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns = "http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -22,98 +18,43 @@
     </parent>
 
     <groupId>com.telenav.kivakit</groupId>
-    <artifactId>kivakit-examples-parent</artifactId>
+    <artifactId>kivakit-examples</artifactId>
     <version>1.8.2</version>
 
     <packaging>pom</packaging>
-    <description>
-        A collection of modules that demonstrate how to use features of KivaKit.
-    </description>
+
+    <name>Kivakit Examples</name>
+    <description>Bill Of Meterials for Kivakit Examples.
+        Import this pom as a pom-type, import scope dependency in your dependencyManagement
+         section to depend on a consistent set of versions of kivakit-examples.</description>
 
     <dependencyManagement>
         <dependencies>
-
-            <!-- Pull in libraries defined in Kivakit -->
             <dependency>
-                <groupId>com.telenav.kivakit</groupId>
-                <artifactId>kivakit</artifactId>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-examples-application</artifactId>
                 <version>${project.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
-
-            <!-- Pull in libraries defined in Kivakit Extensions -->
             <dependency>
-                <groupId>com.telenav.kivakit</groupId>
-                <artifactId>kivakit-extensions</artifactId>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-examples-lambda</artifactId>
                 <version>${project.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
-            
             <dependency>
-                <groupId>com.telenav.kivakit</groupId>
-                <artifactId>kivakit-examples</artifactId>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-examples-microservice</artifactId>
                 <version>${project.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
-            
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-examples-settings</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
-    <!-- Licensing -->
-
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <!-- Modules -->
-
-    <modules>
-        <module>kivakit-examples</module>
-        <module>kivakit-examples-settings</module>
-        <module>kivakit-examples-lambda</module>
-        <module>kivakit-examples-application</module>
-        <module>kivakit-examples-microservice</module>
-    </modules>
-
-    <!-- Source Code -->
-
-    <scm>
-        <connection>scm:git:https://Telenav/kivakit-examples.git</connection>
-        <developerConnection>scm:git:https://Telenav/kivakit-examples.git</developerConnection>
-        <url>https://Telenav/kivakit-examples.git</url>
-    </scm>
-
-    <!-- Project -->
-
-    <url>https://www.kivakit.org</url>
-
-    <!-- Issue Tracking -->
-
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://github.com/Telenav/kivakit/issues</url>
-    </issueManagement>
-
-    <inceptionYear>2011</inceptionYear>
-
-    <organization>
-        <name>Telenav</name>
-        <url>https://www.telenav.com</url>
-    </organization>
-
-    <!-- Contributors -->
-
     <developers>
-
         <developer>
-
             <id>jonathanl</id>
             <name>Jonathan Locke (Luo Shibo)</name>
             <email>jonathanl@telenav.com</email>
@@ -123,11 +64,8 @@
                 <role>lead</role>
                 <role>administrator</role>
             </roles>
-
         </developer>
-
         <developer>
-
             <id>haifeng</id>
             <name>Haifeng Zhu</name>
             <email>hfzhu@telenav.com</email>
@@ -137,11 +75,8 @@
                 <role>developer</role>
                 <role>administrator</role>
             </roles>
-
         </developer>
-
         <developer>
-
             <id>timboudreau</id>
             <name>Tim Boudreau</name>
             <email>tim@timboudreau.com</email>
@@ -151,9 +86,30 @@
                 <role>developer</role>
                 <role>administrator</role>
             </roles>
-
         </developer>
-
     </developers>
 
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+
+    <url>https://kivakit.org</url>
+
+    <inceptionYear>2011</inceptionYear>
+
+    <scm>
+        <connection>scm:git:https://github.com/Telenav/kivakit-examples.git</connection>
+        <developerConnection>scm:git:https://github.com/Telenav/kivakit-examples.git</developerConnection>
+        <url>https://github.com/Telenav/kivakit-examples</url>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/Telenav/kivakit-examples/issues</url>
+    </issueManagement>
 </project>
