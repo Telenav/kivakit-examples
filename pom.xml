@@ -17,7 +17,7 @@
     <parent>
         <groupId>com.telenav</groupId>
         <artifactId>telenav-root-superpom</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.7</version>
         <relativePath/>
     </parent>
 
@@ -77,9 +77,9 @@
     <modules>
         <module>kivakit-examples</module>
         <module>kivakit-examples-settings</module>
-        <module>kivakit-examples-lambda</module>
         <module>kivakit-examples-application</module>
         <module>kivakit-examples-microservice</module>
+        <module>kivakit-examples-lambda</module>
     </modules>
 
     <!-- Source Code -->
