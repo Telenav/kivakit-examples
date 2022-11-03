@@ -4,7 +4,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-examples-settings 1.7.0 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-64.png" srcset="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-64-2x.png 2x"/>
+# kivakit-examples-settings 1.8.2 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-64.png" srcset="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-64-2x.png 2x"/>
 
 Example using kivakit-settings.
 
@@ -14,20 +14,20 @@ Example using kivakit-settings.
 
 
 
-[**Dependencies**](#dependencies) | [**Class Diagrams**](#class-diagrams) | [**Package Diagrams**](#package-diagrams) | [**Javadoc**](#javadoc)
+[**Dependencies**](#dependencies) | [**Code Quality**](#code-quality) | [**Class Diagrams**](#class-diagrams) | [**Package Diagrams**](#package-diagrams)
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512-2x.png 2x"/>
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/dependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/dependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.7.0/lexakai/kivakit-examples/kivakit-examples-settings/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.8.2/lexakai/kivakit-examples/kivakit-examples-settings/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-examples-settings</artifactId>
-        <version>1.7.0</version>
+        <version>1.8.2</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
@@ -40,6 +40,20 @@ Example using kivakit-settings.
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
+### Code Quality <a name="code-quality"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/ruler-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/ruler-32-2x.png 2x"/>
+
+Code quality for this project is 0.0%.  
+  
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-0-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-0-96-2x.png 2x"/>
+
+| Measurement   | Value                    |
+|---------------|--------------------------|
+| Stability     | 0.0%&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-0-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-0-96-2x.png 2x"/>     |
+| Testing       | 0.0%&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-0-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-0-96-2x.png 2x"/>       |
+| Documentation | 0.0%&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-0-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-0-96-2x.png 2x"/> |
+
+<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
+
 ### Class Diagrams <a name="class-diagrams"></a> &nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/diagram-40.png" srcset="https://telenav.github.io/telenav-assets/images/icons/diagram-40-2x.png 2x"/>
 
 None
@@ -48,29 +62,20 @@ None
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-24-2x.png 2x"/>
 
-[*com.telenav.kivakit.examples.settings.lookup*](https://www.kivakit.org/1.7.0/lexakai/kivakit-examples/kivakit-examples-settings/documentation/diagrams/com.telenav.kivakit.examples.settings.lookup.svg)  
-[*com.telenav.kivakit.examples.settings.simple*](https://www.kivakit.org/1.7.0/lexakai/kivakit-examples/kivakit-examples-settings/documentation/diagrams/com.telenav.kivakit.examples.settings.simple.svg)
+[*com.telenav.kivakit.examples.settings.lookup*](https://www.kivakit.org/1.8.2/lexakai/kivakit-examples/kivakit-examples-settings/documentation/diagrams/com.telenav.kivakit.examples.settings.lookup.svg)  
+[*com.telenav.kivakit.examples.settings.simple*](https://www.kivakit.org/1.8.2/lexakai/kivakit-examples/kivakit-examples-settings/documentation/diagrams/com.telenav.kivakit.examples.settings.simple.svg)
 
-<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
+### Javadoc <a name="code-quality"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/books-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/books-24-2x.png 2x"/>
 
-### Javadoc <a name="javadoc"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/books-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/books-24-2x.png 2x"/>
-
-Javadoc coverage for this project is 73.8%.  
-  
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-70-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-70-96-2x.png 2x"/>
-
-
-
-
-| Class | Documentation Sections |
-|---|---|
-| [*Alien*](https://www.kivakit.org/1.7.0/javadoc/kivakit-examples///////////////////////////////////////////////////.html) |  |  
-| [*AttackPlan*](https://www.kivakit.org/1.7.0/javadoc/kivakit-examples////////////////////////////////////////////////////////.html) |  |  
-| [*QuantumDatabase*](https://www.kivakit.org/1.7.0/javadoc/kivakit-examples/////////////////////////////////////////////////////////////.html) |  |  
-| [*RegistryExample*](https://www.kivakit.org/1.7.0/javadoc/kivakit-examples/////////////////////////////////////////////////////////////.html) |  |  
-| [*SettingsExample*](https://www.kivakit.org/1.7.0/javadoc/kivakit-examples/////////////////////////////////////////////////////////////.html) |  |  
-| [*Spaceship*](https://www.kivakit.org/1.7.0/javadoc/kivakit-examples///////////////////////////////////////////////////////.html) |  |  
-| [*SpaceshipSettings*](https://www.kivakit.org/1.7.0/javadoc/kivakit-examples///////////////////////////////////////////////////////////////.html) |  |  
+| Class | Documentation Sections  |
+|-------|-------------------------|
+| [*Alien*](https://www.kivakit.org/1.8.2/javadoc/kivakit-examples/com/telenav/kivakit/examples/settings/lookup/Alien.html) |  |  
+| [*AttackPlan*](https://www.kivakit.org/1.8.2/javadoc/kivakit-examples/com/telenav/kivakit/examples/settings/lookup/AttackPlan.html) |  |  
+| [*QuantumDatabase*](https://www.kivakit.org/1.8.2/javadoc/kivakit-examples/com/telenav/kivakit/examples/settings/lookup/QuantumDatabase.html) |  |  
+| [*RegistryExample*](https://www.kivakit.org/1.8.2/javadoc/kivakit-examples/com/telenav/kivakit/examples/settings/lookup/RegistryExample.html) |  |  
+| [*SettingsRegistryExample*](https://www.kivakit.org/1.8.2/javadoc/kivakit-examples/com/telenav/kivakit/examples/settings/simple/SettingsRegistryExample.html) |  |  
+| [*Spaceship*](https://www.kivakit.org/1.8.2/javadoc/kivakit-examples/com/telenav/kivakit/examples/settings/lookup/Spaceship.html) |  |  
+| [*SpaceshipSettings*](https://www.kivakit.org/1.8.2/javadoc/kivakit-examples/com/telenav/kivakit/examples/settings/simple/SpaceshipSettings.html) |  |  
 
 [//]: # (start-user-text)
 
