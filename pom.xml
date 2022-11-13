@@ -1,66 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!--  -->
-<!-- © 2011-2022 Telenav, Inc. -->
-<!-- Licensed under Apache License, Version 2.0 -->
-<!--  -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- suppress MavenModelInspection -->
 
-<project
-    xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!--
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ //
+ // © 2011-2022 Telenav, Inc.
+ // Licensed under Apache License, Version 2.0
+ //
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ -->
+
+<!--suppress CheckTagEmptyBody -->
+
+<project xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns = "http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.telenav</groupId>
-        <artifactId>telenav-root-superpom</artifactId>
-        <version>1.0.16</version>
-        <relativePath/>
-    </parent>
-
     <groupId>com.telenav.kivakit</groupId>
     <artifactId>kivakit-examples-parent</artifactId>
-    <version>1.8.4</version>
+    <version>1.8.5</version>
 
     <packaging>pom</packaging>
-    <description>
-        A collection of modules that demonstrate how to use features of KivaKit.
-    </description>
 
-    <dependencyManagement>
-        <dependencies>
+    <!-- Project -->
 
-            <!-- Pull in libraries defined in Kivakit -->
-            <dependency>
-                <groupId>com.telenav.kivakit</groupId>
-                <artifactId>kivakit</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <!-- Pull in libraries defined in Kivakit Extensions -->
-            <dependency>
-                <groupId>com.telenav.kivakit</groupId>
-                <artifactId>kivakit-extensions</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            
-            <dependency>
-                <groupId>com.telenav.kivakit</groupId>
-                <artifactId>kivakit-examples</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            
-        </dependencies>
-    </dependencyManagement>
+    <name>kivakit-examples-parent</name>
+    <description>A collection of modules that extend KivaKit</description>
+    <url>https://www.kivakit.org</url>
+    <inceptionYear>2011</inceptionYear>
+    <organization>
+        <name>Telenav</name>
+        <url>https://www.telenav.com</url>
+    </organization>
 
     <!-- Licensing -->
 
@@ -75,45 +46,113 @@
     <!-- Modules -->
 
     <modules>
+
         <module>kivakit-examples</module>
         <module>kivakit-examples-settings</module>
         <module>kivakit-examples-application</module>
         <module>kivakit-examples-microservice</module>
         <module>kivakit-examples-lambda</module>
+
     </modules>
 
-    <!-- Source Code -->
+    <!-- Versioning -->
 
-    <scm>
-        <connection>scm:git:https://Telenav/kivakit-examples.git</connection>
-        <developerConnection>scm:git:https://Telenav/kivakit-examples.git</developerConnection>
-        <url>https://Telenav/kivakit-examples.git</url>
-    </scm>
+    <properties>
 
-    <!-- Project -->
+        <!-- Project -->
 
-    <url>https://www.kivakit.org</url>
+        <repository.group.name>kivakit</repository.group.name>
+        <repository.name>kivakit-examples</repository.name>
 
-    <!-- Issue Tracking -->
+        <!-- Tools -->
 
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://github.com/Telenav/kivakit/issues</url>
-    </issueManagement>
+        <java.version>17</java.version>
+        <maven.version>3.8.5</maven.version>
+        <lexakai.version>1.0.20</lexakai.version>
 
-    <inceptionYear>2011</inceptionYear>
+        <!-- Plugins -->
 
-    <organization>
-        <name>Telenav</name>
-        <url>https://www.telenav.com</url>
-    </organization>
+        <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
+        <maven.enforcer.plugin.version>3.1.0</maven.enforcer.plugin.version>
+        <maven.jar.plugin.version>3.3.0</maven.jar.plugin.version>
+        <maven.shade.plugin.version>3.3.0</maven.shade.plugin.version>
+        <maven.resources.plugin.version>3.3.0</maven.resources.plugin.version>
+        <maven.source.plugin.version>3.2.1</maven.source.plugin.version>
+        <maven.cactus.plugin.version>1.5.49</maven.cactus.plugin.version>
+        <maven.cactus.metadata.plugin.version>1.0.2</maven.cactus.metadata.plugin.version>
+        <maven.moditect.plugin.version>1.0.0.RC1</maven.moditect.plugin.version>
+        <maven.plugin.plugin.version>3.7.0</maven.plugin.plugin.version>
+        <maven.surefire.plugin.version>3.0.0-M7</maven.surefire.plugin.version>
+        <maven.javadoc.plugin.version>3.4.1</maven.javadoc.plugin.version>
+        <maven.nexus.staging.plugin.version>1.6.13</maven.nexus.staging.plugin.version>
+        <maven.deploy.plugin.version>3.0.0</maven.deploy.plugin.version>
+        <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
+        <maven.os.plugin.version>1.6.1</maven.os.plugin.version>
+        <maven.protobuf.plugin.version>0.6.1</maven.protobuf.plugin.version>
+
+        <!-- Documentation -->
+
+        <!--suppress UnresolvedMavenProperty -->
+        <documentation.assets.folder>${env.TELENAV_WORKSPACE}/${repository.group.name}-assets/docs/${project.version}</documentation.assets.folder>
+        <documentation.lexakai.folder>${documentation.assets.folder}/lexakai</documentation.lexakai.folder>
+        <documentation.javadoc.folder>${documentation.assets.folder}/javadoc/${repository.name}</documentation.javadoc.folder>
+        <documentation.javadoc.source.version>17</documentation.javadoc.source.version>
+
+        <!-- Publishing -->
+
+        <publishing.nexus.deploy.skip>false</publishing.nexus.deploy.skip>
+        <publishing.nexus.release>true</publishing.nexus.release>
+
+        <!-- Annotations -->
+
+        <annotations.lexakai.annotations.version>1.0.9</annotations.lexakai.annotations.version>
+        <annotations.jetbrains.annotations.version>23.0.0</annotations.jetbrains.annotations.version>
+
+        <!-- Serialization -->
+
+        <serialization.kryo.version>5.3.0</serialization.kryo.version>
+        <serialization.kryo.serializers.version>0.45</serialization.kryo.serializers.version>
+        <serialization.gson.version>2.10</serialization.gson.version>
+        <serialization.protobuf.version>3.21.9</serialization.protobuf.version>
+        <serialization.jackson.version>2.14.0</serialization.jackson.version>
+        <serialization.snake.yaml.version>1.33</serialization.snake.yaml.version>
+
+        <!-- Cloud -->
+
+        <cloud.aws.s3.version>2.17.31</cloud.aws.s3.version>
+        <cloud.aws.lambda.version>1.2.1</cloud.aws.lambda.version>
+        <cloud.zookeeper.version>1.5.8</cloud.zookeeper.version>
+
+        <!-- Networking -->
+
+        <networking.httpclient.version>4.5.13</networking.httpclient.version>
+
+        <!-- Web -->
+
+        <web.netty.version>4.1.84.Final</web.netty.version>
+
+        <!-- Utility -->
+
+        <utilities.guava.version>31.1-jre</utilities.guava.version>
+        <utilities.classgraph.version>4.8.149</utilities.classgraph.version>
+        <utilities.log4j.version>2.19.0</utilities.log4j.version>
+        <utilities.cactus.metadata.version>1.0.2</utilities.cactus.metadata.version>
+
+        <!-- Testing -->
+
+        <testing.junit.version>4.13.2</testing.junit.version>
+        <testing.junit5.version>5.9.1</testing.junit5.version>
+        <testing.junit.platform.version>1.9.1</testing.junit.platform.version>
+        <testing.surefire.excluded/>
+        <testing.surefire.quick>false</testing.surefire.quick>
+
+    </properties>
 
     <!-- Contributors -->
 
     <developers>
 
         <developer>
-
             <id>jonathanl</id>
             <name>Jonathan Locke (Luo Shibo)</name>
             <email>jonathanl@telenav.com</email>
@@ -123,7 +162,6 @@
                 <role>lead</role>
                 <role>administrator</role>
             </roles>
-
         </developer>
 
         <developer>
@@ -141,19 +179,373 @@
         </developer>
 
         <developer>
-
             <id>timboudreau</id>
-            <name>Tim Boudreau</name>
+            <name>Tim Boudreau (Luo Shibo)</name>
             <email>tim@timboudreau.com</email>
             <organization>Telenav</organization>
             <organizationUrl>https://www.telenav.com/</organizationUrl>
             <roles>
-                <role>developer</role>
+                <role>lead</role>
                 <role>administrator</role>
             </roles>
-
         </developer>
 
     </developers>
+
+    <!-- Maven central staging-->
+
+    <distributionManagement>
+
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+
+    </distributionManagement>
+
+    <!-- Repositories -->
+
+    <repositories>
+
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>Maven Central</name>
+            <url>https://repo.maven.apache.org/maven2/</url>
+        </repository>
+
+    </repositories>
+
+    <!-- Source Code -->
+
+    <scm>
+
+        <connection>scm:git:https://github.com/Telenav/${repository.name}.git</connection>
+        <developerConnection>scm:git:https://github.com/Telenav/${repository.name}.git</developerConnection>
+        <url>https://github.com/Telenav/${repository.name}.git</url>
+
+    </scm>
+
+    <!-- Issue Tracking -->
+
+    <issueManagement>
+
+        <system>GitHub</system>
+        <url>https://github.com/Telenav/${repository.group.name}/issues</url>
+
+    </issueManagement>
+
+    <build>
+
+        <!-- Resource Copying -->
+
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+        </resources>
+
+        <testResources>
+            <testResource>
+                <directory>${project.basedir}/src/test/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </testResource>
+        </testResources>
+
+        <!-- Plugins -->
+
+        <plugins>
+
+            <!-- Building -->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <release>${java.version}</release>
+                    <compilerArgs>
+                        <compilerArg>-Xlint:unchecked</compilerArg>
+                        <compilerArg>-Xlint:-requires-transitive-automatic</compilerArg>
+                        <compilerArg>-Xlint:deprecation</compilerArg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+
+            <!-- Enforce Maven version -->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>${maven.enforcer.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>enforce</id>
+                        <phase>verify</phase>
+                        <configuration>
+                            <rules>
+                                <dependencyConvergence/>
+                                <requireMavenVersion>
+                                    <version>[${maven.version},)</version>
+                                    <message>Build requires Maven version ${maven.version}.</message>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Generate build.properties and project.properties files -->
+
+            <plugin>
+                <groupId>com.telenav.cactus.metadata</groupId>
+                <artifactId>cactus-metadata-maven-plugin</artifactId>
+                <version>${maven.cactus.metadata.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>project-metadata</id>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <verb>Updating project and build metadata</verb>
+                        </configuration>
+                        <goals>
+                            <goal>project-information</goal>
+                            <goal>build-metadata</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+
+        <pluginManagement>
+
+            <plugins>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-plugin-plugin</artifactId>
+                    <version>${maven.plugin.plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven.resources.plugin.version}</version>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven.surefire.plugin.version}</version>
+                    <configuration>
+                        <systemPropertyVariables>
+                            <unit.test>true</unit.test>
+                        </systemPropertyVariables>
+                        <argLine>-Xmx2g</argLine>
+                    </configuration>
+                </plugin>
+
+            </plugins>
+
+        </pluginManagement>
+
+    </build>
+
+    <!-- Build Profiles -->
+
+    <profiles>
+
+        <profile>
+
+            <id>release</id>
+
+            <build>
+                <plugins>
+
+                    <!-- Create source JAR -->
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>${maven.source.plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>attach-source-jar</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- Documentation -->
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven.javadoc.plugin.version}</version>
+                        <configuration>
+                            <show>protected</show>
+                            <quiet>true</quiet>
+                            <source>${documentation.javadoc.source.version}</source>
+                            <encoding>utf-8</encoding>
+                            <sourcepath>src/main/java</sourcepath>
+                            <failOnError>true</failOnError>
+                            <detectJavaApiLink>false</detectJavaApiLink>
+                            <doclint>none</doclint>
+                            <nohelp>true</nohelp>
+                            <additionalOptions>-notimestamp</additionalOptions>
+                            <destDir>target/javadoc</destDir>
+                            <sourceFileIncludes>
+                                <sourceFileInclude>**/*.java</sourceFileInclude>
+                            </sourceFileIncludes>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>generate-javadoc</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>javadoc-no-fork</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>generate-aggregate-javadoc</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>aggregate-no-fork</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>attach-javadoc-jar</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <version>${maven.resources.plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>copy-javadoc</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>${documentation.javadoc.folder}</outputDirectory>
+                                    <resources>
+                                        <resource>
+                                            <directory>target/javadoc</directory>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>com.telenav.cactus</groupId>
+                        <artifactId>cactus-maven-plugin</artifactId>
+                        <version>${maven.cactus.plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>build-lexakai-documentation</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>lexakai</goal>
+                                </goals>
+                                <configuration>
+                                    <lexakaiVersion>${lexakai.version}</lexakaiVersion>
+                                    <updateReadme>true</updateReadme>
+                                    <outputFolder>${documentation.lexakai.folder}</outputFolder>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- Signing -->
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${maven.gpg.plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                </configuration>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- Publishing -->
+
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>${maven.nexus.staging.plugin.version}</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                            <skipLocalStaging>true</skipLocalStaging>
+                            <skipNexusStagingDeployMojo>${publishing.nexus.deploy.skip}</skipNexusStagingDeployMojo>
+                            <autoReleaseAfterClose>${publishing.nexus.release}</autoReleaseAfterClose>
+                            <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>default-deploy</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>deploy</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <version>${maven.deploy.plugin.version}</version>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
 
 </project>
