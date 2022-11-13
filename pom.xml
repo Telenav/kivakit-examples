@@ -9,8 +9,6 @@
  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  -->
 
-<!--suppress CheckTagEmptyBody -->
-
 <project xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns = "http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
@@ -68,6 +66,7 @@
 
         <java.version>17</java.version>
         <maven.version>3.8.5</maven.version>
+        <cactus.version>1.5.49</cactus.version>
         <lexakai.version>1.0.20</lexakai.version>
 
         <!-- Plugins -->
@@ -78,8 +77,6 @@
         <maven.shade.plugin.version>3.3.0</maven.shade.plugin.version>
         <maven.resources.plugin.version>3.3.0</maven.resources.plugin.version>
         <maven.source.plugin.version>3.2.1</maven.source.plugin.version>
-        <maven.cactus.plugin.version>1.5.49</maven.cactus.plugin.version>
-        <maven.cactus.metadata.plugin.version>1.0.2</maven.cactus.metadata.plugin.version>
         <maven.moditect.plugin.version>1.0.0.RC1</maven.moditect.plugin.version>
         <maven.plugin.plugin.version>3.7.0</maven.plugin.plugin.version>
         <maven.surefire.plugin.version>3.0.0-M7</maven.surefire.plugin.version>
@@ -87,6 +84,8 @@
         <maven.nexus.staging.plugin.version>1.6.13</maven.nexus.staging.plugin.version>
         <maven.deploy.plugin.version>3.0.0</maven.deploy.plugin.version>
         <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
+        <maven.javadoc.plugin.version>3.4.1</maven.javadoc.plugin.version>
+        <maven.resources.plugin.version>3.3.0</maven.resources.plugin.version>
         <maven.os.plugin.version>1.6.1</maven.os.plugin.version>
         <maven.protobuf.plugin.version>0.6.1</maven.protobuf.plugin.version>
 
@@ -97,6 +96,7 @@
         <documentation.lexakai.folder>${documentation.assets.folder}/lexakai</documentation.lexakai.folder>
         <documentation.javadoc.folder>${documentation.assets.folder}/javadoc/${repository.name}</documentation.javadoc.folder>
         <documentation.javadoc.source.version>17</documentation.javadoc.source.version>
+        <documentation.lexakai.downloads.folder>${env.HOME}/.lexakai/downloads</documentation.lexakai.downloads.folder>
 
         <!-- Publishing -->
 
@@ -131,7 +131,7 @@
 
         <web.netty.version>4.1.84.Final</web.netty.version>
 
-        <!-- Utility -->
+        <!-- Utilities -->
 
         <utilities.guava.version>31.1-jre</utilities.guava.version>
         <utilities.classgraph.version>4.8.149</utilities.classgraph.version>
@@ -312,7 +312,7 @@
             <plugin>
                 <groupId>com.telenav.cactus.metadata</groupId>
                 <artifactId>cactus-metadata-maven-plugin</artifactId>
-                <version>${maven.cactus.metadata.plugin.version}</version>
+                <version>${utilities.cactus.metadata.version}</version>
                 <executions>
                     <execution>
                         <id>project-metadata</id>
@@ -395,7 +395,7 @@
                         </executions>
                     </plugin>
 
-                    <!-- Documentation -->
+                    <!-- Documentation - Javadoc -->
 
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -453,7 +453,8 @@
                                     <goal>copy-resources</goal>
                                 </goals>
                                 <configuration>
-                                    <outputDirectory>${documentation.javadoc.folder}</outputDirectory>
+                                    <encoding>UTF-8</encoding>
+                                    <outputDirectory>${javadoc.documentation.folder}</outputDirectory>
                                     <resources>
                                         <resource>
                                             <directory>target/javadoc</directory>
@@ -464,21 +465,49 @@
                         </executions>
                     </plugin>
 
+                    <!-- Documentation - Lexakai -->
+
                     <plugin>
-                        <groupId>com.telenav.cactus</groupId>
-                        <artifactId>cactus-maven-plugin</artifactId>
-                        <version>${maven.cactus.plugin.version}</version>
+                        <groupId>com.googlecode.maven-download-plugin</groupId>
+                        <artifactId>download-maven-plugin</artifactId>
+                        <version>1.6.8</version>
                         <executions>
                             <execution>
-                                <id>build-lexakai-documentation</id>
+                                <id>install-jbpm</id>
                                 <phase>prepare-package</phase>
                                 <goals>
-                                    <goal>lexakai</goal>
+                                    <goal>wget</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <url>https://repo.maven.apache.org/maven2/com/telenav/lexakai/lexakai-application/${lexakai.version}/lexakai-application-${lexakai.version}.jar</url>
+                            <outputDirectory>${lexakai.downloads.folder}</outputDirectory>
+                            <overwrite>true</overwrite>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <executions>
+                            <execution>
+                                <id>run-lexakai</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>exec</goal>
                                 </goals>
                                 <configuration>
-                                    <lexakaiVersion>${lexakai.version}</lexakaiVersion>
-                                    <updateReadme>true</updateReadme>
-                                    <outputFolder>${documentation.lexakai.folder}</outputFolder>
+                                    <executable>java</executable>
+                                    <workingDirectory>${documentation.lexakai.downloads.folder}</workingDirectory>
+                                    <arguments>
+                                        <argument>-jar</argument>
+                                        <argument>${documentation.lexakai.downloads.folder}/lexakai-application-${lexakai.version}.jar</argument>
+                                        <argument>-update-readme=true</argument>
+                                        <argument>-output-folder=${documentation.lexakai.folder}</argument>
+                                        <argument>.</argument>
+                                    </arguments>
                                 </configuration>
                             </execution>
                         </executions>
