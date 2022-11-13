@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!--  -->
-<!-- © 2011-2022 Telenav, Inc. -->
-<!-- Licensed under Apache License, Version 2.0 -->
-<!--  -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+<!--
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ //
+ // © 2011-2022 Telenav, Inc.
+ // Licensed under Apache License, Version 2.0
+ //
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ -->
+
 <project xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns = "http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-
-    <parent>
-        <groupId>com.telenav</groupId>
-        <artifactId>telenav-root-superpom</artifactId>
-        <version>1.0.16</version>
-        <relativePath/>
-    </parent>
 
     <groupId>com.telenav.kivakit</groupId>
     <artifactId>kivakit-examples</artifactId>
@@ -23,9 +20,17 @@
 
     <packaging>pom</packaging>
 
-    <description>Bill Of Materials for Kivakit Examples.
-        Import this pom as a pom-type, import scope dependency in your dependencyManagement
-         section to depend on a consistent set of versions of kivakit-examples.</description>
+    <name>kivakit-examples-bill-of-materials</name>
+    <url>https://kivakit.org</url>
+    <inceptionYear>2011</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <dependencyManagement>
         <dependencies>
@@ -88,19 +93,6 @@
         </developer>
     </developers>
 
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-
-    <url>https://kivakit.org</url>
-
-    <inceptionYear>2011</inceptionYear>
-
     <scm>
         <connection>scm:git:https://github.com/Telenav/kivakit-examples.git</connection>
         <developerConnection>scm:git:https://github.com/Telenav/kivakit-examples.git</developerConnection>
@@ -111,4 +103,5 @@
         <system>GitHub</system>
         <url>https://github.com/Telenav/kivakit-examples/issues</url>
     </issueManagement>
+
 </project>
