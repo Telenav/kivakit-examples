@@ -88,6 +88,7 @@
         <maven.resources.plugin.version>3.3.0</maven.resources.plugin.version>
         <maven.os.plugin.version>1.6.1</maven.os.plugin.version>
         <maven.protobuf.plugin.version>0.6.1</maven.protobuf.plugin.version>
+        <maven.cactus.plugin.version>1.5.49</maven.cactus.plugin.version>
 
         <!-- Documentation -->
 
@@ -478,6 +479,16 @@
                             <tolerateVersionInconsistenciesIn>lexakai</tolerateVersionInconsistenciesIn>
                         </configuration>
                         <executions>
+                            <execution>
+                                <id>replace-versions</id>
+                                <goals>
+                                    <goal>replace</goal>
+                                </goals>
+                                <configuration>
+                                    <newVersion>${project.version}</newVersion>
+                                    <newBranchName>${project.version}</newBranchName>
+                                </configuration>
+                            </execution>
                             <execution>
                                 <id>generate-codeflowers</id>
                                 <goals>
