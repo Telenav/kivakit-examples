@@ -100,8 +100,8 @@
 
         <!-- Publishing -->
 
-        <publishing.nexus.deploy.skip>false</publishing.nexus.deploy.skip>
-        <publishing.nexus.release>true</publishing.nexus.release>
+        <nexus.deploy.skip>false</nexus.deploy.skip>
+        <nexus.release>true</nexus.release>
 
         <!-- Annotations -->
 
@@ -575,8 +575,8 @@
                             <serverId>ossrh</serverId>
                             <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
                             <skipLocalStaging>true</skipLocalStaging>
-                            <skipNexusStagingDeployMojo>${publishing.nexus.deploy.skip}</skipNexusStagingDeployMojo>
-                            <autoReleaseAfterClose>${publishing.nexus.release}</autoReleaseAfterClose>
+                            <skipNexusStagingDeployMojo>${nexus.deploy.skip}</skipNexusStagingDeployMojo>
+                            <autoReleaseAfterClose>${nexus.release}</autoReleaseAfterClose>
                             <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
                         </configuration>
                         <executions>
