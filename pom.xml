@@ -465,6 +465,29 @@
                         </executions>
                     </plugin>
 
+                    <!-- Documentation - CodeFlowers -->
+
+                    <plugin>
+                        <groupId>com.telenav.cactus</groupId>
+                        <artifactId>cactus-maven-plugin</artifactId>
+                        <version>${maven.cactus.plugin.version}</version>
+                        <configuration>
+                            <scope>family</scope>
+                            <verbose>true</verbose>
+                            <includeRoot>true</includeRoot>
+                            <tolerateVersionInconsistenciesIn>lexakai</tolerateVersionInconsistenciesIn>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>generate-codeflowers</id>
+                                <goals>
+                                    <goal>codeflowers</goal>
+                                </goals>
+                                <phase>install</phase>
+                            </execution>
+                        </executions>
+                    </plugin>
+
                     <!-- Documentation - Lexakai -->
 
                     <plugin>
