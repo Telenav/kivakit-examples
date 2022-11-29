@@ -77,7 +77,6 @@
         <maven.shade.plugin.version>3.3.0</maven.shade.plugin.version>
         <maven.resources.plugin.version>3.3.0</maven.resources.plugin.version>
         <maven.source.plugin.version>3.2.1</maven.source.plugin.version>
-        <maven.moditect.plugin.version>1.0.0.RC1</maven.moditect.plugin.version>
         <maven.plugin.plugin.version>3.7.0</maven.plugin.plugin.version>
         <maven.surefire.plugin.version>3.0.0-M7</maven.surefire.plugin.version>
         <maven.javadoc.plugin.version>3.4.1</maven.javadoc.plugin.version>
@@ -249,6 +248,9 @@
                     <exclude>**/*.java</exclude>
                 </excludes>
             </resource>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+            </resource>
         </resources>
 
         <testResources>
@@ -274,6 +276,7 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <release>${java.version}</release>
+                    <encoding>UTF-8</encoding>
                     <compilerArgs>
                         <compilerArg>-Xlint:unchecked</compilerArg>
                         <compilerArg>-Xlint:-requires-transitive-automatic</compilerArg>
@@ -494,7 +497,7 @@
                         </executions>
                         <configuration>
                             <url>https://repo.maven.apache.org/maven2/com/telenav/lexakai/lexakai-application/${lexakai.version}/lexakai-application-${lexakai.version}.jar</url>
-                            <outputDirectory>${lexakai.downloads.folder}</outputDirectory>
+                            <outputDirectory>${documentation.lexakai.downloads.folder}</outputDirectory>
                             <overwrite>true</overwrite>
                         </configuration>
                     </plugin>
