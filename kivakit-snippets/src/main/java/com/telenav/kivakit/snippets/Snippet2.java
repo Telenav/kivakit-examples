@@ -12,7 +12,6 @@ public class Snippet2 extends BaseSnippet
     @Override
     protected Object onSnippet()
     {
-        return file("pom.xml")
-            .sizeInBytes();
+        return file("pom.xml").sizeInBytes();
     }
 }
