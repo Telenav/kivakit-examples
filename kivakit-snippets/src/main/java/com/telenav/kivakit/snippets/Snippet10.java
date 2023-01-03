@@ -3,6 +3,7 @@ package com.telenav.kivakit.snippets;
 import com.telenav.kivakit.core.string.FormatProperty;
 import com.telenav.kivakit.core.string.ObjectFormatter;
 
+@SuppressWarnings({"FieldCanBeLocal", "unused", "InnerClassMayBeStatic"})
 public class Snippet10 extends BaseSnippet
 {
     public static void main(String[] args)
