@@ -5,7 +5,7 @@ import com.telenav.kivakit.core.registry.RegistryTrait;
 
 import static com.telenav.kivakit.core.time.LocalTime.now;
 
-public class Snippet14 extends BaseSnippet implements RegistryTrait
+public class Snippet14 extends BaseSnippet
 {
     public static void main(String[] args)
     {
