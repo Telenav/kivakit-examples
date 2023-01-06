@@ -49,6 +49,7 @@
         <module>kivakit-examples-settings</module>
         <module>kivakit-examples-application</module>
         <module>kivakit-examples-microservice</module>
+        <module>kivakit-examples-wicket</module>
         <module>kivakit-examples-lambda</module>
         <module>kivakit-snippets</module>
 
