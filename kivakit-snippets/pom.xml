@@ -42,4 +42,32 @@
 
     </dependencies>
 
+    <build>
+        <plugins>
+
+            <!-- Generate build.properties and project.properties files -->
+
+            <plugin>
+                <groupId>com.telenav.cactus.metadata</groupId>
+                <artifactId>cactus-metadata-maven-plugin</artifactId>
+                <version>${utilities.cactus.metadata.version}</version>
+                <executions>
+                    <execution>
+                        <id>project-metadata</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>project-information</goal>
+                            <goal>build-metadata</goal>
+                        </goals>
+                        <configuration>
+                            <buildPropertiesDestination>target/classes/Snippet16-build.properties</buildPropertiesDestination>
+                            <projectPropertiesDestination>target/classes/Snippet16-project.properties</projectPropertiesDestination>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
 </project>
