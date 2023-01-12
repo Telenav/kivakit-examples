@@ -9,6 +9,7 @@ import com.telenav.kivakit.microservice.protocols.grpc.MicroserviceGrpcClient;
 import com.telenav.kivakit.network.core.LocalHost;
 
 import static com.telenav.kivakit.core.os.Console.console;
+import static com.telenav.kivakit.core.string.AsciiArt.textBox;
 import static com.telenav.kivakit.core.version.Version.parseVersion;
 import static java.util.Objects.requireNonNull;
 
@@ -37,9 +38,9 @@ public class DivisionGrpcClient extends Application
         var response = client.request("divide", new DivisionRequest(9, 3), DivisionResponse.class);
 
         // then show the response
-        console().println(AsciiArt.textBox("response => $", response));
+        console().println(textBox("response => $", response));
 
         var future = client.requestFuture("divide", new DivisionRequest(10, 5), DivisionResponse.class);
-        console().println(AsciiArt.textBox("future response => $", future.get()));
+        console().println(textBox("future response => $", future.get()));
     }
 }
