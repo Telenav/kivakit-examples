@@ -4,7 +4,7 @@ import com.telenav.kivakit.core.object.Lazy;
 
 import static com.telenav.kivakit.core.collections.list.StringList.split;
 import static com.telenav.kivakit.core.object.Lazy.lazy;
-import static com.telenav.kivakit.network.http.secure.SecureHttpNetworkLocation.secureHttpNetworkLocation;
+import static com.telenav.kivakit.network.https.HttpsNetworkLocation.secureHttpNetworkLocation;
 
 public class Snippet15 extends BaseSnippet
 {

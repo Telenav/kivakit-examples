@@ -2,7 +2,7 @@ package com.telenav.kivakit.snippets;
 
 import com.telenav.kivakit.core.language.trait.TryTrait;
 
-import static com.telenav.kivakit.network.http.secure.SecureHttpNetworkLocation.secureHttpNetworkLocation;
+import static com.telenav.kivakit.network.https.HttpsNetworkLocation.secureHttpNetworkLocation;
 
 public class Snippet7 extends BaseSnippet implements TryTrait
 {
