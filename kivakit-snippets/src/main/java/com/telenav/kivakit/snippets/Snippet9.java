@@ -17,8 +17,8 @@ public class Snippet9 extends BaseSnippet
     protected Object onSnippet()
     {
         var now = now();
-        var nowUtc = now.inTimeZone(utc());
-        var nowLocal = now.inTimeZone(ZoneId.systemDefault());
+        var nowUtc = now.asLocalTime(utc());
+        var nowLocal = now.asLocalTime(ZoneId.systemDefault());
         return format("utc => $\nlocal => $", nowUtc, nowLocal);
     }
 }
