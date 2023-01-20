@@ -11,6 +11,7 @@ import com.telenav.kivakit.serialization.gson.GsonObjectSerializer;
 import com.telenav.kivakit.serialization.gson.factory.KivaKitCoreGsonFactory;
 
 import static com.telenav.kivakit.core.os.Console.console;
+import static com.telenav.kivakit.core.string.AsciiArt.textBox;
 
 /**
  * Client application that divides two numbers by using the {@link DivisionMicroservice}, running in another process.
@@ -40,6 +41,6 @@ public class DivisionRestClient extends Application
                 DivisionRequest.DivisionResponse.class, new DivisionRequest(9, 3));
 
         // then show the response
-        console().println(AsciiArt.textBox("response => $", response));
+        console().println(textBox("response => $", response));
     }
 }

@@ -32,7 +32,7 @@ This repository contains working example code to show what KivaKit can do.
 [**Tutorial Articles**](https://state-of-the-art.org/)  
 [**Example Code**](https://github.com/Telenav/kivakit-examples)  
 [**KivaKit Blog Articles**](https://state-of-the-art.org/)  
-[**How to Build This Project**](https://github.com/Telenav/telenav-build/blob/release/1.8.2/documentation/building.md) <!-- [cactus.replacement-branch-name] -->   
+[**How to Build This Project**](https://github.com/Telenav/telenav-build/blob/release/1.8.4/documentation/building.md) <!-- [cactus.replacement-branch-name] -->   
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
