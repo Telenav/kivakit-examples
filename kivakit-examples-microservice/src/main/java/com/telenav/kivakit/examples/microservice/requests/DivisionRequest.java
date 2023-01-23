@@ -18,9 +18,6 @@
 
 package com.telenav.kivakit.examples.microservice.requests;
 
-import com.telenav.kivakit.validation.BaseValidator;
-import com.telenav.kivakit.validation.ValidationType;
-import com.telenav.kivakit.validation.Validator;
 import com.telenav.kivakit.microservice.microservlet.BaseMicroservletRequest;
 import com.telenav.kivakit.microservice.microservlet.BaseMicroservletResponse;
 import com.telenav.kivakit.microservice.microservlet.MicroservletRequest;
@@ -28,6 +25,9 @@ import com.telenav.kivakit.microservice.microservlet.MicroservletResponse;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiRequestHandler;
+import com.telenav.kivakit.validation.BaseValidator;
+import com.telenav.kivakit.validation.ValidationType;
+import com.telenav.kivakit.validation.Validator;
 
 /**
  * A {@link MicroservletRequest} that performs arithmetic division
@@ -42,15 +42,21 @@ public class DivisionRequest extends BaseMicroservletRequest
     @OpenApiIncludeType(description = "Response to a divide request")
     public class DivisionResponse extends BaseMicroservletResponse
     {
+        @OpenApiIncludeMember(description = "The result of dividing the dividend by the divisor",
+                              example = "42")
+        int quotient;
+
         @Override
         public void onPrepareResponse()
         {
             quotient = dividend / divisor;
         }
 
-        @OpenApiIncludeMember(description = "The result of dividing the dividend by the divisor",
-                              example = "42")
-        int quotient;
+        @Override
+        public String toString()
+        {
+            return "quotient = " + quotient;
+        }
     }
 
     @OpenApiIncludeMember(description = "The number to be divided",
