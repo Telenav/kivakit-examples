@@ -24,7 +24,7 @@ import com.telenav.kivakit.microservice.microservlet.BaseMicroservletRequest;
 import com.telenav.kivakit.microservice.microservlet.BaseMicroservletResponse;
 import com.telenav.kivakit.microservice.microservlet.MicroservletRequest;
 import com.telenav.kivakit.microservice.microservlet.MicroservletResponse;
-import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiType;
+import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApi;
 import com.telenav.kivakit.validation.BaseValidator;
 import com.telenav.kivakit.validation.ValidationType;
 import com.telenav.kivakit.validation.Validator;
@@ -36,7 +36,7 @@ import com.telenav.kivakit.validation.Validator;
  * @see MicroservletRequest
  * @see MicroservletResponse
  */
-@OpenApiType
+@OpenApi
     (
         """
             description: "A request for divisive action"
@@ -55,7 +55,7 @@ import com.telenav.kivakit.validation.Validator;
     )
 public class DivisionRequest extends BaseMicroservletRequest
 {
-    @OpenApiType
+    @OpenApi
         (
             """
                 description: "Response to a divide request"

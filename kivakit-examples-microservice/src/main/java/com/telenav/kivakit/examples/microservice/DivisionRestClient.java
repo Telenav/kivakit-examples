@@ -37,7 +37,7 @@ public class DivisionRestClient extends Application
 
         // then issue a divide request and read the response,
         var response = client.post("divide",
-            DivisionResponse.class, new DivisionRequest(9, 3));
+            new DivisionRequest(9, 3), DivisionResponse.class);
 
         // then show the response
         console().println(textBox("response => $", response));
