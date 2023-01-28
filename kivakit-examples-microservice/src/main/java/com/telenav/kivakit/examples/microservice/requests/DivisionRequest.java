@@ -44,12 +44,10 @@ import com.telenav.kivakit.validation.Validator;
               dividend:
                 type: integer
                 format: int32
-                required: true
                 description: "The number to be dividied"
               divisor:
                 type: integer
                 format: int32
-                required: true
                 description: "The number to divide the dividend by (dividend / divisor)"
                 """
     )
@@ -63,7 +61,6 @@ public class DivisionRequest extends BaseMicroservletRequest
                   quotient:
                     type: integer
                     format: int32
-                    required: true
                     description: "The result of dividing the dividend by the divisor"
                     """
         )
