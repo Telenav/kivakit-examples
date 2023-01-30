@@ -18,13 +18,13 @@
 
 package com.telenav.kivakit.examples.microservice.requests;
 
+import com.telenav.kivakit.core.string.FormatProperty;
+import com.telenav.kivakit.core.string.ObjectFormatter;
 import com.telenav.kivakit.microservice.microservlet.BaseMicroservletRequest;
 import com.telenav.kivakit.microservice.microservlet.BaseMicroservletResponse;
 import com.telenav.kivakit.microservice.microservlet.MicroservletRequest;
 import com.telenav.kivakit.microservice.microservlet.MicroservletResponse;
-import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
-import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
-import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiRequestHandler;
+import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApi;
 import com.telenav.kivakit.validation.BaseValidator;
 import com.telenav.kivakit.validation.ValidationType;
 import com.telenav.kivakit.validation.Validator;
@@ -36,14 +36,37 @@ import com.telenav.kivakit.validation.Validator;
  * @see MicroservletRequest
  * @see MicroservletResponse
  */
-@OpenApiIncludeType(description = "Request for divisive action")
+@OpenApi
+    (
+        """
+            description: "A request for divisive action"
+            properties:
+              dividend:
+                type: integer
+                format: int32
+                description: "The number to be dividied"
+              divisor:
+                type: integer
+                format: int32
+                description: "The number to divide the dividend by (dividend / divisor)"
+                """
+    )
 public class DivisionRequest extends BaseMicroservletRequest
 {
-    @OpenApiIncludeType(description = "Response to a divide request")
+    @OpenApi
+        (
+            """
+                description: "Response to a divide request"
+                properties:
+                  quotient:
+                    type: integer
+                    format: int32
+                    description: "The result of dividing the dividend by the divisor"
+                    """
+        )
     public class DivisionResponse extends BaseMicroservletResponse
     {
-        @OpenApiIncludeMember(description = "The result of dividing the dividend by the divisor",
-                              example = "42")
+        @FormatProperty
         int quotient;
 
         @Override
@@ -55,16 +78,14 @@ public class DivisionRequest extends BaseMicroservletRequest
         @Override
         public String toString()
         {
-            return "quotient = " + quotient;
+            return new ObjectFormatter(this).toString();
         }
     }
 
-    @OpenApiIncludeMember(description = "The number to be divided",
-                          example = "84")
+    @FormatProperty
     private int dividend;
 
-    @OpenApiIncludeMember(description = "The number to divide the dividend by (dividend / divisor)",
-                          example = "2")
+    @FormatProperty
     private int divisor;
 
     public DivisionRequest(int dividend, int divisor)
@@ -78,7 +99,6 @@ public class DivisionRequest extends BaseMicroservletRequest
     }
 
     @Override
-    @OpenApiRequestHandler(summary = "Divides two numbers")
     public DivisionResponse onRespond()
     {
         return listenTo(new DivisionResponse());
@@ -88,6 +108,12 @@ public class DivisionRequest extends BaseMicroservletRequest
     public Class<DivisionResponse> responseType()
     {
         return DivisionResponse.class;
+    }
+
+    @Override
+    public String toString()
+    {
+        return new ObjectFormatter(this).toString();
     }
 
     /**
