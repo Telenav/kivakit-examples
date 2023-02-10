@@ -23,6 +23,7 @@ import com.telenav.kivakit.examples.microservice.requests.DivisionRequest;
 import com.telenav.kivakit.microservice.Microservice;
 import com.telenav.kivakit.microservice.protocols.rest.http.RestService;
 
+import static com.telenav.kivakit.core.version.Version.version;
 import static com.telenav.kivakit.network.http.HttpMethod.POST;
 
 /**
@@ -38,10 +39,14 @@ public class DivisionRestService extends RestService
     }
 
     @Override
+    public Version apiVersion()
+    {
+        return version("1.0");
+    }
+
+    @Override
     public void onInitialize()
     {
-        var v1 = Version.version("1.0");
-
-        mount(v1, "/divide", POST, DivisionRequest.class);
+        mount(apiVersion(), "/divide", POST, DivisionRequest.class);
     }
 }
