@@ -6,7 +6,7 @@ import com.telenav.kivakit.examples.microservice.requests.DivisionRequest;
 import com.telenav.kivakit.examples.microservice.requests.DivisionRequest.DivisionResponse;
 import com.telenav.kivakit.microservice.MicroserviceSettings;
 import com.telenav.kivakit.microservice.protocols.rest.http.RestClient;
-import com.telenav.kivakit.serialization.gson.GsonObjectSerializer;
+import com.telenav.kivakit.microservice.protocols.rest.http.serializers.GsonRestSerializer;
 import com.telenav.kivakit.serialization.gson.KivaKitCoreGsonFactory;
 
 import static com.telenav.kivakit.core.os.Console.console;
@@ -33,7 +33,7 @@ public class DivisionRestClient extends Application
 
         // create a client to talk to the microservice REST API,
         register(new KivaKitCoreGsonFactory());
-        var client = listenTo(new RestClient(new GsonObjectSerializer(), port, Version.version("1.0")));
+        var client = listenTo(new RestClient(new GsonRestSerializer(), port, Version.version("1.0")));
 
         // then issue a divide request and read the response,
         var response = client.post("divide",
