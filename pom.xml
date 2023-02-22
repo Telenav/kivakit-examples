@@ -83,7 +83,7 @@
         <maven.javadoc.plugin.version>3.4.1</maven.javadoc.plugin.version>
         <maven.nexus.staging.plugin.version>1.6.13</maven.nexus.staging.plugin.version>
         <maven.deploy.plugin.version>3.0.0</maven.deploy.plugin.version>
-        <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
+        <maven.gpg.plugin.version>3.0.1</maven.gpg.plugin.version>
         <maven.javadoc.plugin.version>3.4.1</maven.javadoc.plugin.version>
         <maven.resources.plugin.version>3.3.0</maven.resources.plugin.version>
         <maven.os.plugin.version>1.6.1</maven.os.plugin.version>
